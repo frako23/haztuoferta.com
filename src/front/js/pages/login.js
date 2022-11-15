@@ -1,28 +1,47 @@
-import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+import { Link } from "react-router-dom";
+import "../../styles/home.css";
 
-export const Single = props => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
+export const Login = () => {
+  const { store, actions } = useContext(Context);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const token = sessionStorage.getItem("token");
+  console.log("Este es tu token", store.token);
 
-	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
-			<img src={rigoImageUrl} />
-			<hr className="my-4" />
+  const handleClick = () => {
+    actions.login(email, password);
+  };
 
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
-		</div>
-	);
-};
-
-Single.propTypes = {
-	match: PropTypes.object
+  if (store.token && store.token != "" && store.token != undefined)
+    navigate("/");
+  return (
+    <div className="text-center mt-5">
+      <h1>Login</h1>
+      {store.token && store.token != "" && store.token != undefined ? (
+        "Estas loggeado con este token" + store.token
+      ) : (
+        <div>
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Link to="/">
+            <button onClick={handleClick}>Login</button>
+          </Link>
+        </div>
+      )}
+    </div>
+  );
 };
