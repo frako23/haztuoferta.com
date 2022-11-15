@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         try {
           const resp = await fetch(
-            "https://3001-4geeksacade-reactflaskh-k7w75gdxxcs.ws-us74.gitpod.io/api/token",
+            "https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us74.gitpod.io/api/token",
             opts
           );
           if (resp.status !== 200) {
@@ -75,7 +75,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         try {
           const response = await fetch(
-            "https://3001-4geeksacade-reactflaskh-k7w75gdxxcs.ws-us74.gitpod.io/api/users",
+            "https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us74.gitpod.io/api/users",
             options
           );
 

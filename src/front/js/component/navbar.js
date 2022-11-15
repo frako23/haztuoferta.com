@@ -19,44 +19,49 @@ export const Navbar = (props) => {
           </Link>
         </div>
         <div className="ml-auto nav-item dropdown">
-          <button
-            className="btn btn-primary dropdown-toggle ddt"
-            id="navbarScrollingDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <strong>
-              Favoritos (
-              {store.favorites.length > 0 ? store.favorites.length : 0})
-            </strong>
-          </button>
-          <ul
-            className="dropdown-menu ddt"
-            aria-labelledby="navbarScrollingDropdown"
-          >
-            {store.favorites.map((fav) => {
-              return (
-                <li key={fav.name}>
-                  <a href="#" className="dropdown-item">
-                    {fav.name}{" "}
-                    <button
-                      type="button"
-                      className="btn btn-danger mx-2"
-                      onClick={(event) => actions.toggleFavorite(fav)}
-                    >
-                      <i className="fa-solid fa-trash"></i>
-                    </button>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-          <Link to="/signup">
-            <button className="btn btn-primary ms-5" type="button">
-              <strong>Regístrate!</strong>
-            </button>
-          </Link>
+          {!store.token ? (
+            <Link to="/signup">
+              <button className="btn btn-primary ms-5" type="button">
+                <strong>Regístrate!</strong>
+              </button>
+            </Link>
+          ) : (
+            <>
+              <button
+                className="btn btn-primary dropdown-toggle ddt"
+                id="navbarScrollingDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <strong>
+                  Favoritos (
+                  {store.favorites.length > 0 ? store.favorites.length : 0})
+                </strong>
+              </button>
+              <ul
+                className="dropdown-menu ddt"
+                aria-labelledby="navbarScrollingDropdown"
+              >
+                {store.favorites.map((fav) => {
+                  return (
+                    <li key={fav.name}>
+                      <a href="#" className="dropdown-item">
+                        {fav.name}{" "}
+                        <button
+                          type="button"
+                          className="btn btn-danger mx-2"
+                          onClick={(event) => actions.toggleFavorite(fav)}
+                        >
+                          <i className="fa-solid fa-trash"></i>
+                        </button>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
         </div>
         {!store.token ? (
           <Link to="/login">
