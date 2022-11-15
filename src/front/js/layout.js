@@ -10,6 +10,7 @@ import { Login } from "./pages/login";
 import { Signup } from "./pages/signup";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Publish } from "./component/publish-modal";
 
 //create your first component
 const Layout = () => {
@@ -33,6 +34,7 @@ const Layout = () => {
           <Footer />
         </ScrollToTop>
       </BrowserRouter>
+      <Publish />
     </div>
   );
 };
