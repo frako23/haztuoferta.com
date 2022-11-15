@@ -52,11 +52,16 @@ export const Navbar = (props) => {
               );
             })}
           </ul>
+          <Link to="/signup">
+            <button className="btn btn-primary ms-5" type="button">
+              <strong>Regístrate!</strong>
+            </button>
+          </Link>
         </div>
         {!store.token ? (
           <Link to="/login">
             <button type="button" className="btn btn-primary">
-              <strong>Log in</strong>
+              <strong>Ingresa</strong>
             </button>
           </Link>
         ) : (
@@ -65,7 +70,7 @@ export const Navbar = (props) => {
             className="btn btn-primary"
             onClick={(event) => actions.logout()}
           >
-            <strong>Log out</strong>
+            <strong>Salir</strong>
           </button>
         )}
       </div>
