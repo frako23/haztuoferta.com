@@ -24,6 +24,7 @@ export const Publish = () => {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Agrega tu imagen</Form.Label>
               <Form.Control type="file" placeholder="upload" />
+              <br />
               <Form.Control type="text" placeholder="titulo" autoFocus />
             </Form.Group>
             <Form.Group
@@ -37,10 +38,10 @@ export const Publish = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Cerrar
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Publicar
           </Button>
         </Modal.Footer>
       </Modal>
