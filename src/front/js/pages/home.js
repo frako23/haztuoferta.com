@@ -5,6 +5,7 @@ import { ItemCard } from "../component/ItemCard";
 import { Carousel } from "../component/carousel.js";
 
 
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
@@ -12,9 +13,6 @@ export const Home = () => {
 		<React.Fragment>
 			<div className="text-center mt-5">
 				<h1>Hello Rigo!!</h1>
-				<p>
-					<img src={rigoImageUrl} />
-				</p>
 				<div className="container">
 					<h2 className="text-start my-4 display-4">Los Mas Buscados</h2>
 					<div className="itemcard gap-5">
