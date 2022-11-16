@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { ItemCard } from "../component/ItemCard";
+import { Carousel } from "../component/carousel.js";
+
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -36,3 +37,5 @@ export const Home = () => {
 		</React.Fragment>
 	);
 };
+
+

@@ -11,6 +11,7 @@ import { Signup } from "./pages/signup";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Publish } from "./component/publish-modal";
+import { Carousel } from "./component/carousel";
 
 //create your first component
 const Layout = () => {
@@ -23,6 +24,7 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
+          <Carousel/>
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Login />} path="/login" />
