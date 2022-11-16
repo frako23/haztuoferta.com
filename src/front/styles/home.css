@@ -5,3 +5,55 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel {
+    height: auto;
+    width: 100%;
+    border: none;
+    background: white;
+    overflow-x: scroll;
+}
+
+.itemcard {
+    height: auto;
+    display: flex;
+}
+
+.title-card {
+    margin: 0;
+    padding: 0;
+}
+
+.img-description {
+    width: 50%;
+}
+
+/* .favs-menu {
+    background-color: transparent;
+    color: darkslategrey;
+}
+
+.favs-menu:hover {
+    background-color: transparent;
+    border-bottom: 1px solid burlywood;
+    color: darkslategrey;
+}
+
+.dropdown-item:hover {
+    background-color: white;
+}
+
+.dropdown-btn:hover {
+    border: 0;
+    color: darkred;
+    cursor: pointer;
+    font-size: larger;
+} */
