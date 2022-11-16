@@ -5,3 +5,12 @@
 .form-control {
   display: block;
 }
+
+.single {
+  width: 800px;
+  height: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

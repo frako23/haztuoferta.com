@@ -24,7 +24,6 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
-          <Carousel/>
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Login />} path="/login" />
@@ -36,7 +35,6 @@ const Layout = () => {
           <Footer />
         </ScrollToTop>
       </BrowserRouter>
-      <Publish />
     </div>
   );
 };
