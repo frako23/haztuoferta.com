@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Publish } from "./publish-modal";
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
@@ -10,14 +11,12 @@ export const Navbar = (props) => {
       <div className="container">
         <Link to="/">
           <span className="navbar-brand mb-0 h1">
-            <i className="fa-solid fa-house"> Home</i>
+            <i class="fa-solid fa-house"> Home</i>
           </span>
         </Link>
         <div className="ml-auto">
-          <Link to="/demo">
-            <button className="btn btn-primary">
-              Check the Context in action
-            </button>
+          <Link to="/">
+            <Publish />
           </Link>
         </div>
         <div className="ml-auto nav-item dropdown">
