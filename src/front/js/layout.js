@@ -34,7 +34,6 @@ const Layout = () => {
           <Footer />
         </ScrollToTop>
       </BrowserRouter>
-      <Publish />
     </div>
   );
 };
