@@ -27,6 +27,10 @@ export const Publish = () => {
               <br />
               <Form.Control type="text" placeholder="titulo" autoFocus />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+              <Form.Label>Precio</Form.Label>
+              <Form.Control type="number" placeholder="Precio" />
+            </Form.Group>
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
