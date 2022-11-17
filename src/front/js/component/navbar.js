@@ -21,7 +21,7 @@ export const Navbar = (props) => {
         </div>
         <div className="ml-auto nav-item dropdown">
           {!store.token ? (
-            <Link to="/signup">
+            <Link to="/">
               <button className="btn btn-primary ms-5" type="button">
                 <strong>Regístrate!</strong>
               </button>
@@ -65,7 +65,7 @@ export const Navbar = (props) => {
           )}
         </div>
         {!store.token ? (
-          <Link to="/login">
+          <Link to="/">
             <button type="button" className="btn btn-primary">
               <strong>Ingresa</strong>
             </button>
@@ -80,12 +80,10 @@ export const Navbar = (props) => {
           </button>
         )}
 
-      <button className="btn btn-primary ms-5" type="button">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+        <button className="btn btn-primary ms-5" type="button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
-
-
     </nav>
   );
 };
