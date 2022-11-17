@@ -12,8 +12,11 @@ export const Home = () => {
 	return (
 		<React.Fragment>
 			<div className="text-center mt-5">
-				<h1>Hello Rigo!!</h1>
+				<div className="carousel">
+					<Carousel />
+				</div>
 				<div className="container">
+				    
 					<h2 className="text-start my-4 display-4">Los Mas Buscados</h2>
 					<div className="itemcard gap-5">
 						<ItemCard />

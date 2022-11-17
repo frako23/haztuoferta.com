@@ -8,6 +8,8 @@ export const Signup = () => {
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const token = sessionStorage.getItem("token");
   const navigate = useNavigate();
@@ -15,7 +17,14 @@ export const Signup = () => {
   const sendData = (event) => {
     event.preventDefault();
     actions.signup(name, email, password);
-    if (name != "" && email != "" && password != "") navigate("/login");
+    if (
+      name != "" &&
+      lastname != "" &&
+      phone != "" &&
+      email != "" &&
+      password != ""
+    )
+      navigate("/login");
   };
   return (
     <div className="text-center mt-5">
@@ -23,10 +32,24 @@ export const Signup = () => {
       <div>
         <input
           type="text"
-          placeholder="Name"
+          placeholder="Nombre"
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Apellido"
+          required
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Teléfono"
+          required
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
         />
         <input
           type="email"

@@ -59,7 +59,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (token && token != "" && token != undefined)
           setStore({ token: token });
       },
-      signup: async (name, email, password) => {
+      signup: async (name, lastName, phone, email, password) => {
         const store = getStore();
         const options = {
           method: "POST",
@@ -67,7 +67,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            full_name: name,
+            name: name,
+            lastName: lastName,
+            phone: phone,
             email: email,
             password: password,
           }),
