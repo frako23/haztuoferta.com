@@ -16,6 +16,7 @@ export const Home = () => {
 			<div className="text-center mt-5">
 				<h1>Haz tu Oferta!</h1>
 				<div className="container">
+
 					<h2 className="text-start my-4 display-4">Los Mas Buscados</h2>
 					<div className="itemcard gap-5">
 						<ItemCard />
