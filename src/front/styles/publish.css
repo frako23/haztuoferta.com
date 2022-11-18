@@ -13,6 +13,13 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+#display_image {
+  width: 100%;
+  height: 50vh;
+  border: 1px solid black;
+  background-size: cover;
+}
+
 /*  {
   box-sizing: border-box;
 }

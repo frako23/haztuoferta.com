@@ -81,12 +81,10 @@ export const Navbar = (props) => {
           </button>
         )}
 
-      <button className="btn btn-primary ms-5" type="button">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+        <button className="btn btn-primary ms-5" type="button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
-
-
     </nav>
   );
 };
