@@ -13,16 +13,13 @@ export const Publish = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Publicar articulo
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>¿Que deseas vender?</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
+      <div className="container">
+        <div className="row">
+          <div className="col-6">
+            <h1>Que deseas vender?</h1>
+          </div>
+          <Form className="w-50 bg-white m-5 p-4 rounded d-flex flex-column col-6">
+            <h1 className="text-center">Que deseas vender?</h1>
             <Form.Group className="mb-3" controlId="formFile">
               <div>
                 {selectedImage && (
@@ -64,16 +61,8 @@ export const Publish = () => {
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
           </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cerrar
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Publicar
-          </Button>
-        </Modal.Footer>
-      </Modal>
+        </div>
+      </div>
     </>
   );
 };
