@@ -8,10 +8,7 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-<<<<<<< HEAD
 import { Carousel } from "./component/carousel";
-=======
->>>>>>> aaef49f94d7a13f9960a2d6c90a8615d8e294e95
 
 //create your first component
 const Layout = () => {
