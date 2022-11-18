@@ -9,13 +9,16 @@ import { Login } from "./login";
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
   return (
-    <nav className="navbar navbar-light bg-light">
+    <nav className="navbar navbar-dark bg-dark text-light">
       <div className="container">
-        <Link to="/">
-          <span className="navbar-brand mb-0 h1">
-            <i className="fa-solid fa-house"> Home</i>
-          </span>
-        </Link>
+        <div className="icons-left">
+          <Link to="/">
+            <span className="navbar-brand mb-0 h1">
+              <i class="fa-solid fa-house"></i>
+            </span>
+          </Link>
+          <i class="fa-regular fa-circle-question"></i>
+        </div>
         <div className="ml-auto">
           <Link to="/">
             <Publish />
