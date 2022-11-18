@@ -57,7 +57,7 @@ export const Footer = () => (
 			</div>
 
 			<div className="text-center p-3 footer">
-				© 2020 Copyright: HaztuOferta.com
+				© 2022 Copyright: HaztuOferta.com
 			</div>
 		</footer>
 	</div>
