@@ -3,28 +3,32 @@
 */
 
 .form-control {
-	display: block;
+  display: block;
 }
 
 .single {
-	width: 800px;
-	height: auto;
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: auto;
+  width: 800px;
+  height: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .boton {
-	width: 100px;
-	font-weight: bold;
+  width: 100px;
+  font-weight: bold;
 }
 
 .inputnavbar {
-	height: 38px;
-	margin-top: 8px;
+  height: 38px;
+  margin-top: 8px;
 }
 
 .footer {
-	background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.paddingnavbar {
+  padding: 0;
 }
