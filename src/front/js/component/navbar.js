@@ -77,12 +77,11 @@ export const Navbar = (props) => {
             <strong>Salir</strong>
           </button>
         )}
-
         <form class="d-flex">
           <input
             className="form-control me-2 inputnavbar"
             type="search"
-            placeholder="Búscalo aqui"
+            placeholder="Busca lo que quieras!"
             aria-label="Search"
           />
           <button className="btn btn-primary boton" type="submit">
