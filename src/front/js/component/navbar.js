@@ -80,12 +80,12 @@ export const Navbar = (props) => {
 
         <form class="d-flex">
           <input
-            class="form-control me-2"
+            className="form-control me-2 inputnavbar"
             type="search"
-            placeholder="Buscar"
+            placeholder="Busca el producto que desees"
             aria-label="Search"
           />
-          <button class="btn btn-primary boton" type="submit">
+          <button className="btn btn-primary boton" type="submit">
             Buscar
           </button>
         </form>
