@@ -10,7 +10,7 @@ import "../../styles/index.css";
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
   return (
-    <nav className="navbar navbar-dark bg-dark text-light">
+    <nav className="navbar navbar-dark bg-dark text-light paddingnavbar">
       <div className="container">
         <div className="icons-left">
           <Link to="/">
