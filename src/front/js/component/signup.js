@@ -97,7 +97,7 @@ export const Signup = () => {
               >
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="password"
                   placeholder="Coloca una contraseña"
                   autoFocus
                   onChange={(e) => setPassword(e.target.value)}
@@ -115,7 +115,7 @@ export const Signup = () => {
           </Modal.Footer>
         </Modal>
       ) : (
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" className="boton" onClick={handleShow}>
           Registrate
         </Button>
       )}

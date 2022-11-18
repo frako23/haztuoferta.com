@@ -56,7 +56,7 @@ export const Login = () => {
               >
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="password"
                   placeholder="Coloca tu contraseña"
                   autoFocus
                   onChange={(e) => setPassword(e.target.value)}
