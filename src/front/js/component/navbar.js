@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Publish } from "./publish-modal";
+import { Signup } from "./signup";
+import { Login } from "./login";
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
@@ -11,7 +13,7 @@ export const Navbar = (props) => {
       <div className="container">
         <Link to="/">
           <span className="navbar-brand mb-0 h1">
-            <i class="fa-solid fa-house"> Home</i>
+            <i className="fa-solid fa-house"> Home</i>
           </span>
         </Link>
         <div className="ml-auto">
@@ -21,11 +23,7 @@ export const Navbar = (props) => {
         </div>
         <div className="ml-auto nav-item dropdown">
           {!store.token ? (
-            <Link to="/">
-              <button className="btn btn-primary ms-5" type="button">
-                <strong>Regístrate!</strong>
-              </button>
-            </Link>
+            <Signup />
           ) : (
             <>
               <button
@@ -65,11 +63,7 @@ export const Navbar = (props) => {
           )}
         </div>
         {!store.token ? (
-          <Link to="/">
-            <button type="button" className="btn btn-primary">
-              <strong>Ingresa</strong>
-            </button>
-          </Link>
+          <Login />
         ) : (
           <button
             type="button"
@@ -81,7 +75,7 @@ export const Navbar = (props) => {
         )}
 
         <button className="btn btn-primary ms-5" type="button">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
     </nav>

@@ -36,8 +36,12 @@ def get_users():
         return jsonify(users_dictionaries), 200
     new_user_data = request.json
     try:
-        if "full_name" not in new_user_data or new_user_data["full_name"] == "": 
-            raise Exception("No ingresaste el name",400)
+        if "name" not in new_user_data or new_user_data["name"] == "": 
+            raise Exception("No ingresaste tu nombre",400)
+        if "lastname" not in new_user_data or new_user_data["lastname"] == "": 
+            raise Exception("No ingresaste tu apellido",400)
+        if "phone" not in new_user_data or new_user_data["phone"] == "": 
+            raise Exception("No ingresaste tu telefono",400)
         if "email" not in new_user_data or new_user_data["email"] == "": 
             raise Exception("No ingresaste el email",400)
         if "password" not in new_user_data or new_user_data["password"] == "": 
