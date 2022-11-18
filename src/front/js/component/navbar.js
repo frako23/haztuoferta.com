@@ -77,9 +77,17 @@ export const Navbar = (props) => {
           </button>
         )}
 
-        <button className="btn btn-primary ms-5" type="button">
-          <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Buscar"
+            aria-label="Search"
+          />
+          <button class="btn btn-primary" type="submit">
+            Buscar
+          </button>
+        </form>
       </div>
     </nav>
   );
