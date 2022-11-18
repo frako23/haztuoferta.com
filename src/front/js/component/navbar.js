@@ -92,7 +92,7 @@ export const Navbar = (props) => {
           <input
             className="form-control me-2 inputnavbar"
             type="search"
-            placeholder="Busca el producto que desees"
+            placeholder="Búscalo aqui"
             aria-label="Search"
           />
           <button className="btn btn-primary boton" type="submit">
