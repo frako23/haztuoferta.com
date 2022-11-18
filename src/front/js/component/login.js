@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FormGroup } from "react-bootstrap";
+import "../../styles/index.css";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
@@ -73,7 +74,11 @@ export const Login = () => {
           </Modal.Footer>
         </Modal>
       ) : (
-        <Button variant="primary" onClick={handleShow}>
+        <Button
+          variant="primary"
+          className="btn btn-primary boton"
+          onClick={handleShow}
+        >
           Ingresa
         </Button>
       )}

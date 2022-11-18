@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 import { Publish } from "./publish-modal";
 import { Signup } from "./signup";
 import { Login } from "./login";
+import "../../styles/index.css";
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
@@ -52,7 +53,7 @@ export const Navbar = (props) => {
                         {fav.name}{" "}
                         <button
                           type="button"
-                          className="btn btn-danger mx-2"
+                          className="btn btn-danger mx-2 boton"
                           onClick={(event) => actions.toggleFavorite(fav)}
                         >
                           <i className="fa-solid fa-trash"></i>
@@ -70,7 +71,7 @@ export const Navbar = (props) => {
         ) : (
           <button
             type="button"
-            className="btn btn-primary"
+            className="btn btn-primary boton"
             onClick={(event) => actions.logout()}
           >
             <strong>Salir</strong>
@@ -84,7 +85,7 @@ export const Navbar = (props) => {
             placeholder="Buscar"
             aria-label="Search"
           />
-          <button class="btn btn-primary" type="submit">
+          <button class="btn btn-primary boton" type="submit">
             Buscar
           </button>
         </form>

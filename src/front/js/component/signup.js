@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FormGroup } from "react-bootstrap";
+import "../../styles/index.css";
 
 export const Signup = () => {
   const { store, actions } = useContext(Context);
