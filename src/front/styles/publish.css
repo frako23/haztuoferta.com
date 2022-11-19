@@ -50,3 +50,41 @@ option:first-of-type {
 textarea {
   resize: none;
 }
+<<<<<<< HEAD button:hover {
+  opacity: 1;
+}
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.cancelbtn,
+.signupbtn {
+  float: left;
+  width: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+*/
+
+/* Change styles for cancel button and signup button on extra small screens 
+@media screen and (max-width: 300px) {
+<<<<<<< HEAD
+	.cancelbtn,
+	.signupbtn {
+    width: 100%;
+	}
+}*/
+
+.cancelbtn,
+.signupbtn {
+  width: 100%;
+}

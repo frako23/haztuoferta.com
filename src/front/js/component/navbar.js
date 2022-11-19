@@ -2,27 +2,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Categories } from "./categories";
 import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
+import logo from "../../img/OliviaWilson.jpg";
+import "../../styles/navbar.css";
 
 export const Navbar = (props) => {
 	const { store, actions } = useContext(Context);
 	return (
-		<nav className="navbar navbar-dark bg-dark text-light">
+		<nav className="navbar navbar-info bg-info text-light sticky-top">
 			<div className="container">
-				<div className="icons-left">
+				<div className="icons-left ml-auto">
 					<Link to="/">
-						<span className="navbar-brand mb-0 h1">
-							<i className="fa-solid fa-house"></i>
+						<span className="navbar-brand mb-0">
+							<img src={logo} style={{ height: "50px" }} />
 						</span>
 					</Link>
-					<i className="fa-regular fa-circle-question"></i>
 				</div>
 				<div className="ml-auto">
+					<Categories />
 					<Link to="/Publish">
 						<button
-							className="btn btn-primary"
+							className="btn btn-info"
 							id=""
 							role="button"
 							aria-expanded="false"
@@ -37,7 +40,7 @@ export const Navbar = (props) => {
 					) : (
 						<>
 							<button
-								className="btn btn-primary dropdown-toggle ddt"
+								className="btn btn-info dropdown-toggle ddt"
 								id="navbarScrollingDropdown"
 								role="button"
 								data-bs-toggle="dropdown"
@@ -84,18 +87,15 @@ export const Navbar = (props) => {
 					</button>
 				)}
 
-				<button className="btn btn-primary ms-5" type="button">
-					<i className="fa-solid fa-magnifying-glass"></i>
-				</button>
-				<form className="d-flex">
+				<form className="d-flex align-content-center">
 					<input
 						className="form-control me-2 inputnavbar"
 						type="search"
 						placeholder="Búscalo aqui"
 						aria-label="Search"
 					/>
-					<button className="btn btn-primary boton" type="submit">
-						Buscar
+					<button className="botonsrch btn btn-info" type="submit">
+						<i className="fa-solid fa-magnifying-glass"></i>
 					</button>
 				</form>
 			</div>
