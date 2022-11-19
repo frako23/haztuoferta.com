@@ -10,7 +10,7 @@ export const Categories = () => {
 
 	return (
 		<>
-			<Button variant="primary" className="me-3" onClick={handleShow}>
+			<Button variant="info" className="me-3" onClick={handleShow}>
 				Categorias
 			</Button>
 

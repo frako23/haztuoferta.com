@@ -7,97 +7,98 @@ import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
 import logo from "../../img/OliviaWilson.jpg";
+import "../../styles/navbar.css";
 
 export const Navbar = (props) => {
-  const { store, actions } = useContext(Context);
-  return (
-    <nav className="navbar navbar-dark bg-dark text-light">
-      <div className="container">
-        <div className="icons-left">
-          <Link to="/">
-            <span className="navbar-brand mb-0 h1">
-              <img src={logo} style={{ height: "50px" }} />
-            </span>
-          </Link>
-        </div>
-        <div className="ml-auto">
-          <Categories />
-          <Link to="/Publish">
-            <button
-              className="btn btn-primary"
-              id=""
-              role="button"
-              aria-expanded="false"
-            >
-              Publicar Artículo
-            </button>
-          </Link>
-        </div>
-        <div className="ml-auto nav-item dropdown">
-          {!store.token ? (
-            <Signup />
-          ) : (
-            <>
-              <button
-                className="btn btn-primary dropdown-toggle ddt"
-                id="navbarScrollingDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <strong>
-                  Favoritos (
-                  {store.favorites.length > 0 ? store.favorites.length : 0})
-                </strong>
-              </button>
-              <ul
-                className="dropdown-menu ddt"
-                aria-labelledby="navbarScrollingDropdown"
-              >
-                {store.favorites.map((fav) => {
-                  return (
-                    <li key={fav.name}>
-                      <a href="#" className="dropdown-item">
-                        {fav.name}{" "}
-                        <button
-                          type="button"
-                          className="btn btn-danger mx-2 boton"
-                          onClick={(event) => actions.toggleFavorite(fav)}
-                        >
-                          <i className="fa-solid fa-trash"></i>
-                        </button>
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </>
-          )}
-        </div>
-        {!store.token ? (
-          <Login />
-        ) : (
-          <button
-            type="button"
-            className="btn btn-primary boton"
-            onClick={(event) => actions.logout()}
-          >
-            <strong>Salir</strong>
-          </button>
-        )}
+	const { store, actions } = useContext(Context);
+	return (
+		<nav className="navbar navbar-info bg-info text-light sticky-top">
+			<div className="container">
+				<div className="icons-left ml-auto">
+					<Link to="/">
+						<span className="navbar-brand mb-0">
+							<img src={logo} style={{ height: "50px" }} />
+						</span>
+					</Link>
+				</div>
+				<div className="ml-auto">
+					<Categories />
+					<Link to="/Publish">
+						<button
+							className="btn btn-info"
+							id=""
+							role="button"
+							aria-expanded="false"
+						>
+							Publicar Artículo
+						</button>
+					</Link>
+				</div>
+				<div className="ml-auto nav-item dropdown">
+					{!store.token ? (
+						<Signup />
+					) : (
+						<>
+							<button
+								className="btn btn-info dropdown-toggle ddt"
+								id="navbarScrollingDropdown"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								<strong>
+									Favoritos (
+									{store.favorites.length > 0 ? store.favorites.length : 0})
+								</strong>
+							</button>
+							<ul
+								className="dropdown-menu ddt"
+								aria-labelledby="navbarScrollingDropdown"
+							>
+								{store.favorites.map((fav) => {
+									return (
+										<li key={fav.name}>
+											<a href="#" className="dropdown-item">
+												{fav.name}{" "}
+												<button
+													type="button"
+													className="btn btn-danger mx-2 boton"
+													onClick={(event) => actions.toggleFavorite(fav)}
+												>
+													<i className="fa-solid fa-trash"></i>
+												</button>
+											</a>
+										</li>
+									);
+								})}
+							</ul>
+						</>
+					)}
+				</div>
+				{!store.token ? (
+					<Login />
+				) : (
+					<button
+						type="button"
+						className="btn btn-primary boton"
+						onClick={(event) => actions.logout()}
+					>
+						<strong>Salir</strong>
+					</button>
+				)}
 
-        <form className="d-flex">
-          <input
-            className="form-control me-2 inputnavbar"
-            type="search"
-            placeholder="Búscalo aqui"
-            aria-label="Search"
-          />
-          <button className="botonsrch btn btn-primary" type="submit">
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-      </div>
-    </nav>
-  );
+				<form className="d-flex align-content-center">
+					<input
+						className="form-control me-2 inputnavbar"
+						type="search"
+						placeholder="Búscalo aqui"
+						aria-label="Search"
+					/>
+					<button className="botonsrch btn btn-info" type="submit">
+						<i className="fa-solid fa-magnifying-glass"></i>
+					</button>
+				</form>
+			</div>
+		</nav>
+	);
 };
