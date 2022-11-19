@@ -13,11 +13,38 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-#display_image {
+#container {
+  display: flex;
+  flex-direction: row;
+}
+
+#container1 {
+  display: flex;
+  width: 40%;
+  background-color: blue;
+  border-radius: 0 10px 10px 0;
+}
+
+#container1 h1 {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: #ffffff;
+}
+
+option:first-of-type {
+  background-color: rgba(224, 213, 213, 0.295);
+}
+
+#imagen {
   width: 100%;
-  height: 50vh;
+  height: 500px;
   border: 1px solid black;
-  background-size: cover;
+}
+
+textarea {
+  resize: none;
 }
 
 /*  {
