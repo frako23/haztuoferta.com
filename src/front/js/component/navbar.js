@@ -6,6 +6,7 @@ import { Categories } from "./categories";
 import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
+import logo from "../../img/OliviaWilson.jpg";
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
@@ -15,10 +16,9 @@ export const Navbar = (props) => {
         <div className="icons-left">
           <Link to="/">
             <span className="navbar-brand mb-0 h1">
-              <i className="fa-solid fa-house"></i>
+              <img src={logo} style={{ height: "50px" }} />
             </span>
           </Link>
-          <i className="fa-regular fa-circle-question"></i>
         </div>
         <div className="ml-auto">
           <Categories />
