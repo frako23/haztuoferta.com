@@ -15,9 +15,9 @@ export const Secciones = () => {
                     <Link className="seccion-link" to="/demo">
                         <div className="seccion">
                             <div className="image">
-                                <img src="https://dummyimage.com/600x400/f2f2f2/000000&text=Placeholder+COMPRAR" />
+                                <img src="https://dummyimage.com/600x400/f2f2f2/000000&text=QUIERO+COMPRAR" />
                             </div>
-                            <div className="seccion-inner">
+                            <div className="seccion-inner text-center">
                                 <div className="header text-center">
                                     <h2>COMPRAR</h2>
                                     <h3>Haz una Oferta!</h3>

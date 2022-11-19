@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import { ItemCard } from "../component/ItemCard";
 import { Carousel } from "../component/carousel.js";
 import { Secciones } from "../component/Secciones";
+import { Segmento } from "../component/Segmento";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -11,7 +12,8 @@ export const Home = () => {
 	return (
 		<React.Fragment>
 			<Carousel />
-			<Secciones />
+			{/* <Secciones /> */}
+			<Segmento />
 			<div className="text-center mt-5">
 				<h1 className="display-3">Haz tu Oferta!</h1>
 				<div className="container">
