@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
+import { Categories } from "./categories";
 import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
@@ -20,6 +21,7 @@ export const Navbar = (props) => {
           <i className="fa-regular fa-circle-question"></i>
         </div>
         <div className="ml-auto">
+          <Categories />
           <Link to="/Publish">
             <button
               className="btn btn-primary"
