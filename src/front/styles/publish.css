@@ -43,6 +43,10 @@ option:first-of-type {
   border: 1px solid black;
 }
 
+#form {
+  width: 500px;
+}
+
 textarea {
   resize: none;
 }
