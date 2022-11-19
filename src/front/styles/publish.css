@@ -22,6 +22,10 @@ input[type="number"] {
 
 /*  {
   box-sizing: border-box;
+=======
+* {
+	box-sizing: border-box;
+>>>>>>> 440c0b5e26a85184d7f38a5a5cabcae01561e8d6
 }
 
 
@@ -84,8 +88,16 @@ button:hover {
 
 /* Change styles for cancel button and signup button on extra small screens 
 @media screen and (max-width: 300px) {
+<<<<<<< HEAD
   .cancelbtn,
   .signupbtn {
     width: 100%;
   }
 }*/
+=======.cancelbtn,
+.signupbtn {
+	width: 100%;
+}
+}
+
+>>>>>>>440c0b5e26a85184d7f38a5a5cabcae01561e8d6
