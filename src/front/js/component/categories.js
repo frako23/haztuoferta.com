@@ -19,8 +19,29 @@ export const Categories = () => {
           <Offcanvas.Title>Categorias de productos</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <ul style={{"list-style":"none"}}>
+            <li>Accesorios para bebes</li>
+            <li>Accesorios para mascotas</li>
+            <li>Articulos de coleccion</li>
+            <li>Carros y Motos</li>
+            <li>Camaras y Accesorios</li>
+            <li>Celulares</li>
+            <li>Computacion</li>
+            <li>Consolas y Videojuegos</li>
+            <li>Deporte y Fitness</li>
+            <li>Electrodomesticos</li>
+            <li>Electronica, audio y video</li>
+            <li>Herramientas</li>
+            <li>Hogar</li>
+            <li>Inmuebles</li>
+            <li>Instrumentos musicales</li>
+            <li>Juguetes</li>
+            <li>Joyas</li>
+            <li>Libros</li>
+            <li>Repuestos para vehiculos</li>
+            <li>Ropa y Zapatos</li>
+            <li>Otras categorias</li>
+          </ul>
         </Offcanvas.Body>
       </Offcanvas>
     </>
