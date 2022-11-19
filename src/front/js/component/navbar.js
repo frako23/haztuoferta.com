@@ -84,9 +84,6 @@ export const Navbar = (props) => {
           </button>
         )}
 
-        <button className="btn btn-primary ms-5" type="button">
-          <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
         <form className="d-flex">
           <input
             className="form-control me-2 inputnavbar"
@@ -95,7 +92,7 @@ export const Navbar = (props) => {
             aria-label="Search"
           />
           <button className="botonsrch btn btn-primary" type="submit">
-            Buscar
+            <i className="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
       </div>
