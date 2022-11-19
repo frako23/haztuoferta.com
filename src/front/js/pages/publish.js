@@ -30,12 +30,15 @@ export const Publish = () => {
                       src={URL.createObjectURL(selectedImage)}
                     />
                     <br />
-                    <button onClick={() => setSelectedImage(null)}>
-                      Remove
-                    </button>
-                  </div>
-                )}
-                <br />
+                  <button
+                    className="rounded p-2 btn btn-primary"
+                    onClick={() => setSelectedImage(null)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              )}
+              <br />
 
                 <br />
                 <input
