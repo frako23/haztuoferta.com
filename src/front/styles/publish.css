@@ -21,7 +21,7 @@ input[type="number"] {
 }
 
 /*  {
-  box-sizing: border-box;
+	box-sizing: border-box;
 =======
 * {
 	box-sizing: border-box;
@@ -46,8 +46,8 @@ input[type="password"]:focus {
 }
 
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 15px;
+	border: 1px solid #f1f1f1;
+	margin-bottom: 15px;
 }
 
 button {
@@ -89,15 +89,13 @@ button:hover {
 /* Change styles for cancel button and signup button on extra small screens 
 @media screen and (max-width: 300px) {
 <<<<<<< HEAD
-  .cancelbtn,
-  .signupbtn {
+	.cancelbtn,
+	.signupbtn {
     width: 100%;
-  }
+	}
 }*/
-=======.cancelbtn,
+
+.cancelbtn,
 .signupbtn {
 	width: 100%;
 }
-}
-
->>>>>>>440c0b5e26a85184d7f38a5a5cabcae01561e8d6

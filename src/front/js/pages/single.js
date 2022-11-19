@@ -11,11 +11,17 @@ export const Single = (props) => {
 	return (
 		<div className="jumbotron">
 			<div className="card mb-3 single">
-				<img
-					src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07973337.png"
-					className="card-img-top"
-					alt="..."
-				/>
+				<div>
+					{/* <div className="col-md-2 text-center d-none d-md-block>
+						<div className="img-grid">
+						</div>
+					</div> */}
+					<img
+						src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07973337.png"
+						className="card-img-top col-md-10"
+						alt="..."
+					/>
+				</div>
 				<hr></hr>
 				<div className="card-body">
 					<h1 className="card-title">HP 250 G9</h1>
@@ -58,8 +64,8 @@ export const Single = (props) => {
 						<button className="btn btn-primary ms-4">Comprar</button>
 					</p>
 				</div>
-			</div>
-		</div>
+			</div >
+		</div >
 		//   <h1 className="display-4">This will show the demo element: </h1>
 		//   <img src={rigoImageUrl} />
 		//   <hr className="my-4" />
