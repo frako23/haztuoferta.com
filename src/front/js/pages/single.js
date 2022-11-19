@@ -9,18 +9,51 @@ export const Single = (props) => {
 	const params = useParams();
 
 	return (
-		<div className="jumbotron">
+		<div className="container">
 			<div className="card mb-3 single">
-				<div>
-					{/* <div className="col-md-2 text-center d-none d-md-block>
-						<div className="img-grid">
+				<div className="content">
+					<div className="container">
+						<div class="row">
+							<div class="col-4 col-sm-3">
+								<div class="multi-carousel vertical">
+									<div class="multi-carousel-inner">
+										<div class="multi-carousel-item active my-2">
+											<img src="https://www.shutterstock.com/image-photo/laptop-computer-mock-green-screen-600w-1959079696.jpg"
+												alt="..."
+												class="active w-100" />
+										</div>
+										<div class="multi-carousel-item mb-2">
+											<img src="https://www.shutterstock.com/image-photo/mockup-green-screen-stanting-on-600w-1804298176.jpg"
+												alt="..."
+												class="w-100" />
+										</div>
+										<div class="multi-carousel-item mb-2">
+											<img src="https://www.shutterstock.com/image-photo/laptop-on-desk-office-shows-600w-1804298161.jpg"
+												alt="..." class="w-100" />
+										</div>
+										<div class="multi-carousel-item mb-2">
+											<img src="https://www.shutterstock.com/image-photo/computer-peripherals-laptop-accessories-on-600w-1065152207.jpg"
+												alt="..."
+												class="w-100" />
+										</div>
+									</div>
+									{/* <button class="carousel-control-prev" tabindex="0" type="button" data-mdb-slide="prev">
+										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									</button>
+									<button class="carousel-control-next" tabindex="0" type="button" data-mdb-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									</button> */}
+								</div>
+							</div>
+							<div class="col-8 col-sm-9">
+								<div class="main-img">
+									<img src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07973337.png" alt="..."
+										class="ecommerce-gallery-main-img active w-100" />
+								</div>
+							</div>
 						</div>
-					</div> */}
-					<img
-						src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07973337.png"
-						className="card-img-top col-md-10"
-						alt="..."
-					/>
+					</div>
+
 				</div>
 				<hr></hr>
 				<div className="card-body">
