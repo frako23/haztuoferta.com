@@ -11,7 +11,7 @@ export const Categories = () => {
   return (
     <>
       <Button variant="primary" className="me-3" onClick={handleShow}>
-        Categorias
+        <strong>Categorias</strong>
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
@@ -19,7 +19,7 @@ export const Categories = () => {
           <Offcanvas.Title>Categorias de productos</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ul style={{"list-style":"none"}}>
+          <ul style={{ "list-style": "none" }}>
             <li>Accesorios para bebes</li>
             <li>Accesorios para mascotas</li>
             <li>Articulos de coleccion</li>
