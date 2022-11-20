@@ -20,13 +20,13 @@ export const Segmento = () => {
                                                 <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"> VENDER
                                                 </a>
                                             </h4>
-                                            <p className="text-center h3">
+                                            {/* <p className="text-center h3">
                                                 Vende tu Producto a un Precio Fijo
-                                            </p>
+                                            </p> */}
                                         </div>
                                         <div className="card-read-more">
                                             <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" className="btn btn-link btn-block">
-                                                HAS TU OFERTA!
+                                                Vende tu Producto!
                                             </a>
                                         </div>
                                     </div>
@@ -41,9 +41,9 @@ export const Segmento = () => {
                                                 <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"> COMPRAR
                                                 </a>
                                             </h4>
-                                            <p className="text-center h3">
+                                            {/* <p className="text-center h3">
 
-                                            </p>
+                                            </p> */}
                                         </div>
                                         <div className="card-read-more">
                                             <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" className="btn btn-link btn-block">
@@ -52,7 +52,7 @@ export const Segmento = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-xs-12 col-sm-4">
+                                <div className="col-xs-12 col-sm-4 pe-5">
                                     <div className="card">
                                         <span className="img-card">
                                             <img src="https://placehold.co/600x400?text=QUIERO+INTERCAMBIAR" />
@@ -62,13 +62,13 @@ export const Segmento = () => {
                                                 <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"> INTERCAMBIAR
                                                 </a>
                                             </h4>
-                                            <p className="text-center h3">
+                                            {/* <p className="text-center h3">
                                                 Propón un Intercambio ofreciendo otro Producto
-                                            </p>
+                                            </p> */}
                                         </div>
                                         <div className="card-read-more">
                                             <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" className="btn btn-link btn-block">
-                                                HAS TU OFERTA!
+                                                PROPON UN TRUEQUE!
                                             </a>
                                         </div>
                                     </div>

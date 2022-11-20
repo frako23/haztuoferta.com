@@ -17,13 +17,15 @@ export const Publish = () => {
         <div id="container1">
           <h1>Que deseas vender?</h1>
         </div>
-        <Form className="w-50 bg-white m-5 p-4 rounded">
+        <Form
+          className="bg-white m-5 p-4 border rounded-4 border-dark border-opacity-25"
+          id="form"
+        >
           <Form.Group className="mb-3" controlId="formFile">
             <div>
               {selectedImage && (
                 <div>
                   <img
-                    id="imagen"
                     alt="not found"
                     width={"100%"}
                     height={"500px"}

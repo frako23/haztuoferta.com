@@ -10,8 +10,8 @@ export const Categories = () => {
 
   return (
     <>
-      <Button variant="primary" className="me-3" onClick={handleShow}>
-        <strong>Categorias</strong>
+      <Button variant="info" className="me-3" onClick={handleShow}>
+        Categorias
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
