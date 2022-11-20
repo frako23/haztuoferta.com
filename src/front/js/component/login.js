@@ -74,7 +74,11 @@ export const Login = () => {
           </Modal.Footer>
         </Modal>
       ) : (
-        <Button variant="flat" className="btn boton" onClick={handleShow}>
+        <Button
+          variant="outline-success"
+          className="btn boton"
+          onClick={handleShow}
+        >
           Ingresa
         </Button>
       )}
