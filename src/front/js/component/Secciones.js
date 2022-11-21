@@ -20,10 +20,11 @@ export const Secciones = () => {
                             <div className="seccion-inner text-center">
                                 <div className="header text-center">
                                     <h2>COMPRAR</h2>
-                                    <h3>Haz una Oferta!</h3>
                                 </div>
-                                <div className="content">
-                                    <p>Content area</p>
+                                <div className="card-read-more">
+                                    <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" className="btn btn-link btn-block">
+                                        Vende tu Producto!
+                                    </a>
                                 </div>
                             </div>
                         </div>

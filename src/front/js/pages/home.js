@@ -14,8 +14,15 @@ export const Home = () => {
 			<Carousel />
 			{/* <Secciones /> */}
 			<Segmento />
-			<div className="text-center mt-5">
-				<h1 className="display-3">Haz tu Oferta!</h1>
+			<div className="text-center">
+				<figure className="image">
+					<img
+						src='https://i.imgur.com/biKBhrV.png'
+						style={{ width: "400px" }}
+						alt="Placeholder image">
+
+					</img>
+				</figure>
 				<div className="container">
 					<h2 className="text-start my-4 display-6">Los Mas Buscados</h2>
 					<div className="itemcard gap-5">

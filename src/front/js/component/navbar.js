@@ -6,13 +6,13 @@ import { Categories } from "./categories";
 import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
-import logo from "../../img/OliviaWilson.jpg";
+import logo from "../../img/logoSimple.png";
 import "../../styles/navbar.css";
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
   return (
-    <nav className="navbar navbar-info bg-info text-light sticky-top paddingnavbar">
+    <nav className="navbar navbar-info bg-info text-light sticky-top">
       <div className="container">
         <div className="icons-left ml-auto">
           <Link to="/">
