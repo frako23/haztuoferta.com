@@ -12,7 +12,7 @@ import "../../styles/navbar.css";
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
   return (
-    <nav className="navbar navbar-info bg-info text-light sticky-top">
+    <nav className="navbar navbar-dark bg-dark text-light sticky-top">
       <div className="container">
         <div className="icons-left ml-auto">
           <Link to="/">
@@ -35,6 +35,17 @@ export const Navbar = (props) => {
           </Link>
         </div>
         <div className="ml-auto nav-item dropdown">
+          <form className="d-flex align-content-center">
+            <input
+              className="form-control me-2 inputnavbar"
+              type="search"
+              placeholder="Búscalo aqui"
+              aria-label="Search"
+            />
+            <button className="botonsrch btn btn-info" type="submit">
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
           {!store.token ? (
             <Signup />
           ) : (
@@ -86,18 +97,6 @@ export const Navbar = (props) => {
             <strong>Salir</strong>
           </button>
         )}
-
-        <form className="d-flex align-content-center">
-          <input
-            className="form-control me-2 inputnavbar"
-            type="search"
-            placeholder="Búscalo aqui"
-            aria-label="Search"
-          />
-          <button className="botonsrch btn btn-info" type="submit">
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
       </div>
     </nav>
   );
