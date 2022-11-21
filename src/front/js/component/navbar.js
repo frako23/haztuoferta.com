@@ -6,7 +6,7 @@ import { Categories } from "./categories";
 import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
-import logo from "../../img/OliviaWilson.jpg";
+import logo from "../../img/logoSimple.png";
 import "../../styles/navbar.css";
 
 export const Navbar = (props) => {
