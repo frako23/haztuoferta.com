@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Computadora, Celular
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -48,5 +48,74 @@ def get_users():
             raise Exception("No ingresaste el password",400)
         new_user = User.create(**new_user_data)
         return jsonify(new_user.serialize()),201
+    except Exception as error:
+        return jsonify(error.args[0]), error.args[1]
+
+computadoras = []
+
+@api.route('/computadoras', methods=['GET','POST'])
+def get_computadoras():
+    if request.method == 'GET':
+        computadoras = Computadora.query.all()
+        computadoras_dictionaries = []
+        for computadora in computadoras:
+            computadoras_dictionaries.append(computadora.serialize())
+        return jsonify(computadoras_dictionaries), 200
+    new_computadora_data = request.json
+    try:
+        if "marca" not in new_computadora_data or new_computadora_data["marca"] == "": 
+            raise Exception("No ingresaste el modelo",400)
+        if "modelo" not in new_computadora_data or new_computadora_data["modelo"] == "": 
+            raise Exception("No ingresaste la marca",400)
+        if "procesador" not in new_computadora_data or new_computadora_data["procesador"] == "": 
+            raise Exception("No ingresaste el procesador",400)
+        if "pantalla" not in new_computadora_data or new_computadora_data["pantalla"] == "": 
+            raise Exception("No ingresaste la pantalla",400)
+        if "memoria_ram" not in new_computadora_data or new_computadora_data["memoria_ram"] == "": 
+            raise Exception("No ingresaste la memoria Ram",400)
+        if "memoria_rom" not in new_computadora_data or new_computadora_data["memoria_rom"] == "": 
+            raise Exception("No ingresaste la memoria Rom",400)
+        if "sistema_operativo" not in new_computadora_data or new_computadora_data["sistema_operativo"] == "": 
+            raise Exception("No ingresaste el sistema operativo",400)
+        if "precio" not in new_computadora_data or new_computadora_data["precio"] == "": 
+            raise Exception("No ingresaste el precio",400)
+        new_computadora = Computadora.create(**new_computadora_data)
+        return jsonify(new_computadora.serialize()),201
+    except Exception as error:
+        return jsonify(error.args[0]), error.args[1]
+
+
+celulares = []
+
+@api.route('/celulares', methods=['GET','POST'])
+def get_celulares():
+    if request.method == 'GET':
+        celulares = Celular.query.all()
+        celulares_dictionaries = []
+        for celular in celulares:
+            celulares_dictionaries.append(celular.serialize())
+        return jsonify(celulares_dictionaries), 200
+    new_celular_data = request.json
+    try:
+        if "marca" not in new_celular_data or new_celular_data["marca"] == "": 
+            raise Exception("No ingresaste el modelo",400)
+        if "modelo" not in new_celular_data or new_celular_data["modelo"] == "": 
+            raise Exception("No ingresaste la marca",400)
+        if "procesador" not in new_celular_data or new_celular_data["procesador"] == "": 
+            raise Exception("No ingresaste el procesador",400)
+        if "pantalla" not in new_celular_data or new_celular_data["pantalla"] == "": 
+            raise Exception("No ingresaste la pantalla",400)
+        if "memoria_ram" not in new_celular_data or new_celular_data["memoria_ram"] == "": 
+            raise Exception("No ingresaste la memoria Ram",400)
+        if "memoria_rom" not in new_celular_data or new_celular_data["memoria_rom"] == "": 
+            raise Exception("No ingresaste la memoria Rom",400)
+        if "sistema_operativo" not in new_celular_data or new_celular_data["sistema_operativo"] == "": 
+            raise Exception("No ingresaste el sistema operativo",400)
+        if "precio" not in new_celular_data or new_celular_data["precio"] == "": 
+            raise Exception("No ingresaste el precio",400)
+        if "bateria" not in new_celular_data or new_celular_data["bateria"] == "": 
+            raise Exception("No ingresaste la bateria",400)
+        new_celular = Celular.create(**new_celular_data)
+        return jsonify(new_celular.serialize()),201
     except Exception as error:
         return jsonify(error.args[0]), error.args[1]

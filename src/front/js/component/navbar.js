@@ -12,7 +12,7 @@ import "../../styles/navbar.css";
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
   return (
-    <nav className="navbar navbar-info bg-info text-light sticky-top">
+    <nav className="navbar navbar-info bg-info text-light sticky-top paddingnavbar">
       <div className="container">
         <div className="icons-left ml-auto">
           <Link to="/">
