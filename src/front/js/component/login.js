@@ -30,7 +30,7 @@ export const Login = () => {
   }, [store.token]);
   return (
     <>
-      {show ? (
+      {show && (
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Ingresa</Modal.Title>
@@ -73,15 +73,14 @@ export const Login = () => {
             </Button>
           </Modal.Footer>
         </Modal>
-      ) : (
-        <Button
-          variant="outline-success"
-          className="btn boton"
-          onClick={handleShow}
-        >
-          Ingresa
-        </Button>
       )}
+      <Button
+        variant="outline-success"
+        className="btn boton"
+        onClick={handleShow}
+      >
+        Ingresa
+      </Button>
     </>
   );
 };

@@ -12,7 +12,7 @@ import "../../styles/navbar.css";
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
   return (
-    <nav className="navbar navbar-dark bg-dark text-light sticky-top">
+    <nav className="navbar navbar-white bg-white text-light sticky-top">
       <div className="container">
         <div className="d-flex flex-row m-1 px-3 justify-content-center">
           <Categories />

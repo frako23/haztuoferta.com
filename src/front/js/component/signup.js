@@ -31,11 +31,14 @@ export const Signup = () => {
       email != "" &&
       password != ""
     )
-      navigate("/login");
+      handleClose();
+    <div class="alert alert-success" role="alert">
+      "¡Tú registro ha sido exitoso!;
+    </div>;
   };
   return (
     <>
-      {show ? (
+      {show && (
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Registrate</Modal.Title>
@@ -114,15 +117,14 @@ export const Signup = () => {
             </Button>
           </Modal.Footer>
         </Modal>
-      ) : (
-        <Button
-          variant="outline-primary"
-          className="boton mr-0"
-          onClick={handleShow}
-        >
-          Registrate
-        </Button>
       )}
+      <Button
+        variant="outline-primary"
+        className="boton mr-0"
+        onClick={handleShow}
+      >
+        Registrate
+      </Button>
     </>
   );
 };
