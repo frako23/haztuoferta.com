@@ -55,18 +55,24 @@ class Computadora(db.Model):
     procesador = db.Column(db.String(250),unique=False, nullable=False)
     pantalla = db.Column(db.String(50),unique=False, nullable=False)
     memoria_ram = db.Column(db.String(50),unique=False, nullable=False)
-    memoria_rom = db.Column(db.String(50), unique=False, nullable=False)
+    disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
-    
+    tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
+    nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
+
     def __init__(self, **kwargs):
         self.marca = kwargs['marca']
         self.modelo = kwargs['modelo']
+        self.procesador = kwargs['procesador']
         self.pantalla = kwargs['pantalla']
         self.memoria_ram = kwargs['memoria_ram']
-        self.memoria_rom = kwargs['memoria_rom']
+        self.disco_duro = kwargs['disco_duro']
         self.sistema_operativo = kwargs['sistema_operativo']
         self.precio = kwargs['precio']
+        self.tipo_de_negocio = kwargs['tipo_de_negocio']
+        self.nuevo_usado = kwargs ['nuevo_usado']
+        
     
     @classmethod
     def create(cls, **kwargs):
@@ -88,9 +94,11 @@ class Computadora(db.Model):
             "procesador": self.procesador,
             "pantalla": self.pantalla,
             "memoria_ram": self.memoria_ram,
-            "memoria_rom": self.memoria_rom,
+            "disco_duro": self.disco_duro,
             "sistema_operativo": self.sistema_operativo,
             "precio": self.precio,
+            "tipo_de_negocio": self.tipo_de_negocio,
+            "nuevo_usado": self.nuevo_usado
             # do not serialize the password, its a security breach
         }
 
@@ -98,23 +106,30 @@ class Celular(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     marca = db.Column(db.String(50),unique=False, nullable=False)
     modelo = db.Column(db.String(250),unique=False, nullable=False)
-    procesador = db.Column(db.String(250),unique=False, nullable=False)
     pantalla = db.Column(db.String(50),unique=False, nullable=False)
     memoria_ram = db.Column(db.String(50),unique=False, nullable=False)
-    memoria_rom = db.Column(db.String(50), unique=False, nullable=False)
+    disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
     bateria = db.Column(db.String(50), unique=False, nullable=False)
+    camara_frontal = db.Column(db.String(50), unique=False, nullable=False)
+    camara_trasera = db.Column(db.String(50), unique=False, nullable=False)
+    tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
+    nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
 
     def __init__(self, **kwargs):
         self.marca = kwargs['marca']
         self.modelo = kwargs['modelo']
         self.pantalla = kwargs['pantalla']
         self.memoria_ram = kwargs['memoria_ram']
-        self.memoria_rom = kwargs['memoria_rom']
+        self.disco_duro = kwargs['disco_duro']
         self.sistema_operativo = kwargs['sistema_operativo']
         self.precio = kwargs['precio']
         self.bateria = kwargs['bateria']
+        self.camara_frontal = kwargs['camara_frontal']
+        self.camara_trasera = kwargs['camara_trasera']
+        self.tipo_de_negocio = kwargs['tipo_de_negocio']
+        self.nuevo_usado = kwargs ['nuevo_usado']
     
     @classmethod
     def create(cls, **kwargs):
@@ -134,12 +149,15 @@ class Celular(db.Model):
             "id": self.id,
             "marca": self.marca,
             "modelo": self.modelo,
-            "procesador": self.procesador,
             "pantalla": self.pantalla,
             "memoria_ram": self.memoria_ram,
-            "memoria_rom": self.memoria_rom,
+            "disco_duro": self.disco_duro,
             "sistema_operativo": self.sistema_operativo,
             "precio": self.precio,
             "bateria": self.bateria,
+            "camara_frontal": self.camara_frontal,
+            "camara_trasera": self.camara_trasera,
+            "tipo_de_negocio": self.tipo_de_negocio,
+            "nuevo_usado": self.nuevo_usado
             # do not serialize the password, its a security breach
         }
