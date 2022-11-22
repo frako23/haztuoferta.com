@@ -11,7 +11,7 @@ export const Categories = () => {
   return (
     <>
       <Button variant="info" className="me-3" onClick={handleShow}>
-        <i class="fa-solid fa-bars"></i>
+        <i className="fa-solid fa-bars"></i>
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>

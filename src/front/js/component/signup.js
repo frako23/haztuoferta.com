@@ -117,7 +117,7 @@ export const Signup = () => {
       ) : (
         <Button
           variant="outline-primary"
-          className="boton"
+          className="boton mr-0"
           onClick={handleShow}
         >
           Registrate

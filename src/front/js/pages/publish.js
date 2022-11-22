@@ -14,7 +14,7 @@ export const Publish = () => {
   return (
     <>
       <div id="container">
-        <div id="container1">
+        <div id="container1" className="">
           <h1>Que deseas vender?</h1>
         </div>
         <Form
