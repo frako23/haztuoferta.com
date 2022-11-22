@@ -15,32 +15,33 @@ export const Navbar = (props) => {
 
 
       <nav className="navbar navbar-dark bg-dark text-light sticky-top">
-            <div className="container-fluid">
-            <div className="d-flex flex-row m-1 px-3 justify-content-center">
-            <Categories />
-                  <Link to="/Publish">
-                  <button
-                  className="btn btn-info"
-                  id=""
-                  role="button"
-                  aria-expanded="false"
-                  >
-                  Publicar Artículo
-                  </button>
-                  </Link>
-            </div>
-            <div className="d-flex flex-row col-auto p-1 text-center">
-                <div className="icons-left  ">
-                            <Link to="/">
-                              <span className="navbar-brand mb-0">
-                                <img src={logo} style={{ height: "50px" }} />
-                              </span>
-                            </Link>
-                </div>    
+                          
+            <div className="container-fluid">  
+                <div className="d-flex flex-row m-1 px-3 justify-content-center">   //* Categorias y boton para publicar producto *//
+                <Categories />
+                      <Link to="/Publish">
+                      <button
+                      className="btn btn-info"
+                      id=""
+                      role="button"
+                      aria-expanded="false"
+                      >
+                      Publicar Artículo
+                      </button>
+                      </Link>
+                </div>
 
-            </div>
-            <div className="d-flex flex-row p-1 text-center">
-            <div className="nav-item dropdown">
+                <div className="d-flex flex-row col-auto p-1 text-center">         //* Logo centro de web *//
+                  <div className="icons-left  ">
+                              <Link to="/">
+                                <span className="navbar-brand mb-0">
+                                  <img src={logo} style={{ height: "50px" }} />
+                                </span>
+                              </Link>
+                  </div>    
+                </div>
+                <div className="d-flex flex-row p-1 text-center">                 //* Barra de busqueda *//
+                    <div className="nav-item dropdown">
                             <form className="d-flex align-content-center px-3 mb-1">
                               <input
                                 className="form-control me-2 inputnavbar"
@@ -52,11 +53,10 @@ export const Navbar = (props) => {
                                 <i className="fa-solid fa-magnifying-glass"></i>
                               </button>
                             </form>
-            </div>        
-
-
-            <div className="d-flex flex-row m-1 px-1">
-            {!store.token ? (
+                    </div>  
+                </div>          
+                <div className="d-flex flex-row m-1 px-1">                       //* Login *//
+                        {!store.token ? (
                               <Signup />
                             ) : (
                               <>
@@ -95,11 +95,8 @@ export const Navbar = (props) => {
                                 </ul>
                               </>
                             )}
-
-            </div>
-
-
-            <div className="d-flex flex-row m-1 px-1">
+                </div>
+                <div className="d-flex flex-row m-1 px-1">                        //* Registro *//
                         {!store.token ? (
                           <Login />
                           ) : (
@@ -112,20 +109,10 @@ export const Navbar = (props) => {
                           </button>  
                           )}
                           
-            </div>
-
-              
                 </div>
-            </div>
-            
-      </nav>
-
-
-
-
-        
-
-                          
-
+            </div>      
+      </nav>                      
   );
 };
+
+
