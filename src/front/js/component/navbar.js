@@ -15,9 +15,8 @@ export const Navbar = (props) => {
 
 
       <nav className="navbar navbar-dark bg-dark text-light sticky-top">
-                          
-            <div className="container-fluid">  
-                <div className="d-flex flex-row m-1 px-3 justify-content-center">   //* Categorias y boton para publicar producto *//
+            <div className="container">
+                <div className="d-flex flex-row m-1 px-3 justify-content-center">
                 <Categories />
                       <Link to="/Publish">
                       <button
@@ -30,8 +29,7 @@ export const Navbar = (props) => {
                       </button>
                       </Link>
                 </div>
-
-                <div className="d-flex flex-row col-auto p-1 text-center">         //* Logo centro de web *//
+                <div className="d-flex flex-row col-auto p-1 text-center">
                   <div className="icons-left  ">
                               <Link to="/">
                                 <span className="navbar-brand mb-0">
@@ -40,7 +38,7 @@ export const Navbar = (props) => {
                               </Link>
                   </div>    
                 </div>
-                <div className="d-flex flex-row p-1 text-center">                 //* Barra de busqueda *//
+                <div className="d-flex flex-row p-1 text-center">
                     <div className="nav-item dropdown">
                             <form className="d-flex align-content-center px-3 mb-1">
                               <input
@@ -53,10 +51,10 @@ export const Navbar = (props) => {
                                 <i className="fa-solid fa-magnifying-glass"></i>
                               </button>
                             </form>
-                    </div>  
-                </div>          
-                <div className="d-flex flex-row m-1 px-1">                       //* Login *//
-                        {!store.token ? (
+                    </div> 
+                
+                  <div className="d-flex flex-row m-1 px-1">
+                    {!store.token ? (
                               <Signup />
                             ) : (
                               <>
@@ -95,8 +93,8 @@ export const Navbar = (props) => {
                                 </ul>
                               </>
                             )}
-                </div>
-                <div className="d-flex flex-row m-1 px-1">                        //* Registro *//
+                  </div>
+                  <div className="d-flex flex-row m-1 px-1">
                         {!store.token ? (
                           <Login />
                           ) : (
@@ -109,10 +107,17 @@ export const Navbar = (props) => {
                           </button>  
                           )}
                           
-                </div>
-            </div>      
-      </nav>                      
+                  </div>
+            </div>
+            </div> 
+      </nav>
+
+
+
+
+        
+
+                          
+
   );
 };
-
-
