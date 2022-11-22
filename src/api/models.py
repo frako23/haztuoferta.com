@@ -58,15 +58,21 @@ class Computadora(db.Model):
     memoria_rom = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
-    
+    tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
+    nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
+
     def __init__(self, **kwargs):
         self.marca = kwargs['marca']
         self.modelo = kwargs['modelo']
+        self.procesador = kwargs['procesador']
         self.pantalla = kwargs['pantalla']
         self.memoria_ram = kwargs['memoria_ram']
         self.memoria_rom = kwargs['memoria_rom']
         self.sistema_operativo = kwargs['sistema_operativo']
         self.precio = kwargs['precio']
+        self.tipo_de_negocio = kwargs['tipo_de_negocio']
+        self.nuevo_usado = kwargs ['nuevo_usado']
+        
     
     @classmethod
     def create(cls, **kwargs):
@@ -91,6 +97,8 @@ class Computadora(db.Model):
             "memoria_rom": self.memoria_rom,
             "sistema_operativo": self.sistema_operativo,
             "precio": self.precio,
+            "tipo_de_negocio": self.tipo_de_negocio,
+            "nuevo_usado": self.nuevo_usado
             # do not serialize the password, its a security breach
         }
 
@@ -98,13 +106,14 @@ class Celular(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     marca = db.Column(db.String(50),unique=False, nullable=False)
     modelo = db.Column(db.String(250),unique=False, nullable=False)
-    procesador = db.Column(db.String(250),unique=False, nullable=False)
     pantalla = db.Column(db.String(50),unique=False, nullable=False)
     memoria_ram = db.Column(db.String(50),unique=False, nullable=False)
     memoria_rom = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
     bateria = db.Column(db.String(50), unique=False, nullable=False)
+    tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
+    nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
 
     def __init__(self, **kwargs):
         self.marca = kwargs['marca']
@@ -115,6 +124,8 @@ class Celular(db.Model):
         self.sistema_operativo = kwargs['sistema_operativo']
         self.precio = kwargs['precio']
         self.bateria = kwargs['bateria']
+        self.tipo_de_negocio = kwargs['tipo_de_negocio']
+        self.nuevo_usado = kwargs ['nuevo_usado']
     
     @classmethod
     def create(cls, **kwargs):
@@ -134,12 +145,13 @@ class Celular(db.Model):
             "id": self.id,
             "marca": self.marca,
             "modelo": self.modelo,
-            "procesador": self.procesador,
             "pantalla": self.pantalla,
             "memoria_ram": self.memoria_ram,
             "memoria_rom": self.memoria_rom,
             "sistema_operativo": self.sistema_operativo,
             "precio": self.precio,
             "bateria": self.bateria,
+            "tipo_de_negocio": self.tipo_de_negocio,
+            "nuevo_usado": self.nuevo_usado
             # do not serialize the password, its a security breach
         }
