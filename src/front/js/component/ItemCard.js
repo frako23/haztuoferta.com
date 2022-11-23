@@ -1,11 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/itemCard.css";
 
-export const ItemCard = () => {
+export const ItemCard = (props) => {
   const { store, actions } = useContext(Context);
+  useEffect(() => {
+    if (store.computadoras.length > 0) {
+      actions.getComputadoras();
+    }
+  }, []);
 
   return (
     <React.Fragment>
@@ -21,15 +26,21 @@ export const ItemCard = () => {
         </div>
         <div className="card-body d-flex flex-column justify-content-between">
           <div className="title-card justify-content-between h5">
-            <span className="font-weight-bold">Nombre del Producto</span>
+            <span className="font-weight-bold">{props.computadoras.marca}</span>
+            <span className="font-weight-bold">
+              {props.computadoras.modelo}
+            </span>
+            <span className="item-category h5">
+              {props.computadoras.tipo_de_negocio}
+            </span>
+            <span className="item-price h5">
+              <strong>Precio: </strong> {props.computadoras.precio}
+            </span>
             <button href="#!" className="btn text-danger">
               <i className="fa-regular fa-heart"></i>
             </button>
           </div>
-          <span className="item-category h5">Intercambio y/o Venta</span>
-          <span className="item-price h5">
-            <strong>Precio: </strong> $20
-          </span>
+
           <a href="#!" className="btn btn-success">
             Haz tu Oferta!
           </a>

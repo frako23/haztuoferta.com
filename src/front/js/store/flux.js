@@ -17,6 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       favorites: [],
+      computadoras: [],
     },
     actions: {
       // Use getActions to call a function within a fuction
@@ -115,6 +116,18 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.log("Error loading message from backend", error);
         }
+      },
+      getComputadoras: () => {
+        const apiURL = `https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/computadoras`;
+        fetch(apiURL)
+          .then((Response) => {
+            if (Response.ok) {
+              return Response.json();
+            }
+            throw new Error("Ha ocurrido un error");
+          })
+          .then((body) => setStore({ computadoras: body }))
+          .catch((error) => console.log(error));
       },
       changeColor: (index, color) => {
         //get the store

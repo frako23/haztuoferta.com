@@ -18,7 +18,7 @@ export const Login = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  console.log("Este es tu token", store.token);
+  // console.log("Este es tu token", store.token);
 
   const handleClick = async () => {
     const success = await actions.login(email, password);

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { ItemCard } from "../component/ItemCard";
@@ -25,10 +25,10 @@ export const Home = () => {
         <div className="container">
           <h2 className="text-center my-4 display-6">Los Mas Buscados</h2>
           <div className="itemcard gap-5">
-            <ItemCard />
-            <ItemCard />
-            <ItemCard />
-            <ItemCard />
+            {store.computadoras.map((computadoras, index) => {
+              return <ItemCard computadoras={computadoras} key={index} />;
+            })}
+            {/* <ItemCard /> */}
           </div>
         </div>
       </div>
