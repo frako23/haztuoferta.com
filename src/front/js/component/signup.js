@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FormGroup } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
 import "../../styles/index.css";
 
 export const Signup = () => {
@@ -30,11 +31,10 @@ export const Signup = () => {
       phone != "" &&
       email != "" &&
       password != ""
-    )
+    ) {
       handleClose();
-    <div class="alert alert-success" role="alert">
-      "¡Tú registro ha sido exitoso!;
-    </div>;
+      actions.setNotification("¡Te has registrado exitosamente!");
+    }
   };
   return (
     <>

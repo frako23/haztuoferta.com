@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
-import injectContext from "./store/appContext";
+import injectContext, { Context } from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Carousel } from "./component/carousel";
@@ -16,11 +16,21 @@ const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
+  const { store, actions } = useContext(Context);
 
   return (
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+          {store.notification && (
+            <div
+              className="alert alert-success"
+              onClick={(e) => actions.setNotification(undefined)}
+              role="alert"
+            >
+              {store.notification}
+            </div>
+          )}
           <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />

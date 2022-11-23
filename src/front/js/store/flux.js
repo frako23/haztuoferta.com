@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       token: null,
       message: null,
+      notification: undefined,
       demo: [
         {
           title: "FIRST",
@@ -128,6 +129,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         //reset the global store
         setStore({ demo: demo });
+      },
+      setNotification: (mensaje) => {
+        setStore({ notification: mensaje });
+        setTimeout(() => {
+          setStore({ notification: undefined });
+        }, 3000);
       },
     },
   };

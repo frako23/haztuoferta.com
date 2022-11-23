@@ -16,16 +16,6 @@ export const Navbar = (props) => {
       <div className="container">
         <div className="d-flex flex-row m-1 px-3 justify-content-center">
           <Categories />
-          <Link to="/Publish">
-            <button
-              className="btn btn-info"
-              id=""
-              role="button"
-              aria-expanded="false"
-            >
-              Publicar Artículo
-            </button>
-          </Link>
         </div>
         <div className="d-flex flex-row col-auto p-1 text-center">
           <div className="icons-left  ">
@@ -56,8 +46,18 @@ export const Navbar = (props) => {
               <Signup />
             ) : (
               <>
+                <Link to="/Publish">
+                  <button
+                    className="btn btn-info"
+                    id=""
+                    role="button"
+                    aria-expanded="false"
+                  >
+                    Publicar Artículo
+                  </button>
+                </Link>
                 <button
-                  className="btn btn-info dropdown-toggle ddt"
+                  className="btn btn-info dropdown-toggle ddt ms-3"
                   id="navbarScrollingDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
