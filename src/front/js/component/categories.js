@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
@@ -20,17 +21,19 @@ export const Categories = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul style={{ "list-style": "none" }}>
-            <li>Accesorios para bebes</li>
+            <li>Accesorios para bebés</li>
             <li>Accesorios para mascotas</li>
-            <li>Articulos de coleccion</li>
+            <li>Artículos de colección</li>
             <li>Carros y Motos</li>
-            <li>Camaras y Accesorios</li>
+            <li>Cámaras y Accesorios</li>
             <li>Celulares</li>
-            <li>Computacion</li>
+            <Link to="/Computadoras">
+              <li>Computación</li>
+            </Link>
             <li>Consolas y Videojuegos</li>
+            <li>Electrodomésticos</li>
             <li>Deporte y Fitness</li>
-            <li>Electrodomesticos</li>
-            <li>Electronica, audio y video</li>
+            <li>Electrónica, audio y video</li>
             <li>Herramientas</li>
             <li>Hogar</li>
             <li>Inmuebles</li>
@@ -38,9 +41,9 @@ export const Categories = () => {
             <li>Juguetes</li>
             <li>Joyas</li>
             <li>Libros</li>
-            <li>Repuestos para vehiculos</li>
+            <li>Repuestos para vehículos</li>
             <li>Ropa y Zapatos</li>
-            <li>Otras categorias</li>
+            <li>Otras categorías</li>
           </ul>
         </Offcanvas.Body>
       </Offcanvas>
