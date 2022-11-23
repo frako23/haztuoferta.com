@@ -3,9 +3,9 @@ import "../../styles/index.css";
 
 export const Footer = () => (
   <div>
-    <footer className="text-center text-lg-start text-white bg-dark">
-      <div className="container p-4 pb-0">
-        <section className="">
+    <footer className="text-center text-lg-start text-black bg-white border-top">
+      <div className="container-fluid p-4 pb-0">
+        <section className="container">
           <div className="row">
             <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 className="text-uppercase mb-4 font-weight-bold">
@@ -22,16 +22,16 @@ export const Footer = () => (
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
               <p>
-                <a className="text-white">MDBootstrap</a>
+                <a className="text-black">MDBootstrap</a>
               </p>
               <p>
-                <a className="text-white">MDWordPress</a>
+                <a className="text-black">MDWordPress</a>
               </p>
               <p>
-                <a className="text-white">BrandFlow</a>
+                <a className="text-black">BrandFlow</a>
               </p>
               <p>
-                <a className="text-white">Bootstrap Angular</a>
+                <a className="text-black">Bootstrap Angular</a>
               </p>
             </div>
 
@@ -41,16 +41,16 @@ export const Footer = () => (
                 Useful links
               </h6>
               <p>
-                <a className="text-white">Your Account</a>
+                <a className="text-black">Your Account</a>
               </p>
               <p>
-                <a className="text-white">Become an Affiliate</a>
+                <a className="text-black">Become an Affiliate</a>
               </p>
               <p>
-                <a className="text-white">Shipping Rates</a>
+                <a className="text-black">Shipping Rates</a>
               </p>
               <p>
-                <a className="text-white">Help</a>
+                <a className="text-black">Help</a>
               </p>
             </div>
 
@@ -74,13 +74,13 @@ export const Footer = () => (
           </div>
         </section>
 
-        <hr className="my-3" />
+        <hr className="my-3 w-100" />
 
-        <section className="p-3 pt-0">
+        <section className="p-3 pt-0 container">
           <div className="row d-flex align-items-center">
             <div className="col-md-7 col-lg-8 text-center text-md-start">
               <div className="p-3">
-                <a className="text-white m-1" href="https://mdbootstrap.com/">
+                <a className="text-black m-1" href="https://mdbootstrap.com/">
                   HazTuOferta.com
                 </a>
                 © 2022 Copyright
@@ -88,26 +88,26 @@ export const Footer = () => (
             </div>
             <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
               <a
-                className="btn btn-outline-light btn-floating m-1 text-white"
+                className="btn btn-outline-dark btn-floating m-1 text-black"
                 role="button"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a
-                className="btn btn-outline-light btn-floating m-1 text-white"
+                className="btn btn-outline-dark btn-floating m-1 text-black"
                 role="button"
               >
                 <i className="fab fa-twitter"></i>
               </a>
               <a
-                className="btn btn-outline-light btn-floating m-1 text-white"
+                className="btn btn-outline-dark btn-floating m-1 text-black"
                 role="button"
               >
                 <i className="fab fa-google"></i>
               </a>
 
               <a
-                className="btn btn-outline-light btn-floating m-1 text-white"
+                className="btn btn-outline-dark btn-floating m-1 text-black"
                 role="button"
               >
                 <i className="fab fa-instagram"></i>
