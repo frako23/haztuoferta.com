@@ -2,6 +2,9 @@ import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import "../../styles/itemCard.css";
 
 export const ItemCard = (props) => {
@@ -25,25 +28,20 @@ export const ItemCard = (props) => {
           </figure>
         </div>
         <div className="card-body d-flex flex-column justify-content-between">
-          <div className="title-card justify-content-between h5">
-            <span className="font-weight-bold">{props.computadoras.marca}</span>
-            <span className="font-weight-bold">
-              {props.computadoras.modelo}
-            </span>
-            <span className="item-category h5">
+          <Card.Title>{props.computadoras.marca}</Card.Title>
+          <ListGroup variant="flush">
+            <ListGroup.Item>{props.computadoras.modelo}</ListGroup.Item>
+            <ListGroup.Item>
               {props.computadoras.tipo_de_negocio}
-            </span>
-            <span className="item-price h5">
-              <strong>Precio: </strong> {props.computadoras.precio}
-            </span>
-            <button href="#!" className="btn text-danger">
+            </ListGroup.Item>
+            <ListGroup.Item>{props.computadoras.precio}</ListGroup.Item>
+          </ListGroup>
+          <div>
+            <Button variant="success">Haz tu Oferta!</Button>{" "}
+            <Button variant="outline-danger">
               <i className="fa-regular fa-heart"></i>
-            </button>
+            </Button>
           </div>
-
-          <a href="#!" className="btn btn-success">
-            Haz tu Oferta!
-          </a>
         </div>
       </div>
     </React.Fragment>
