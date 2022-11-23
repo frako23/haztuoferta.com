@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
+import { Comments } from "../component/Comments";
+import "../../styles/comments.css";
 
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
@@ -109,7 +111,15 @@ export const Single = (props) => {
           </p>
         </div>
       </div>
+      <div>
+        <Comments
+          commentsUrl="https://3000-frako23-haztuofertacom-c8ycfnd9gg3.ws-us77.gitpod.io/single/1"
+          currentUserId="1"
+        />
+        ;
+      </div>
     </div>
+
     //   <h1 className="display-4">This will show the demo element: </h1>
     //   <img src={rigoImageUrl} />
     //   <hr className="my-4" />
