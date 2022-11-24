@@ -15,7 +15,11 @@
 }
 
 body {
-  background: #eeeded;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #ffffff;
 }
 
 .carousel {
@@ -54,7 +58,7 @@ body {
   color: black;
 }
 
-.seccion > .seccion-inner {
+.seccion>.seccion-inner {
   padding: 10px;
 }
 
@@ -76,6 +80,27 @@ h3 {
   text-decoration: none;
   color: black;
 }
+
+.btn-search {
+  background: #424242;
+  border-radius: 0;
+  color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #1c1c1c;
+}
+
+.btn-search:link,
+.btn-search:visited {
+  color: #fff;
+}
+
+.btn-search:active,
+.btn-search:hover {
+  background: #1c1c1c;
+  color: #fff;
+}
+
 
 /* .favs-menu {
     background-color: transparent;

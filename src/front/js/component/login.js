@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
+import { Button as MyButton } from "./Button";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -74,13 +75,18 @@ export const Login = () => {
           </Modal.Footer>
         </Modal>
       )}
-      <Button
+      <MyButton
+        title="Ingresa"
+        classButton="btn signup__button--register"
+        handleShow={handleShow}
+      />
+      {/* <Button
         variant="outline-success"
         className="btn boton"
         onClick={handleShow}
       >
         Ingresa
-      </Button>
+      </Button> */}
     </>
   );
 };

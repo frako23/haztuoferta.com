@@ -8,9 +8,11 @@ import { Signup } from "./signup";
 import { Login } from "./login";
 import logo from "../../img/logoSimple.png";
 import "../../styles/navbar.css";
+import { Search } from "./Search";
 
 export const Navbar = (props) => {
 	const { store, actions } = useContext(Context);
+
 	return (
 		<nav className="navbar navbar-white bg-white text-light sticky-top">
 			<div className="container">
@@ -21,27 +23,14 @@ export const Navbar = (props) => {
 					<div className="icons-left  ">
 						<Link to="/">
 							<span className="navbar-brand mb-0">
-								<img src={logo} style={{ height: "50px" }} />
+								<img src={logo} style={{ height: "60px" }} />
 							</span>
 						</Link>
 					</div>
 				</div>
 				<div className="d-flex flex-row p-1 text-center">
-					<div className="nav-item dropdown">
-						<form className="d-flex align-content-center px-3 mb-1">
-							<input
-								className="form-control me-2 inputnavbar"
-								type="search"
-								placeholder="Búscalo aqui"
-								aria-label="Search"
-							/>
-							<button className="botonsrch btn btn-info" type="submit">
-								<i className="fa-solid fa-magnifying-glass"></i>
-							</button>
-						</form>
-					</div>
-
-					<div className="d-flex flex-row m-1 px-1">
+					<Search />
+					<div className="d-flex align-items-center">
 						{!store.token ? (
 							<Signup />
 						) : (
@@ -92,7 +81,7 @@ export const Navbar = (props) => {
 							</>
 						)}
 					</div>
-					<div className="d-flex flex-row m-1 px-1">
+					<div className="d-flex align-items-center ms-2">
 						{!store.token ? (
 							<Login />
 						) : (

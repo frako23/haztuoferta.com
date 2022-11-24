@@ -2,12 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { Button as MyButton } from "./Button";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FormGroup } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
 import "../../styles/index.css";
+import "../../styles/signup.css";
 
 export const Signup = () => {
   const { store, actions } = useContext(Context);
@@ -118,13 +120,18 @@ export const Signup = () => {
           </Modal.Footer>
         </Modal>
       )}
-      <Button
-        variant="outline-primary"
-        className="boton mr-0"
+      <MyButton
+        title="Registrate"
+        classButton="btn signup__button--register"
+        handleShow={handleShow}
+      />
+      {/* <Button
+        // variant="outline-primary"
+        className="btn signup__button--register"
         onClick={handleShow}
       >
         Registrate
-      </Button>
+      </Button> */}
     </>
   );
 };

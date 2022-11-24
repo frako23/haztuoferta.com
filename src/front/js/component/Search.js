@@ -40,39 +40,58 @@ export const Search = () => {
     };
 
     return (
-        <div className="container py-3">
-            <div className="row ">
-                <h2 className="text-center">Search</h2>
-                <input
-                    type="text"
-                    placeholder="Search"
-                    value={inputValue}
-                    className="input-search"
-                    onChange={(event) => {
-                        onChageHandler(event.target.value.trim());
-                    }}
-                ></input>
-                <div className="suggestions">
-                    {suggestions &&
-                        suggestions.map((suggestion, index) => {
-                            return (
-                                // <Link
-                                //     to={`/${suggestion.description.includes("person")
-                                //             ? "people"
-                                //             : suggestion.description.includes("planet")
-                                //                 ? "planets"
-                                //                 : "vehicles"
-                                //         }/${suggestion.uid}`}
-                                //     key={suggestion._id}
-                                //     className="d-block"
-                                //     onClick={() => onSuggestHandler(suggestion.properties.name)}
-                                // >
-                                //     {suggestion.properties.name}
-                                // </Link>
-                            );
-                        })}
+        <React.Fragment>
+            <div class="container">
+                <div className="input-group">
+                    <input
+                        type="text"
+                        className="form-control shadow-none"
+                        placeholder="Busca lo que quieras..."
+                    />
+                    <span className="input-group-btn">
+                        <button className="btn btn-search" type="button">
+                            <i className="fa fa-search fa-fw"></i>
+                        </button>
+                    </span>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     );
+
+    // return (
+    //     <div className="container py-3">
+    //         <div className="row ">
+    //             <h2 className="text-center">Search</h2>
+    //             <input
+    //                 type="text"
+    //                 placeholder="Search"
+    //                 value={inputValue}
+    //                 className="input-search"
+    //                 onChange={(event) => {
+    //                     onChageHandler(event.target.value.trim());
+    //                 }}
+    //             ></input>
+    //             <div className="suggestions">
+    //                 {suggestions &&
+    //                     suggestions.map((suggestion, index) => {
+    //                         return (
+    //                             <Link
+    //                                 to={`/${suggestion.description.includes("person")
+    //                                     ? "people"
+    //                                     : suggestion.description.includes("planet")
+    //                                         ? "planets"
+    //                                         : "vehicles"
+    //                                     }/${suggestion.uid}`}
+    //                                 key={suggestion._id}
+    //                                 className="d-block"
+    //                                 onClick={() => onSuggestHandler(suggestion.properties.name)}
+    //                             >
+    //                                 {suggestion.properties.name}
+    //                             </Link>
+    //                         );
+    //                     })}
+    //             </div>
+    //         </div>
+    //     </div>
+    // );
 };
