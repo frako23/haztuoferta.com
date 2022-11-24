@@ -134,17 +134,17 @@ def get_ofertas_de_compras():
         for oferta_de_compra in ofertas_de_compras:
             ofertas_de_compras_dictionaries.append(oferta_de_compra.serialize())
         return jsonify(ofertas_de_compras_dictionaries), 200
-    new_celular_data = request.json
+    new_oferta_de_compra_data = request.json
     try:
-        if "titulo" not in new_oferta_de_compra_data or new_celular_data["titulo"] == "": 
+        if "titulo" not in new_oferta_de_compra_data or new_oferta_de_compra_data["titulo"] == "": 
             raise Exception("No ingresaste el titulo",400)
-        if "categoria" not in new_oferta_de_compra_data or new_celular_data["categoria"] == "": 
+        if "categoria" not in new_oferta_de_compra_data or new_oferta_de_compra_data["categoria"] == "": 
             raise Exception("No ingresaste la categoria",400)
-        if "oferta" not in new_oferta_de_compra_data or new_celular_data["oferta"] == "": 
+        if "oferta" not in new_oferta_de_compra_data or new_oferta_de_compra_data["oferta"] == "": 
             raise Exception("No ingresaste la oferta",400)
-        if "descripcion" not in new_oferta_de_compra_data or new_celular_data["descripcion"] == "": 
+        if "descripcion" not in new_oferta_de_compra_data or new_oferta_de_compra_data["descripcion"] == "": 
             raise Exception("No ingresaste la descripcion",400)
         new_oferta_de_compra = Compra.create(**new_oferta_de_compra_data)
         return jsonify(new_oferta_de_compra.serialize()),201
     except Exception as error:
-        return jsonify(error.args[0]), error.args[1]
+        return jsonify(error.args[0]), error.args[1] if len(error.args) > 1 else 500
