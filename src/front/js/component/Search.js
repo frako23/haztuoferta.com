@@ -45,7 +45,7 @@ export const Search = () => {
                 <div className="input-group">
                     <input
                         type="text"
-                        className="form-control shadow-none"
+                        className="form-control shadow-none border border-dark rounded-0"
                         placeholder="Busca lo que quieras..."
                     />
                     <span className="input-group-btn">
