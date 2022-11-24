@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Computadora, Celular
+from api.models import db, User, Computadora, Celular, Compra
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -121,5 +121,30 @@ def get_celulares():
             raise Exception("No ingresaste la camara trasera",400)
         new_celular = Celular.create(**new_celular_data)
         return jsonify(new_celular.serialize()),201
+    except Exception as error:
+        return jsonify(error.args[0]), error.args[1]
+
+ofertas_de_compras = []
+
+@api.route('/ofertas_de_compras', methods=['GET','POST'])
+def get_ofertas_de_compras():
+    if request.method == 'GET':
+        ofertas_de_compras = Compra.query.all()
+        ofertas_de_compras_dictionaries = []
+        for oferta_de_compra in ofertas_de_compras:
+            ofertas_de_compras_dictionaries.append(oferta_de_compra.serialize())
+        return jsonify(ofertas_de_compras_dictionaries), 200
+    new_celular_data = request.json
+    try:
+        if "titulo" not in new_oferta_de_compra_data or new_celular_data["titulo"] == "": 
+            raise Exception("No ingresaste el titulo",400)
+        if "categoria" not in new_oferta_de_compra_data or new_celular_data["categoria"] == "": 
+            raise Exception("No ingresaste la categoria",400)
+        if "oferta" not in new_oferta_de_compra_data or new_celular_data["oferta"] == "": 
+            raise Exception("No ingresaste la oferta",400)
+        if "descripcion" not in new_oferta_de_compra_data or new_celular_data["descripcion"] == "": 
+            raise Exception("No ingresaste la descripcion",400)
+        new_oferta_de_compra = Compra.create(**new_oferta_de_compra_data)
+        return jsonify(new_oferta_de_compra.serialize()),201
     except Exception as error:
         return jsonify(error.args[0]), error.args[1]

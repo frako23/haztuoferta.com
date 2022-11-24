@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 import Modal from "react-bootstrap/Modal";
 import "../../styles/publish.css";
 
@@ -21,39 +22,14 @@ export const Buy = () => {
           className="bg-white m-5 p-4 border rounded-4 border-dark border-opacity-25"
           id="form"
         >
-          <Form.Group className="mb-3" controlId="formFile">
-            <div>
-              {selectedImage && (
-                <div>
-                  <img
-                    alt="not found"
-                    width={"100%"}
-                    height={"500px"}
-                    src={URL.createObjectURL(selectedImage)}
-                  />
-                  <br />
-                  <button
-                    className="rounded p-2 btn btn-primary position-absolute b-20"
-                    onClick={() => setSelectedImage(null)}
-                  >
-                    Remove
-                  </button>
-                </div>
-              )}
-              <br />
-
-              <br />
-              <input
-                className="form-control"
-                type="file"
-                name="myImage"
-                onChange={(event) => {
-                  console.log(event.target.files[0]);
-                  setSelectedImage(event.target.files[0]);
-                }}
-              />
-            </div>
-          </Form.Group>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">Titulo</InputGroup.Text>
+            <Form.Control
+              placeholder="Titulo de la publicacion"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </InputGroup>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
             <Form.Label>Categoria</Form.Label>
             <Form.Select aria-label="dropdown select">
@@ -91,7 +67,7 @@ export const Buy = () => {
                 <option value="commputadoras">€</option>
                 <option value="videojuegos">Bs</option>
               </Form.Select>
-              <Form.Control type="number" placeholder="Precio" />
+              <Form.Control type="number" placeholder="Haz tu oferta aca" />
             </div>
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">

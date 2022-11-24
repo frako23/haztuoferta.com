@@ -35,6 +35,7 @@ export const Navbar = (props) => {
 							<Signup />
 						) : (
 							<>
+							
 								<Link to="/Publish">
 									<button
 										className="btn btn-info"
@@ -43,6 +44,16 @@ export const Navbar = (props) => {
 										aria-expanded="false"
 									>
 										Publicar Artículo
+									</button>
+								</Link>
+								<Link to="/Buy">
+									<button
+										className="btn btn-info ms-3"
+										id=""
+										role="button"
+										aria-expanded="false"
+									>
+										Publicar Búsqueda
 									</button>
 								</Link>
 								<button
