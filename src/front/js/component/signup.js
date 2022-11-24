@@ -121,7 +121,7 @@ export const Signup = () => {
         </Modal>
       )}
       <MyButton
-        title="Registrate"
+        title="Regístrate"
         classButton="btn signup__button--register"
         handleShow={handleShow}
       />

@@ -104,6 +104,17 @@ h3 {
   letter-spacing: 1px;
 }
 
+.categories {
+  background-color: transparent;
+  color: darkslategrey;
+  text-decoration: none;
+}
+
+.categories:hover {
+  background-color: transparent;
+  border-bottom: 1px solid burlywood;
+  color: darkslategrey;
+}
 
 /* .favs-menu {
     background-color: transparent;

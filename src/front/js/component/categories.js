@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Button as MyButton } from "./Button";
 
 export const Categories = () => {
   const [show, setShow] = useState(false);
@@ -11,7 +12,7 @@ export const Categories = () => {
 
   return (
     <>
-      <Button variant="info" className="me-3" onClick={handleShow}>
+      <Button variant="info" className="btn signup__button--register" onClick={handleShow}>
         <i className="fa-solid fa-bars"></i>
       </Button>
 
@@ -22,67 +23,67 @@ export const Categories = () => {
         <Offcanvas.Body>
           <ul style={{ "list-style": "none" }}>
             <Link to="/">
-              <li>Accesorios para bebés</li>
+              <li className="categories">Accesorios para bebés</li>
             </Link>
             <Link to="/">
-              <li>Accesorios para mascotas</li>
+              <li className="categories">Accesorios para mascotas</li>
             </Link>
             <Link to="/">
-              <li>Artículos de colección</li>
+              <li className="categories">Artículos de colección</li>
             </Link>
             <Link to="/">
-              <li>Carros y Motos</li>
+              <li className="categories">Carros y Motos</li>
             </Link>
             <Link to="/">
-              <li>Cámaras y Accesorios</li>
+              <li className="categories">Cámaras y Accesorios</li>
             </Link>
             <Link to="/">
-              <li>Celulares</li>
+              <li className="categories">Celulares</li>
             </Link>
             <Link to="/Computadoras">
-              <li>Computación</li>
+              <li className="categories">Computación</li>
             </Link>
             <Link to="/">
-              <li>Consolas y Videojuegos</li>
+              <li className="categories">Consolas y Videojuegos</li>
             </Link>
             <Link to="/">
-              <li>Electrodomésticos</li>
+              <li className="categories">Electrodomésticos</li>
             </Link>
             <Link to="/">
-              <li>Deporte y Fitness</li>
+              <li className="categories">Deporte y Fitness</li>
             </Link>
             <Link to="/">
-              <li>Electrónica, audio y video</li>
+              <li className="categories">Electrónica, audio y video</li>
             </Link>
             <Link to="/">
-              <li>Herramientas</li>
+              <li className="categories">Herramientas</li>
             </Link>
             <Link to="/">
-              <li>Hogar</li>
+              <li className="categories">Hogar</li>
             </Link>
             <Link to="/">
-              <li>Inmuebles</li>
+              <li className="categories">Inmuebles</li>
             </Link>
             <Link to="/">
-              <li>Instrumentos musicales</li>
+              <li className="categories">Instrumentos musicales</li>
             </Link>
             <Link to="/">
-              <li>Juguetes</li>
+              <li className="categories">Juguetes</li>
             </Link>
             <Link to="/">
-              <li>Joyas</li>
+              <li className="categories">Joyas</li>
             </Link>
             <Link to="/">
-              <li>Libros</li>
+              <li className="categories">Libros</li>
             </Link>
             <Link to="/">
-              <li>Repuestos para vehículos</li>
+              <li className="categories">Repuestos para vehículos</li>
             </Link>
             <Link to="/">
-              <li>Ropa y Zapatos</li>
+              <li className="categories">Ropa y Zapatos</li>
             </Link>
             <Link to="/">
-              <li>Otras categorías</li>
+              <li className="categories">Otras categorías</li>
             </Link>
           </ul>
         </Offcanvas.Body>
