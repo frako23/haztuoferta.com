@@ -21,29 +21,69 @@ export const Categories = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul style={{ "list-style": "none" }}>
-            <li>Accesorios para bebés</li>
-            <li>Accesorios para mascotas</li>
-            <li>Artículos de colección</li>
-            <li>Carros y Motos</li>
-            <li>Cámaras y Accesorios</li>
-            <li>Celulares</li>
+            <Link to="/">
+              <li>Accesorios para bebés</li>
+            </Link>
+            <Link to="/">
+              <li>Accesorios para mascotas</li>
+            </Link>
+            <Link to="/">
+              <li>Artículos de colección</li>
+            </Link>
+            <Link to="/">
+              <li>Carros y Motos</li>
+            </Link>
+            <Link to="/">
+              <li>Cámaras y Accesorios</li>
+            </Link>
+            <Link to="/">
+              <li>Celulares</li>
+            </Link>
             <Link to="/Computadoras">
               <li>Computación</li>
             </Link>
-            <li>Consolas y Videojuegos</li>
-            <li>Electrodomésticos</li>
-            <li>Deporte y Fitness</li>
-            <li>Electrónica, audio y video</li>
-            <li>Herramientas</li>
-            <li>Hogar</li>
-            <li>Inmuebles</li>
-            <li>Instrumentos musicales</li>
-            <li>Juguetes</li>
-            <li>Joyas</li>
-            <li>Libros</li>
-            <li>Repuestos para vehículos</li>
-            <li>Ropa y Zapatos</li>
-            <li>Otras categorías</li>
+            <Link to="/">
+              <li>Consolas y Videojuegos</li>
+            </Link>
+            <Link to="/">
+              <li>Electrodomésticos</li>
+            </Link>
+            <Link to="/">
+              <li>Deporte y Fitness</li>
+            </Link>
+            <Link to="/">
+              <li>Electrónica, audio y video</li>
+            </Link>
+            <Link to="/">
+              <li>Herramientas</li>
+            </Link>
+            <Link to="/">
+              <li>Hogar</li>
+            </Link>
+            <Link to="/">
+              <li>Inmuebles</li>
+            </Link>
+            <Link to="/">
+              <li>Instrumentos musicales</li>
+            </Link>
+            <Link to="/">
+              <li>Juguetes</li>
+            </Link>
+            <Link to="/">
+              <li>Joyas</li>
+            </Link>
+            <Link to="/">
+              <li>Libros</li>
+            </Link>
+            <Link to="/">
+              <li>Repuestos para vehículos</li>
+            </Link>
+            <Link to="/">
+              <li>Ropa y Zapatos</li>
+            </Link>
+            <Link to="/">
+              <li>Otras categorías</li>
+            </Link>
           </ul>
         </Offcanvas.Body>
       </Offcanvas>

@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import "../../styles/publish.css";
 
-export const Publish = () => {
+export const Buy = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -15,7 +15,7 @@ export const Publish = () => {
     <>
       <div id="container">
         <div id="container1" className="">
-          <h1>Que deseas vender?</h1>
+          <h1>Que estas buscando?</h1>
         </div>
         <Form
           className="bg-white m-5 p-4 border rounded-4 border-dark border-opacity-25"
@@ -84,7 +84,7 @@ export const Publish = () => {
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-            <Form.Label>Precio</Form.Label>
+            <Form.Label>Cuanto estas dispuesto a pagar?</Form.Label>
             <div className="d-flex">
               <Form.Select aria-label="dropdown select" className="w-auto">
                 <option value="telefonos">$</option>
