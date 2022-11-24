@@ -17,7 +17,7 @@ export const ItemCard = (props) => {
 
   return (
     <React.Fragment>
-      <div className="card col-12 col-md-3 mx-2">
+      <div className="card col-12 col-md-3 me-2">
         <div className="card-image">
           <figure className="image">
             <img

@@ -107,7 +107,7 @@ h3 {
 .categories {
   background-color: transparent;
   color: darkslategrey;
-  text-decoration: none;
+  text-decoration: underline white;
 }
 
 .categories:hover {

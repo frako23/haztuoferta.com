@@ -6,6 +6,7 @@ import { Categories } from "./categories";
 import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
+import { Button as MyButton } from "./Button";
 import logo from "../../img/logoSimple.png";
 import "../../styles/navbar.css";
 import { Search } from "./Search";
@@ -35,7 +36,7 @@ export const Navbar = (props) => {
 							<Signup />
 						) : (
 							<>
-							
+
 								<Link to="/Publish">
 									<button
 										className="btn btn-info"
@@ -47,14 +48,18 @@ export const Navbar = (props) => {
 									</button>
 								</Link>
 								<Link to="/Buy">
-									<button
+									<MyButton
+										title="Publicar Búsqueda"
+										classButton="btn signup__button--register"
+									/>
+									{/* <button
 										className="btn btn-info ms-3"
 										id=""
 										role="button"
 										aria-expanded="false"
 									>
 										Publicar Búsqueda
-									</button>
+									</button> */}
 								</Link>
 								<button
 									className="btn btn-info dropdown-toggle ddt ms-3"
