@@ -114,7 +114,7 @@ export const Single = (props) => {
       <div>
         <Comments
           commentsUrl="https://3000-frako23-haztuofertacom-c8ycfnd9gg3.ws-us77.gitpod.io/single/1"
-          currentUserId="1"
+          currentUserId="comment.userId"
         />
         ;
       </div>

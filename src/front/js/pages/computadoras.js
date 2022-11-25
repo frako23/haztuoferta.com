@@ -10,7 +10,7 @@ export const Computadoras = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="text-center">
+    <div className="text-center container-flex">
       <h1>Computadoras</h1>
       <div className="container d-flex flex-wrap">
         {store.computadoras.map((computadoras, index) => {
