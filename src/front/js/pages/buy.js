@@ -76,9 +76,9 @@ export const Buy = () => {
             <Form.Label>Descripción</Form.Label>
             <Form.Control as="textarea" rows={5} />
           </Form.Group>
-          <Button variant="primary" onClick={actions.postOfertas()}>
+          {/* <Button variant="primary" onClick={actions.postOfertas()}>
             !Haz tu oferta!
-          </Button>
+          </Button> */}
         </Form>
       </div>
     </>

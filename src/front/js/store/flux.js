@@ -165,22 +165,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log(error));
       },
 
-      postOfertas: () => {
-        const apiURL = `https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/ofertas_de_compras`;
-        fetch(apiURL, {
-          method: "POST", // or 'POST'
-          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            if (!res.ok) throw Error(res.statusText);
-            return res.json();
-          })
-          .then((response) => console.log("Success:", response))
-          .catch((error) => console.error(error));
-      },
+      // postOfertas: () => {
+      //   const apiURL = `https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/ofertas_de_compras`;
+      //   fetch(apiURL, {
+      //     method: "POST", // or 'POST'
+      //     body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   })
+      //     .then((res) => {
+      //       if (!res.ok) throw Error(res.statusText);
+      //       return res.json();
+      //     })
+      //     .then((response) => console.log("Success:", response))
+      //     .catch((error) => console.error(error));
+      // },
 
       changeColor: (index, color) => {
         //get the store
