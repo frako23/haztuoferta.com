@@ -4,46 +4,43 @@ import { Context } from "../store/appContext";
 
 export const Search = () => {
   const { store, actions } = useContext(Context);
-  const [inputValue, setInputValue] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+  // const [inputValue, setInputValue] = useState("");
+  // const [suggestions, setSuggestions] = useState([]);
 
-  const onChageHandler = (text) => {
-    let matchComputers = [];
-    let matchCellphones = [];
-    let matchVideoGames = [];
+  // const onChangeHandler = (text) => {
+  //   let matchComputers = [];
+  //   let matchCellphones = [];
 
-    if (text.length > 0) {
-      matchComputers = store.computadoras.filter((computadoras) => {
-        const regex = new RegExp(`${text}`, "gi");
-        return computadoras.properties.name.match(regex);
-      });
+  //   if (text.length > 0) {
+  //     matchComputers = store.computadoras.filter((computadoras) => {
+  //       const regex = new RegExp(`${text}`, "gi");
+  //       return computadoras.properties.name.match(regex);
+  //     });
 
-      matchCellphones = store.celulares.filter((celulares) => {
-        const regex = new RegExp(`${text}`, "gi");
-        return celulares.properties.name.match(regex);
-      });
+  //     matchCellphones = store.celulares.filter((celulares) => {
+  //       const regex = new RegExp(`${text}`, "gi");
+  //       return celulares.properties.name.match(regex);
+  //     });
 
-      matchVideoGames = store.videojuegos.filter((videojuegos) => {
-        const regex = new RegExp(`${text}`, "gi");
-        return videojuegos.properties.name.match(regex);
-      });
-    }
-    let searches = [...matchComputers, ...matchCellphones, ...matchVideoGames];
+  //   }
+  //   let searches = [...matchComputers, ...matchCellphones,];
 
-    setSuggestions(searches);
-    setInputValue(text);
-  };
+  //   setSuggestions(searches);
+  //   setInputValue(text);
+  // };
 
-  const onSuggestHandler = (text) => {
-    setInputValue(text);
-    setSuggestions([]);
-  };
+  // const onSuggestHandler = (text) => {
+  //   setInputValue(text);
+  //   setSuggestions([]);
+  // };
 
   return (
     <React.Fragment>
       <div className="container">
         <div className="input-group">
           <input
+            value={store.search}
+            onChange={(event) => actions.handleSearch(event.target.value)}
             type="text"
             className="form-control shadow-none border border-dark rounded-0"
             placeholder="Busca lo que quieras..."
@@ -68,26 +65,18 @@ export const Search = () => {
   //                 value={inputValue}
   //                 className="input-search"
   //                 onChange={(event) => {
-  //                     onChageHandler(event.target.value.trim());
+  //                     onChangeHandler(event.target.value.trim());
   //                 }}
   //             ></input>
   //             <div className="suggestions">
   //                 {suggestions &&
   //                     suggestions.map((suggestion, index) => {
   //                         return (
-  //                             <Link
-  //                                 to={`/${suggestion.description.includes("person")
-  //                                     ? "people"
-  //                                     : suggestion.description.includes("planet")
-  //                                         ? "planets"
-  //                                         : "vehicles"
-  //                                     }/${suggestion.uid}`}
-  //                                 key={suggestion._id}
-  //                                 className="d-block"
-  //                                 onClick={() => onSuggestHandler(suggestion.properties.name)}
-  //                             >
-  //                                 {suggestion.properties.name}
-  //                             </Link>
+
+
+
+
+
   //                         );
   //                     })}
   //             </div>

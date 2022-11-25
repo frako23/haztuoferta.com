@@ -20,12 +20,17 @@ const getState = ({ getStore, getActions, setStore }) => {
       favorites: [],
       computadoras: [],
       celulares: [],
-      videojuegos: [],
       ofertas: [],
+      search: "",
     },
 
     actions: {
       // Use getActions to call a function within a fuction
+      handleSearch: (product) => {
+        setStore({ search: product })
+      },
+
+
       login: async (email, password) => {
         const opts = {
           method: "POST",
@@ -125,10 +130,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       getComputadoras: () => {
         const apiURL = `https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/computadoras`;
+
         fetch(apiURL)
-          .then((Response) => {
-            if (Response.ok) {
-              return Response.json();
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
             }
             throw new Error("Ha ocurrido un error");
           })
