@@ -17,11 +17,7 @@ export const ItemCard = (props) => {
 
   return (
     <React.Fragment>
-<<<<<<< HEAD
-      <div className="card col-12 col-md-3 mx-2">
-=======
       <div className="card col-12 col-md-3 me-2">
->>>>>>> af039036ae2ffe49ef98bd433db2b322ae67cd5e
         <div className="card-image">
           <figure className="image">
             <img

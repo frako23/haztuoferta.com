@@ -20,44 +20,47 @@ export const Footer = () => (
 
             <hr className="w-100 clearfix d-md-none" />
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
+              <h6 className="text-uppercase mb-4 font-weight-bold border-bottom">
+                Inicia Hoy
+              </h6>
               <p>
-                <a className="text-black">MDBootstrap</a>
+                <a className="text-black">Tu Cuenta</a>
               </p>
               <p>
-                <a className="text-black">MDWordPress</a>
+                <a className="text-black">Afilia tu Negocio</a>
               </p>
               <p>
-                <a className="text-black">BrandFlow</a>
+                <a className="text-black">Tus Compras</a>
               </p>
               <p>
-                <a className="text-black">Bootstrap Angular</a>
+                <a className="text-black">Ayuda</a>
               </p>
             </div>
 
             <hr className="w-100 clearfix d-md-none" />
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 className="text-uppercase mb-4 font-weight-bold">
-                Useful links
+              <h6 className="text-uppercase mb-4 font-weight-bold border-bottom">
+                Compañia
               </h6>
               <p>
-                <a className="text-black">Your Account</a>
+                <a href="./AboutUs" className="text-black">
+                  Acerca de Nosotros
+                </a>
               </p>
               <p>
-                <a className="text-black">Become an Affiliate</a>
+                <a className="text-black">Politica de Privacidad</a>
               </p>
               <p>
-                <a className="text-black">Shipping Rates</a>
-              </p>
-              <p>
-                <a className="text-black">Help</a>
+                <a className="text-black">Terminos y Condiciones</a>
               </p>
             </div>
 
             <hr className="w-100 clearfix d-md-none" />
 
             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
+              <h6 className="text-uppercase mb-4 font-weight-bold border-bottom">
+                Contacto
+              </h6>
               <p>
                 <i className="fas fa-home mr-3"></i> New York, NY 10012, US
               </p>
@@ -80,10 +83,10 @@ export const Footer = () => (
           <div className="row d-flex align-items-center">
             <div className="col-md-7 col-lg-8 text-center text-md-start">
               <div className="p-3">
+                Copyright © 2022
                 <a className="text-black m-1" href="https://mdbootstrap.com/">
                   HazTuOferta.com
                 </a>
-                © 2022 Copyright
               </div>
             </div>
             <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">

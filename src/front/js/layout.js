@@ -12,6 +12,7 @@ import { Carousel } from "./component/carousel";
 import { Publish } from "./pages/publish";
 import { Buy } from "./pages/buy";
 import { Oferts } from "./pages/oferts";
+import { AboutUs } from "./pages/AboutUs";
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -41,6 +42,7 @@ const Layout = () => {
             <Route element={<Publish />} path="/Publish" />
             <Route element={<Buy />} path="/Buy" />
             <Route element={<Oferts />} path="/Oferts" />
+            <Route element={<AboutUs />} path="/AboutUs" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
