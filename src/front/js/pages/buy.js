@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Button from "react-bootstrap/Button";
+import { Context } from "../store/appContext";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Modal from "react-bootstrap/Modal";
@@ -11,6 +12,7 @@ export const Buy = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [selectedImage, setSelectedImage] = useState(null);
+  const { store, actions } = useContext(Context);
 
   return (
     <>
@@ -74,6 +76,9 @@ export const Buy = () => {
             <Form.Label>Descripción</Form.Label>
             <Form.Control as="textarea" rows={5} />
           </Form.Group>
+          <Button variant="primary" onClick={actions.postOfertas()}>
+            !Haz tu oferta!
+          </Button>
         </Form>
       </div>
     </>
