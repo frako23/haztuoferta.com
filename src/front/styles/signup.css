@@ -1,0 +1,19 @@
+.signup__button--register {
+    background: #424242;
+    border-radius: 0;
+    color: #fff;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #1c1c1c;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+
+.signup__button--register:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

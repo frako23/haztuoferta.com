@@ -162,3 +162,38 @@ class Celular(db.Model):
             "nuevo_usado": self.nuevo_usado
             # do not serialize the password, its a security breach
         }
+
+class Compra(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    titulo = db.Column(db.String(250),unique=False, nullable=False)
+    categoria = db.Column(db.String(250),unique=False, nullable=False)
+    oferta = db.Column(db.String(50),unique=False, nullable=False)
+    descripcion = db.Column(db.String(500),unique=False, nullable=False)
+    
+    def __init__(self, **kwargs):
+        self.titulo = kwargs['titulo']
+        self.categoria = kwargs['categoria']
+        self.oferta = kwargs['oferta']
+        self.descripcion = kwargs['descripcion']
+    
+    @classmethod
+    def create(cls, **kwargs):
+        new_compra = cls(**kwargs)
+        db.session.add(new_compra)
+        try:
+            db.session.commit()
+            return new_compra
+        except Exception as error:
+            raise Exception(error.args[0], 400)
+        print(new_compra.id)
+        return new_compra
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "titulo": self.titulo,
+            "categoria": self.categoria,
+            "oferta": self.oferta,
+            "descripcion": self.descripcion
+            # do not serialize the password, its a security breach
+        }

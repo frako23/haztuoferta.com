@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Button as MyButton } from "./Button";
 
 export const Categories = () => {
   const [show, setShow] = useState(false);
@@ -11,7 +12,7 @@ export const Categories = () => {
 
   return (
     <>
-      <Button variant="info" className="me-3" onClick={handleShow}>
+      <Button variant="info" className="btn signup__button--register" onClick={handleShow}>
         <i className="fa-solid fa-bars"></i>
       </Button>
 
@@ -21,29 +22,69 @@ export const Categories = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul style={{ "list-style": "none" }}>
-            <li>Accesorios para bebés</li>
-            <li>Accesorios para mascotas</li>
-            <li>Artículos de colección</li>
-            <li>Carros y Motos</li>
-            <li>Cámaras y Accesorios</li>
-            <li>Celulares</li>
-            <Link to="/Computadoras">
-              <li>Computación</li>
+            <Link to="/">
+              <li className="categories">Accesorios para bebés</li>
             </Link>
-            <li>Consolas y Videojuegos</li>
-            <li>Electrodomésticos</li>
-            <li>Deporte y Fitness</li>
-            <li>Electrónica, audio y video</li>
-            <li>Herramientas</li>
-            <li>Hogar</li>
-            <li>Inmuebles</li>
-            <li>Instrumentos musicales</li>
-            <li>Juguetes</li>
-            <li>Joyas</li>
-            <li>Libros</li>
-            <li>Repuestos para vehículos</li>
-            <li>Ropa y Zapatos</li>
-            <li>Otras categorías</li>
+            <Link to="/">
+              <li className="categories">Accesorios para mascotas</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Artículos de colección</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Carros y Motos</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Cámaras y Accesorios</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Celulares</li>
+            </Link>
+            <Link to="/Computadoras">
+              <li className="categories">Computación</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Consolas y Videojuegos</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Electrodomésticos</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Deporte y Fitness</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Electrónica, audio y video</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Herramientas</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Hogar</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Inmuebles</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Instrumentos musicales</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Juguetes</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Joyas</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Libros</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Repuestos para vehículos</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Ropa y Zapatos</li>
+            </Link>
+            <Link to="/">
+              <li className="categories">Otras categorías</li>
+            </Link>
           </ul>
         </Offcanvas.Body>
       </Offcanvas>

@@ -16,9 +16,14 @@ const getState = ({ getStore, getActions, setStore }) => {
           initial: "white",
         },
       ],
+
       favorites: [],
       computadoras: [],
+      celulares: [],
+      videojuegos: [],
+      ofertas: [],
     },
+
     actions: {
       // Use getActions to call a function within a fuction
       login: async (email, password) => {
@@ -117,6 +122,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("Error loading message from backend", error);
         }
       },
+
       getComputadoras: () => {
         const apiURL = `https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/computadoras`;
         fetch(apiURL)
@@ -129,6 +135,36 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((body) => setStore({ computadoras: body }))
           .catch((error) => console.log(error));
       },
+
+      getCelulares: async () => {
+        const cellURL = `https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/celulares`;
+
+        try {
+          let response = await fetch(cellURL);
+          if (response.ok) {
+            let body = await response.json();
+            setStore({ celulares: body });
+          } else if (response.status === 500) {
+            console.log(response.status);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      },
+
+      getOfertas: () => {
+        const apiURL = `https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/ofertas_de_compras`;
+        fetch(apiURL)
+          .then((Response) => {
+            if (Response.ok) {
+              return Response.json();
+            }
+            throw new Error("Ha ocurrido un error");
+          })
+          .then((body) => setStore({ ofertas: body }))
+          .catch((error) => console.log(error));
+      },
+
       changeColor: (index, color) => {
         //get the store
         const store = getStore();

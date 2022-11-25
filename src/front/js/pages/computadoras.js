@@ -10,8 +10,8 @@ export const Computadoras = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="text-center container-flex">
-      <h1>Computadoras</h1>
+    <div className="text-center">
+      <h1>Computadoras 💻</h1>
       <div className="container d-flex flex-wrap">
         {store.computadoras.map((computadoras, index) => {
           return <ItemCard computadoras={computadoras} key={index} />;
