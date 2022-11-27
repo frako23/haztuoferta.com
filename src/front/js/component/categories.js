@@ -18,7 +18,9 @@ export const Categories = () => {
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Categorias de productos</Offcanvas.Title>
+          <Offcanvas.Title>
+            <span className="h2"><strong>CATEGORIAS</strong></span>
+          </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul style={{ "list-style": "none" }}>

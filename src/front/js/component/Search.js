@@ -29,6 +29,7 @@ export const Search = () => {
 					<input
 						// value={store.search}
 						// onChange={(event) => actions.handleSearch(event.target.value)}
+						style={{ minWidth: '150px' }}
 						value={value}
 						onChange={onChange}
 						type="text"

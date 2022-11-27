@@ -8,7 +8,6 @@ import { Signup } from "./signup";
 import { Login } from "./login";
 import { Button as MyButton } from "./Button";
 import logo from "../../img/logoSimple.png";
-import "../../styles/navbar.css";
 import { Search } from "./Search";
 
 export const Navbar = (props) => {
@@ -17,7 +16,7 @@ export const Navbar = (props) => {
 	return (
 		<nav className="navbar navbar-white bg-white text-light sticky-top">
 			<div className="container-fluid justify-content-between">
-				<div className="d-flex flex-row justify-content-center">
+				<div className="d-flex flex-row justify-content-center ms-3">
 					<Categories />
 				</div>
 				<div className="d-flex flex-row text-start">
