@@ -9,8 +9,8 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
@@ -18,7 +18,7 @@ body {
   font-size: 1rem;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   background-color: #ffffff;
 }
 
@@ -36,8 +36,8 @@ body {
 }
 
 .title-card {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .img-description {

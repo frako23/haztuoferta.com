@@ -4,7 +4,7 @@ export const Carousel = () => {
   return (
     <div
       id="carousel"
-      className="carousel slide overflow-hidden"
+      className="container-fluid carousel slide overflow-hidden"
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">

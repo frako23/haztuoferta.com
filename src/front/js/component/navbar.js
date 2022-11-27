@@ -17,24 +17,20 @@ export const Navbar = (props) => {
 	return (
 		<nav className="navbar navbar-white bg-white text-light sticky-top">
 			<div className="container-fluid justify-content-between">
-				<div className="d-flex flex-row m-1 justify-content-center">
+				<div className="d-flex flex-row justify-content-center">
 					<Categories />
 				</div>
-				<div className="icons-left justify-content-left ">
+				<div className="d-flex flex-row text-start">
 					<Link to="/">
-						<span className="navbar-brand">
-							<img src={logo} style={{ height: "60px" }} />
-						</span>
+						<img src={logo} style={{ height: "50px" }} />
 					</Link>
 				</div>
 				<div className="d-flex flex-row p-1 text-center">
-					<Search />
 					<div className="d-flex align-items-center">
 						{!store.token ? (
 							<Signup />
 						) : (
 							<>
-
 								<Link to="/Publish">
 									<button
 										className="btn btn-info"
@@ -50,17 +46,9 @@ export const Navbar = (props) => {
 										title="Publicar Búsqueda"
 										classButton="btn signup__button--register"
 									/>
-									{/* <button
-										className="btn btn-info ms-3"
-										id=""
-										role="button"
-										aria-expanded="false"
-									>
-										Publicar Búsqueda
-									</button> */}
 								</Link>
 								<button
-									className="btn btn-info dropdown-toggle ddt ms-3"
+									className="btn signup__button--register dropdown-toggle ddt ms-2"
 									id="navbarScrollingDropdown"
 									role="button"
 									data-bs-toggle="dropdown"
@@ -95,7 +83,7 @@ export const Navbar = (props) => {
 							</>
 						)}
 					</div>
-					<div className="d-flex align-items-center ms-2">
+					<div className="d-flex align-items-between ms-1">
 						{!store.token ? (
 							<Login />
 						) : (
@@ -107,6 +95,7 @@ export const Navbar = (props) => {
 								<strong>Salir</strong>
 							</button>
 						)}
+						<Search />
 					</div>
 				</div>
 			</div>

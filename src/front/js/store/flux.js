@@ -45,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         try {
           const resp = await fetch(
-            "https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/token",
+            `${process.env.BACKEND_URL}/api/token`,
             opts
           );
           if (resp.status !== 200) {

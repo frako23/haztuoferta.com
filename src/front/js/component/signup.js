@@ -115,7 +115,7 @@ export const Signup = () => {
               Cancelar
             </Button>
             <Button variant="success" onClick={sendData}>
-              Resgistrarme
+              Registrarme
             </Button>
           </Modal.Footer>
         </Modal>
@@ -125,13 +125,6 @@ export const Signup = () => {
         classButton="btn signup__button--register"
         handleShow={handleShow}
       />
-      {/* <Button
-        // variant="outline-primary"
-        className="btn signup__button--register"
-        onClick={handleShow}
-      >
-        Registrate
-      </Button> */}
     </>
   );
 };
