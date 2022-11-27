@@ -88,6 +88,7 @@ h3 {
   border-width: 2px;
   border-style: solid;
   border-color: #1c1c1c;
+  font-size: 1rem;
 }
 
 .btn-search:link,
@@ -102,6 +103,7 @@ h3 {
   border: 2px solid black;
   font-weight: bold;
   letter-spacing: 1px;
+  font-size: 1rem;
 }
 
 .categories {
