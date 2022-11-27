@@ -16,18 +16,16 @@ export const Navbar = (props) => {
 
 	return (
 		<nav className="navbar navbar-white bg-white text-light sticky-top">
-			<div className="container">
-				<div className="d-flex flex-row m-1 px-3 justify-content-center">
+			<div className="container-fluid justify-content-between">
+				<div className="d-flex flex-row m-1 justify-content-center">
 					<Categories />
 				</div>
-				<div className="d-flex flex-row col-auto p-1 text-center">
-					<div className="icons-left  ">
-						<Link to="/">
-							<span className="navbar-brand mb-0">
-								<img src={logo} style={{ height: "60px" }} />
-							</span>
-						</Link>
-					</div>
+				<div className="icons-left justify-content-left ">
+					<Link to="/">
+						<span className="navbar-brand">
+							<img src={logo} style={{ height: "60px" }} />
+						</span>
+					</Link>
 				</div>
 				<div className="d-flex flex-row p-1 text-center">
 					<Search />

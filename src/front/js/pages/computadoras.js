@@ -12,7 +12,7 @@ export const Computadoras = () => {
   return (
     <div className="text-center">
       <h1>Computadoras 💻</h1>
-      <div className="container d-flex flex-wrap">
+      <div className="container d-flex flex-wrap justify-content-center">
         {store.computadoras.map((computadoras, index) => {
           return <ItemCard computadoras={computadoras} key={index} />;
         })}

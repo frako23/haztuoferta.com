@@ -8,7 +8,10 @@ import "../../styles/publish.css";
 
 export const Buy = () => {
   const [show, setShow] = useState(false);
-
+  const [titulo, setTitulo] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [oferta, setOferta] = useState("");
+  const [descripcion, setDescripcion] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -30,11 +33,20 @@ export const Buy = () => {
               placeholder="Titulo de la publicacion"
               aria-label="Username"
               aria-describedby="basic-addon1"
+              value={titulo}
+              onChange={(e) => {
+                setTitulo(e.target.value);
+              }}
             />
           </InputGroup>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
             <Form.Label>Categoria</Form.Label>
-            <Form.Select aria-label="dropdown select">
+            <Form.Select
+              aria-label="dropdown select"
+              onChange={(e) => {
+                setCategoria(e.target.value);
+              }}
+            >
               <option disabled selected>
                 Escoge una categoria
               </option>
@@ -44,7 +56,7 @@ export const Buy = () => {
               <option value="telefonos">Carros y Motos</option>
               <option value="telefonos">Cámaras y Accesorios</option>
               <option value="telefonos">Celulares</option>
-              <option value="telefonos">Computación</option>
+              <option value="computadoras">Computadoras</option>
               <option value="telefonos">Consolas y Videojuegos</option>
               <option value="telefonos">Electrodomésticos</option>
               <option value="telefonos">Deporte y Fitness</option>
@@ -63,22 +75,45 @@ export const Buy = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
             <Form.Label>Cuanto estas dispuesto a pagar?</Form.Label>
-            <div className="d-flex">
-              <Form.Select aria-label="dropdown select" className="w-auto">
-                <option value="telefonos">$</option>
-                <option value="commputadoras">€</option>
-                <option value="videojuegos">Bs</option>
-              </Form.Select>
-              <Form.Control type="number" placeholder="Haz tu oferta aca" />
-            </div>
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1">
+                ¿Cuánto ofreces?
+              </InputGroup.Text>
+              <Form.Control
+                placeholder="Haz tu oferta aqui"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                value={oferta}
+                onChange={(e) => {
+                  setOferta(e.target.value);
+                }}
+              />
+            </InputGroup>
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Descripción</Form.Label>
-            <Form.Control as="textarea" rows={5} />
+            <Form.Control
+              as="textarea"
+              rows={5}
+              value={descripcion}
+              onChange={(e) => {
+                setDescripcion(e.target.value);
+              }}
+            />
           </Form.Group>
-          {/* <Button variant="primary" onClick={actions.postOfertas()}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              actions.postOfertas({
+                titulo: titulo,
+                categoria: categoria,
+                oferta: oferta,
+                descripcion: descripcion,
+              });
+            }}
+          >
             !Haz tu oferta!
-          </Button> */}
+          </Button>
         </Form>
       </div>
     </>
