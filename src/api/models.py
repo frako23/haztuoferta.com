@@ -9,11 +9,12 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(250),unique=False, nullable=False)
-    lastname = db.Column(db.String(50),unique=False, nullable=False)
-    phone = db.Column(db.String(50),unique=False, nullable=False)
+    name = db.Column(db.String(250), unique=False, nullable=False)
+    lastname = db.Column(db.String(50), unique=False, nullable=False)
+    phone = db.Column(db.String(50), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
 
@@ -49,13 +50,14 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
+
 class Computadora(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    marca = db.Column(db.String(50),unique=False, nullable=False)
-    modelo = db.Column(db.String(250),unique=False, nullable=False)
-    procesador = db.Column(db.String(250),unique=False, nullable=False)
-    pantalla = db.Column(db.String(50),unique=False, nullable=False)
-    memoria_ram = db.Column(db.String(50),unique=False, nullable=False)
+    marca = db.Column(db.String(50), unique=False, nullable=False)
+    modelo = db.Column(db.String(250), unique=False, nullable=False)
+    procesador = db.Column(db.String(250), unique=False, nullable=False)
+    pantalla = db.Column(db.String(50), unique=False, nullable=False)
+    memoria_ram = db.Column(db.String(50), unique=False, nullable=False)
     disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
@@ -72,9 +74,8 @@ class Computadora(db.Model):
         self.sistema_operativo = kwargs['sistema_operativo']
         self.precio = kwargs['precio']
         self.tipo_de_negocio = kwargs['tipo_de_negocio']
-        self.nuevo_usado = kwargs ['nuevo_usado']
-        
-    
+        self.nuevo_usado = kwargs['nuevo_usado']
+
     @classmethod
     def create(cls, **kwargs):
         new_computadora = cls(**kwargs)
@@ -103,14 +104,17 @@ class Computadora(db.Model):
             # do not serialize the password, its a security breach
         }
 
+
 class Celular(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    marca = db.Column(db.String(50),unique=False, nullable=False)
-    modelo = db.Column(db.String(250),unique=False, nullable=False)
-    pantalla = db.Column(db.String(50),unique=False, nullable=False)
-    memoria_ram = db.Column(db.String(50),unique=False, nullable=False)
+    titulo = db.Column(db.String(500), unique=False, nullable=False)
+    marca = db.Column(db.String(50), unique=False, nullable=False)
+    modelo = db.Column(db.String(250), unique=False, nullable=False)
+    pantalla = db.Column(db.String(50), unique=False, nullable=False)
+    memoria_ram = db.Column(db.String(50), unique=False, nullable=False)
     disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
+    moneda = db.Column(db.String(5), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
     bateria = db.Column(db.String(50), unique=False, nullable=False)
     camara_frontal = db.Column(db.String(50), unique=False, nullable=False)
@@ -119,19 +123,21 @@ class Celular(db.Model):
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
 
     def __init__(self, **kwargs):
+        self.titulo = kwargs['titulo']
         self.marca = kwargs['marca']
         self.modelo = kwargs['modelo']
         self.pantalla = kwargs['pantalla']
         self.memoria_ram = kwargs['memoria_ram']
         self.disco_duro = kwargs['disco_duro']
         self.sistema_operativo = kwargs['sistema_operativo']
+        self.moneda = kwargs['moneda']
         self.precio = kwargs['precio']
         self.bateria = kwargs['bateria']
         self.camara_frontal = kwargs['camara_frontal']
         self.camara_trasera = kwargs['camara_trasera']
         self.tipo_de_negocio = kwargs['tipo_de_negocio']
-        self.nuevo_usado = kwargs ['nuevo_usado']
-    
+        self.nuevo_usado = kwargs['nuevo_usado']
+
     @classmethod
     def create(cls, **kwargs):
         new_celular = cls(**kwargs)
@@ -144,16 +150,17 @@ class Celular(db.Model):
         print(new_celular.id)
         return new_celular
 
-
     def serialize(self):
         return {
             "id": self.id,
+            "titulo": self.titulo,
             "marca": self.marca,
             "modelo": self.modelo,
             "pantalla": self.pantalla,
             "memoria_ram": self.memoria_ram,
             "disco_duro": self.disco_duro,
             "sistema_operativo": self.sistema_operativo,
+            "moneda": self.moneda,
             "precio": self.precio,
             "bateria": self.bateria,
             "camara_frontal": self.camara_frontal,
@@ -163,19 +170,20 @@ class Celular(db.Model):
             # do not serialize the password, its a security breach
         }
 
+
 class Compra(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    titulo = db.Column(db.String(250),unique=False, nullable=False)
-    categoria = db.Column(db.String(250),unique=False, nullable=False)
-    oferta = db.Column(db.String(50),unique=False, nullable=False)
-    descripcion = db.Column(db.String(500),unique=False, nullable=False)
-    
+    titulo = db.Column(db.String(250), unique=False, nullable=False)
+    categoria = db.Column(db.String(250), unique=False, nullable=False)
+    oferta = db.Column(db.String(50), unique=False, nullable=False)
+    descripcion = db.Column(db.String(500), unique=False, nullable=False)
+
     def __init__(self, **kwargs):
         self.titulo = kwargs['titulo']
         self.categoria = kwargs['categoria']
         self.oferta = kwargs['oferta']
         self.descripcion = kwargs['descripcion']
-    
+
     @classmethod
     def create(cls, **kwargs):
         new_compra = cls(**kwargs)
