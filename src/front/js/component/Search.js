@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
+
 
 export const Search = () => {
+
 	const { store, actions } = useContext(Context);
 
 	const [value, setValue] = useState("");
@@ -17,6 +19,12 @@ export const Search = () => {
 		// API to fetch the search result
 		let matchComputers = [];
 		let matchCellphones = [];
+
+		if (searchTerm.lenght > 0) {
+			matchComputers = store.computadoras.filter((modelo) => {
+				return computadoras.modelo.match
+			});
+		}
 
 
 		console.log("search", searchTerm);

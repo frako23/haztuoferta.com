@@ -26,8 +26,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
     actions: {
       // Use getActions to call a function within a fuction
-      handleSearch: (product) => {
-        setStore({ search: product });
+      setSearchResults: (searchResult) => {
+        setStore({ searchResult: searchResult });
       },
 
       login: async (email, password) => {
