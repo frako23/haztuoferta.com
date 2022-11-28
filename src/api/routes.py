@@ -67,10 +67,12 @@ def get_computadoras():
         return jsonify(computadoras_dictionaries), 200
     new_computadora_data = request.json
     try:
+        if "titulo" not in new_computadora_data or new_computadora_data["titulo"] == "":
+            raise Exception("No ingresaste el titulo", 400)
         if "marca" not in new_computadora_data or new_computadora_data["marca"] == "":
-            raise Exception("No ingresaste el modelo", 400)
-        if "modelo" not in new_computadora_data or new_computadora_data["modelo"] == "":
             raise Exception("No ingresaste la marca", 400)
+        if "modelo" not in new_computadora_data or new_computadora_data["modelo"] == "":
+            raise Exception("No ingresaste el modelo", 400)
         if "procesador" not in new_computadora_data or new_computadora_data["procesador"] == "":
             raise Exception("No ingresaste el procesador", 400)
         if "pantalla" not in new_computadora_data or new_computadora_data["pantalla"] == "":
@@ -81,6 +83,8 @@ def get_computadoras():
             raise Exception("No ingresaste el disco duro", 400)
         if "sistema_operativo" not in new_computadora_data or new_computadora_data["sistema_operativo"] == "":
             raise Exception("No ingresaste el sistema operativo", 400)
+        if "moneda" not in new_computadora_data or new_computadora_data["moneda"] == "":
+            raise Exception("No ingresaste la moneda", 400)
         if "precio" not in new_computadora_data or new_computadora_data["precio"] == "":
             raise Exception("No ingresaste el precio", 400)
         new_computadora = Computadora.create(**new_computadora_data)
@@ -103,9 +107,9 @@ def get_celulares():
     new_celular_data = request.json
     try:
         if "marca" not in new_celular_data or new_celular_data["marca"] == "":
-            raise Exception("No ingresaste el modelo", 400)
-        if "modelo" not in new_celular_data or new_celular_data["modelo"] == "":
             raise Exception("No ingresaste la marca", 400)
+        if "modelo" not in new_celular_data or new_celular_data["modelo"] == "":
+            raise Exception("No ingresaste el modelo", 400)
         if "procesador" not in new_celular_data or new_celular_data["procesador"] == "":
             raise Exception("No ingresaste el procesador", 400)
         if "pantalla" not in new_celular_data or new_celular_data["pantalla"] == "":
