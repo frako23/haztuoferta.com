@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { ItemCard } from "../component/ItemCard";
 import { Carousel } from "../component/carousel.js";
-import { Secciones } from "../component/Secciones";
 import { Segmento } from "../component/Segmento";
 
 export const Computadoras = () => {
@@ -12,7 +11,7 @@ export const Computadoras = () => {
   return (
     <div className="text-center">
       <h1>Computadoras 💻</h1>
-      <div className="container d-flex flex-wrap">
+      <div className="container d-flex flex-wrap justify-content-center">
         {store.computadoras.map((computadoras, index) => {
           return <ItemCard computadoras={computadoras} key={index} />;
         })}

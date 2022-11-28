@@ -4,27 +4,27 @@ export const Carousel = () => {
   return (
     <div
       id="carousel"
-      className="carousel slide overflow-hidden"
+      className="container-fluid carousel slide overflow-hidden"
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img
-            src="https://i.postimg.cc/WztFmNMx/2.png"
+            src="https://i.postimg.cc/ncfDhwML/BANNER1.png"
             className="d-block w-100"
             alt="..."
           ></img>
         </div>
         <div className="carousel-item">
           <img
-            src="https://i.postimg.cc/Hsqc5CjP/3.png"
+            src="https://i.postimg.cc/3JQhQf2Z/BANNER2.png"
             className="d-block w-100"
             alt="..."
           ></img>
         </div>
         <div className="carousel-item">
           <img
-            src="https://i.postimg.cc/fbKJ6tC6/1.png"
+            src="https://i.postimg.cc/xCh0fPfw/BANNER3.png"
             className="d-block w-100"
             alt="..."
           ></img>

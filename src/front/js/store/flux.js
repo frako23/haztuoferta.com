@@ -20,12 +20,16 @@ const getState = ({ getStore, getActions, setStore }) => {
       favorites: [],
       computadoras: [],
       celulares: [],
-      videojuegos: [],
       ofertas: [],
+      search: "",
     },
 
     actions: {
       // Use getActions to call a function within a fuction
+      handleSearch: (product) => {
+        setStore({ search: product });
+      },
+
       login: async (email, password) => {
         const opts = {
           method: "POST",
@@ -40,7 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         try {
           const resp = await fetch(
-            "https://3001-4geeksacade-reactflaskh-zr71gznn0qr.ws-us77.gitpod.io/api/token",
+            `${process.env.BACKEND_URL}/api/token`,
             opts
           );
           if (resp.status !== 200) {
@@ -106,25 +110,27 @@ const getState = ({ getStore, getActions, setStore }) => {
         console.log("Se han borrado todos los tokens");
         setStore({ token: null });
       },
-      exampleFunction: () => {
-        getActions().changeColor(0, "green");
-      },
 
-      getMessage: async () => {
-        try {
-          // fetching data from the backend
-          const resp = await fetch(process.env.BACKEND_URL + "/api/hello");
-          const data = await resp.json();
-          setStore({ message: data.message });
-          // don't forget to return something, that is how the async resolves
-          return data;
-        } catch (error) {
-          console.log("Error loading message from backend", error);
-        }
-      },
+      // exampleFunction: () => {
+      //   getActions().changeColor(0, "green");
+      // },
+
+      // getMessage: async () => {
+      //   try {
+      //     // fetching data from the backend
+      //     const resp = await fetch(process.env.BACKEND_URL + "/api/hello");
+      //     const data = await resp.json();
+      //     setStore({ message: data.message });
+      //     // don't forget to return something, that is how the async resolves
+      //     return data;
+      //   } catch (error) {
+      //     console.log("Error loading message from backend", error);
+      //   }
+      // },
 
       getComputadoras: () => {
         const apiURL = `${process.env.BACKEND_URL}/api/computadoras`;
+
         fetch(apiURL)
           .then((response) => {
             if (response.ok) {
@@ -166,6 +172,57 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postOfertas: (data) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        fetch(apiURL, {
+          method: "POST", // or 'POST'
+          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) throw Error(res.statusText);
+            return res.json();
+          })
+          .then((response) => console.log("Success:", response))
+          .catch((error) => console.error(error));
+      },
+
+      postVentas: (data) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        fetch(apiURL, {
+          method: "POST", // or 'POST'
+          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) throw Error(res.statusText);
+            return res.json();
+          })
+          .then((response) => console.log("Success:", response))
+          .catch((error) => console.error(error));
+      },
+
+      postIntercambios: (data) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        fetch(apiURL, {
+          method: "POST", // or 'POST'
+          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) throw Error(res.statusText);
+            return res.json();
+          })
+          .then((response) => console.log("Success:", response))
+          .catch((error) => console.error(error));
+      },
+
+      postSubastas: (data) => {
         const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
         fetch(apiURL, {
           method: "POST", // or 'POST'
