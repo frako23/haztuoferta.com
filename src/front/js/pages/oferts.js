@@ -6,6 +6,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
 import "../../styles/publish.css";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 export const Oferts = () => {
   const [show, setShow] = useState(false);
@@ -25,6 +27,7 @@ export const Oferts = () => {
               <th>Categoría</th>
               <th>Se Ofrecen</th>
               <th>Descripción</th>
+              <th>Contacto</th>
             </tr>
           </thead>
           <tbody>
@@ -35,6 +38,23 @@ export const Oferts = () => {
                   <td>{oferta.categoria}</td>
                   <td>{oferta.oferta}</td>
                   <td>{oferta.descripcion}</td>
+                  <td>
+                    <OverlayTrigger
+                      key={oferta.id}
+                      placement="top"
+                      overlay={
+                        <Tooltip id={`tooltip-top`}>
+                          Francisco Orozco
+                          <br></br>
+                          frako23@gmail.com
+                          <br></br>
+                          04242526757
+                        </Tooltip>
+                      }
+                    >
+                      <Button variant="secondary">Contacto</Button>
+                    </OverlayTrigger>
+                  </td>
                 </tr>
               );
             })}
