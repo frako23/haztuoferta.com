@@ -5,7 +5,7 @@ body {
     height: 100%;
     width: 100%;
     background: #FFF;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 } */
 
@@ -82,6 +82,8 @@ h1.heading {
 .card-content {
     padding: 15px;
     text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 
 .card-title {
@@ -109,7 +111,8 @@ h1.heading {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     color: #444444;
 }
 

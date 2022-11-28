@@ -5,6 +5,7 @@ import { ItemCard } from "../component/ItemCard";
 import { Carousel } from "../component/carousel.js";
 import { Segmento } from "../component/Segmento";
 
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 

@@ -19,7 +19,7 @@ export const Navbar = (props) => {
 				<div className="d-flex flex-row justify-content-center ms-3">
 					<Categories />
 				</div>
-				<div className="d-flex flex-row text-start">
+				<div className="align-items-start">
 					<Link to="/">
 						<img src={logo} style={{ height: "50px" }} />
 					</Link>
