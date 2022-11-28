@@ -162,14 +162,15 @@ def get_ofertas_de_compras():
         return jsonify(error.args[0]), error.args[1] if len(error.args) > 1 else 500
 
 
-# @api.route('/producto/<string:product_name>', methods=['GET'])
-# def get_products(product_name):
-#     product_name = f"%{product_name}%"
+@api.route('/producto/<string:product_name>', methods=['GET'])
+def get_products(product_name):
 
-#     products = Computadora.query.filter(
-#         Computadora.marca.like(product_name)).limit(5).all()
-#     if products is None:
-#         return jsonify({'message': 'No se encontraron resultados'}), 404
-#     else:
-#         response = list(map(lambda item: item.serialize(), products))
-#         return jsonify(response), 200
+    # product_name = f"%{product_name}%"image.png
+
+    products = Computadora.query.filter(
+        Computadora.modelo.ilike('%' + product_name + '%')).limit(10).all()
+    if products is None:
+        return jsonify({'message': 'No se encontraron resultados'}), 404
+    else:
+        response = list(map(lambda item: item.serialize(), products))
+        return jsonify(response), 200

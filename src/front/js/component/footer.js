@@ -106,7 +106,7 @@ export const Footer = () => (
                 className="btn btn-outline-dark btn-floating m-1 text-black"
                 role="button"
               >
-                <i className="fab fa-google"></i>
+                <i className="fab fa-linkedin"></i>
               </a>
 
               <a
