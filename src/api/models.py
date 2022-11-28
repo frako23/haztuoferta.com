@@ -9,11 +9,12 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(250),unique=False, nullable=False)
-    lastname = db.Column(db.String(50),unique=False, nullable=False)
-    phone = db.Column(db.String(50),unique=False, nullable=False)
+    name = db.Column(db.String(250), unique=False, nullable=False)
+    lastname = db.Column(db.String(50), unique=False, nullable=False)
+    phone = db.Column(db.String(50), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
 
@@ -49,13 +50,14 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
+
 class Computadora(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    marca = db.Column(db.String(50),unique=False, nullable=False)
-    modelo = db.Column(db.String(250),unique=False, nullable=False)
-    procesador = db.Column(db.String(250),unique=False, nullable=False)
-    pantalla = db.Column(db.String(50),unique=False, nullable=False)
-    memoria_ram = db.Column(db.String(50),unique=False, nullable=False)
+    marca = db.Column(db.String(50), unique=False, nullable=False)
+    modelo = db.Column(db.String(250), unique=False, nullable=False)
+    procesador = db.Column(db.String(250), unique=False, nullable=False)
+    pantalla = db.Column(db.String(50), unique=False, nullable=False)
+    memoria_ram = db.Column(db.String(50), unique=False, nullable=False)
     disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
@@ -72,9 +74,8 @@ class Computadora(db.Model):
         self.sistema_operativo = kwargs['sistema_operativo']
         self.precio = kwargs['precio']
         self.tipo_de_negocio = kwargs['tipo_de_negocio']
-        self.nuevo_usado = kwargs ['nuevo_usado']
-        
-    
+        self.nuevo_usado = kwargs['nuevo_usado']
+
     @classmethod
     def create(cls, **kwargs):
         new_computadora = cls(**kwargs)
@@ -103,12 +104,13 @@ class Computadora(db.Model):
             # do not serialize the password, its a security breach
         }
 
+
 class Celular(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    marca = db.Column(db.String(50),unique=False, nullable=False)
-    modelo = db.Column(db.String(250),unique=False, nullable=False)
-    pantalla = db.Column(db.String(50),unique=False, nullable=False)
-    memoria_ram = db.Column(db.String(50),unique=False, nullable=False)
+    marca = db.Column(db.String(50), unique=False, nullable=False)
+    modelo = db.Column(db.String(250), unique=False, nullable=False)
+    pantalla = db.Column(db.String(50), unique=False, nullable=False)
+    memoria_ram = db.Column(db.String(50), unique=False, nullable=False)
     disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
@@ -130,8 +132,8 @@ class Celular(db.Model):
         self.camara_frontal = kwargs['camara_frontal']
         self.camara_trasera = kwargs['camara_trasera']
         self.tipo_de_negocio = kwargs['tipo_de_negocio']
-        self.nuevo_usado = kwargs ['nuevo_usado']
-    
+        self.nuevo_usado = kwargs['nuevo_usado']
+
     @classmethod
     def create(cls, **kwargs):
         new_celular = cls(**kwargs)
@@ -143,7 +145,6 @@ class Celular(db.Model):
             raise Exception(error.args[0], 400)
         print(new_celular.id)
         return new_celular
-
 
     def serialize(self):
         return {
@@ -163,19 +164,20 @@ class Celular(db.Model):
             # do not serialize the password, its a security breach
         }
 
+
 class Compra(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    titulo = db.Column(db.String(250),unique=False, nullable=False)
-    categoria = db.Column(db.String(250),unique=False, nullable=False)
-    oferta = db.Column(db.String(50),unique=False, nullable=False)
-    descripcion = db.Column(db.String(500),unique=False, nullable=False)
-    
+    titulo = db.Column(db.String(250), unique=False, nullable=False)
+    categoria = db.Column(db.String(250), unique=False, nullable=False)
+    oferta = db.Column(db.String(50), unique=False, nullable=False)
+    descripcion = db.Column(db.String(500), unique=False, nullable=False)
+
     def __init__(self, **kwargs):
         self.titulo = kwargs['titulo']
         self.categoria = kwargs['categoria']
         self.oferta = kwargs['oferta']
         self.descripcion = kwargs['descripcion']
-    
+
     @classmethod
     def create(cls, **kwargs):
         new_compra = cls(**kwargs)
@@ -196,4 +198,38 @@ class Compra(db.Model):
             "oferta": self.oferta,
             "descripcion": self.descripcion
             # do not serialize the password, its a security breach
+        }
+
+
+class Publicar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    author = db.Column(db.Integer, db.ForeignKey('user.id'))
+    titulo = db.Column(db.String(250), unique=False, nullable=False)
+    categoria = db.Column(db.String(250), unique=False, nullable=False)
+    precio = db.Column(db.Integer, unique=False)
+    oferta = db.Column(db.String(50), unique=False, nullable=False)
+    descripcion = db.Column(db.String(500), unique=False, nullable=False)
+
+    def __init__(self, **kwargs):
+        self.titulo = kwargs['titulo']
+        self.categoria = kwargs['categoria']
+        self.precio = kwargs['precio']
+        self.oferta = kwargs['oferta']
+        self.descripcion = kwargs['descripcion']
+        self.author = kwargs['author']
+
+    @classmethod
+    def create(cls, **kwargs):
+        new_publicacion = cls(**kwargs)
+        db.session.add(new_publicacion)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "author": self.author,
+            "titulo": self.titulo,
+            "categoria": self.categoria,
+            "precio": self.precio,
+            "oferta": self.oferta,
+            "descripcion": self.descripcion
         }
