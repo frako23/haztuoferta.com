@@ -107,12 +107,14 @@ class Computadora(db.Model):
 
 class Celular(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    titulo = db.Column(db.String(500), unique=False, nullable=False)
     marca = db.Column(db.String(50), unique=False, nullable=False)
     modelo = db.Column(db.String(250), unique=False, nullable=False)
     pantalla = db.Column(db.String(50), unique=False, nullable=False)
     memoria_ram = db.Column(db.String(50), unique=False, nullable=False)
     disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
+    moneda = db.Column(db.String(5), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
     bateria = db.Column(db.String(50), unique=False, nullable=False)
     camara_frontal = db.Column(db.String(50), unique=False, nullable=False)
@@ -121,12 +123,14 @@ class Celular(db.Model):
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
 
     def __init__(self, **kwargs):
+        self.titulo = kwargs['titulo']
         self.marca = kwargs['marca']
         self.modelo = kwargs['modelo']
         self.pantalla = kwargs['pantalla']
         self.memoria_ram = kwargs['memoria_ram']
         self.disco_duro = kwargs['disco_duro']
         self.sistema_operativo = kwargs['sistema_operativo']
+        self.moneda = kwargs['moneda']
         self.precio = kwargs['precio']
         self.bateria = kwargs['bateria']
         self.camara_frontal = kwargs['camara_frontal']
@@ -149,12 +153,14 @@ class Celular(db.Model):
     def serialize(self):
         return {
             "id": self.id,
+            "titulo": self.titulo,
             "marca": self.marca,
             "modelo": self.modelo,
             "pantalla": self.pantalla,
             "memoria_ram": self.memoria_ram,
             "disco_duro": self.disco_duro,
             "sistema_operativo": self.sistema_operativo,
+            "moneda": self.moneda,
             "precio": self.precio,
             "bateria": self.bateria,
             "camara_frontal": self.camara_frontal,

@@ -50,27 +50,27 @@ export const Buy = () => {
               <option disabled selected>
                 Escoge una categoria
               </option>
-              <option value="telefonos">Accesorios para bebés</option>
-              <option value="commputadoras">Accesorios para mascotas</option>
-              <option value="videojuegos">Artículos de colección</option>
-              <option value="telefonos">Carros y Motos</option>
-              <option value="telefonos">Cámaras y Accesorios</option>
-              <option value="telefonos">Celulares</option>
+              <option value="bebes">Accesorios para bebés</option>
+              <option value="mascotas">Accesorios para mascotas</option>
+              <option value="coleccion">Artículos de colección</option>
+              <option value="automotor">Carros y Motos</option>
+              <option value="camaras">Cámaras y Accesorios</option>
+              <option value="celulares">Celulares</option>
               <option value="computadoras">Computadoras</option>
-              <option value="telefonos">Consolas y Videojuegos</option>
-              <option value="telefonos">Electrodomésticos</option>
-              <option value="telefonos">Deporte y Fitness</option>
-              <option value="telefonos">Electrónica, audio y video</option>
-              <option value="telefonos">Herramientas</option>
-              <option value="telefonos">Hogar</option>
-              <option value="telefonos">Inmuebles</option>
-              <option value="telefonos">Instrumentos musicales</option>
-              <option value="telefonos">Juguetes</option>
-              <option value="telefonos">Joyas</option>
-              <option value="telefonos">Libros</option>
-              <option value="telefonos">Repuestos para vehículos</option>
-              <option value="telefonos">Ropa y Zapatos</option>
-              <option value="telefonos">Otras categorías</option>
+              <option value="videojuegos">Consolas y Videojuegos</option>
+              <option value="electrodomesticos">Electrodomésticos</option>
+              <option value="deporte">Deporte y Fitness</option>
+              <option value="electronica">Electrónica, audio y video</option>
+              <option value="herramientas">Herramientas</option>
+              <option value="hogar">Hogar</option>
+              <option value="inmuebles">Inmuebles</option>
+              <option value="musica">Instrumentos musicales</option>
+              <option value="juguetes">Juguetes</option>
+              <option value="joyas">Joyas</option>
+              <option value="libros">Libros</option>
+              <option value="repuestos">Repuestos para vehículos</option>
+              <option value="ropa">Ropa y Zapatos</option>
+              <option value="otros">Otras categorías</option>
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
