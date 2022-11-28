@@ -12,9 +12,15 @@ export const Computadoras = () => {
     <div className="text-center">
       <h1>Computadoras 💻</h1>
       <div className="container d-flex flex-wrap justify-content-center">
-        {store.computadoras.map((computadoras, index) => {
-          return <ItemCard computadoras={computadoras} key={index} />;
-        })}
+        {store.searchResults == "" ?
+          store.computadoras.map((computadoras, index) => {
+            return <ItemCard computadoras={computadoras} key={index} />;
+          })
+          :
+          store.searchResults.map((computadora, index) => {
+            return <ItemCard computadoras={computadora} key={index} />;
+          })
+        }
       </div>
     </div>
   );
