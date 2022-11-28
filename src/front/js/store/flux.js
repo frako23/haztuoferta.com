@@ -27,9 +27,8 @@ const getState = ({ getStore, getActions, setStore }) => {
     actions: {
       // Use getActions to call a function within a fuction
       handleSearch: (product) => {
-        setStore({ search: product })
+        setStore({ search: product });
       },
-
 
       login: async (email, password) => {
         const opts = {
@@ -173,6 +172,57 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postOfertas: (data) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        fetch(apiURL, {
+          method: "POST", // or 'POST'
+          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) throw Error(res.statusText);
+            return res.json();
+          })
+          .then((response) => console.log("Success:", response))
+          .catch((error) => console.error(error));
+      },
+
+      postVentas: (data) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        fetch(apiURL, {
+          method: "POST", // or 'POST'
+          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) throw Error(res.statusText);
+            return res.json();
+          })
+          .then((response) => console.log("Success:", response))
+          .catch((error) => console.error(error));
+      },
+
+      postIntercambios: (data) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        fetch(apiURL, {
+          method: "POST", // or 'POST'
+          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) throw Error(res.statusText);
+            return res.json();
+          })
+          .then((response) => console.log("Success:", response))
+          .catch((error) => console.error(error));
+      },
+
+      postSubastas: (data) => {
         const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
         fetch(apiURL, {
           method: "POST", // or 'POST'

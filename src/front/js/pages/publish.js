@@ -3,10 +3,10 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import "../../styles/publish.css";
+import CloudinaryUploadWidget from "../component/upLoadImages";
 
 export const Publish = () => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -53,6 +53,7 @@ export const Publish = () => {
                 }}
               />
             </div>
+            <CloudinaryUploadWidget />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
             <Form.Label>Categoria</Form.Label>
