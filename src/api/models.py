@@ -196,7 +196,7 @@ class Compra(db.Model):
     categoria = db.Column(db.String(250), unique=False, nullable=False)
     oferta = db.Column(db.String(50), unique=False, nullable=False)
     descripcion = db.Column(db.String(500), unique=False, nullable=False)
-    user_name = Column(String, ForeignKey(user.name))
+    user_name = Column(String, ForeignKey('user.name'))
     user_lastname = Column(String, ForeignKey(user.lastname))
     user_email = Column(String, ForeignKey(user.email))
     user_phone = Column(String, ForeignKey(user.phone))
