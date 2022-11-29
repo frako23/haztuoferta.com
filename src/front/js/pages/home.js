@@ -17,7 +17,7 @@ export const Home = () => {
 			<section className="banner">
 				<div className="container d-flex flex-column mb-2">
 					<header>
-						<h1 className="display-4 text-bold text-center">Has Tu Oferta</h1>
+						<h1 className="display-4 text-bold text-center">Haz Tu Oferta</h1>
 						<p className="text-center text-bold"> <i>Oferta, Intercambia o Subasta tus Productos. Que esperas para comprar a tu manera?</i></p>
 					</header>
 					<div className="call-to-action text-center">

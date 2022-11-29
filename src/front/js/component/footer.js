@@ -84,7 +84,7 @@ export const Footer = () => (
             <div className="col-md-7 col-lg-8 text-center text-md-start">
               <div className="p-3">
                 Copyright © 2022
-                <a className="text-black m-1" href="https://mdbootstrap.com/">
+                <a className="text-black m-1" href="https://github.com/frako23/haztuoferta.com">
                   HazTuOferta.com
                 </a>
               </div>
