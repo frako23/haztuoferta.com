@@ -30,7 +30,7 @@ export const Publish = () => {
     <>
       <div id="container">
         <div id="container1" className="">
-          <h1>Que deseas vender?</h1>
+          <h1>¿Qué deseas vender?</h1>
         </div>
         <Form
           className="bg-white m-5 p-4 border rounded-4 border-dark border-opacity-25"
@@ -48,6 +48,20 @@ export const Publish = () => {
               }}
             />
           </InputGroup>
+          <Form.Label>Tipo de producto</Form.Label>
+          <Form.Select
+            aria-label="dropdown select"
+            onChange={(e) => {
+              setNuevo_usado(e.target.value);
+            }}
+          >
+            <option disabled selected>
+              Escoge una categoria
+            </option>
+            <option value="Nuevo">Nuevo</option>
+            <option value="Usado">Usado</option>
+          </Form.Select>
+          <br></br>
           <Form.Label>Tipo de negocio</Form.Label>
           <Form.Select
             aria-label="dropdown select"
@@ -123,13 +137,13 @@ export const Publish = () => {
 
             ""
           )}
-
+          <br></br>
           <Form.Group className="mb-3 d-grid gap-2" controlId="formFile">
             <Form.Label>Agregar fotos </Form.Label>
             <CloudinaryUploadWidget />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+          <Form.Group className="" controlId="exampleForm.ControlInput2">
             <Form.Label>Categoria</Form.Label>
             <Form.Select
               aria-label="dropdown select"
@@ -242,6 +256,7 @@ export const Publish = () => {
                 <Form.Label>Sistema Operativo</Form.Label>
                 <Form.Select
                   aria-label="dropdown select"
+                  className="mb-3"
                   onChange={(e) => {
                     setSistema_operativo(e.target.value);
                   }}
@@ -258,7 +273,6 @@ export const Publish = () => {
               ""
             )}
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Descripción</Form.Label>
             <Form.Control

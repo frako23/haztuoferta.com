@@ -11,93 +11,85 @@ import logo from "../../img/logoSimple.png";
 import { Search } from "./Search";
 
 export const Navbar = (props) => {
-	const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
-	return (
-		<nav className="navbar navbar-white bg-white text-light sticky-top">
-			<div className="container-fluid justify-content-between">
-				<div className="d-flex flex-row justify-content-center ms-3">
-					<Categories />
-				</div>
-				<div className="align-items-start">
-					<Link to="/">
-						<img src={logo} style={{ height: "50px" }} />
-					</Link>
-				</div>
-				<div className="d-flex flex-row p-1 text-center">
-					<div className="d-flex align-items-center">
-						{!store.token ? (
-							<Signup />
-						) : (
-							<>
-								<Link to="/Publish">
-									<button
-										className="btn btn-info"
-										id=""
-										role="button"
-										aria-expanded="false"
-									>
-										Publicar Artículo
-									</button>
-								</Link>
-								<Link to="/Buy">
-									<MyButton
-										title="Publicar Búsqueda"
-										classButton="btn signup__button--register"
-									/>
-								</Link>
-								<button
-									className="btn signup__button--register dropdown-toggle ddt ms-2"
-									id="navbarScrollingDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-expanded="false"
-								>
-									<strong>
-										Favoritos (
-										{store.favorites.length > 0 ? store.favorites.length : 0})
-									</strong>
-								</button>
-								<ul
-									className="dropdown-menu ddt"
-									aria-labelledby="navbarScrollingDropdown"
-								>
-									{store.favorites.map((fav) => {
-										return (
-											<li key={fav.name}>
-												<a href="#" className="dropdown-item">
-													{fav.name}{" "}
-													<button
-														type="button"
-														className="btn btn-danger mx-2 boton"
-														onClick={(event) => actions.toggleFavorite(fav)}
-													>
-														<i className="fa-solid fa-trash"></i>
-													</button>
-												</a>
-											</li>
-										);
-									})}
-								</ul>
-							</>
-						)}
-					</div>
-					<div className="d-flex align-items-between ms-1">
-						{!store.token ? (
-							<Login />
-						) : (
-							<button
-								type="button"
-								className="btn btn-primary boton"
-								onClick={(event) => actions.logout()}
-							>
-								<strong>Salir</strong>
-							</button>
-						)}
-						<Search />
-					</div>
-				</div>
-			</div>
-		</nav>
-	);
+  return (
+    <nav className="navbar navbar-white bg-white text-light sticky-top">
+      <div className="container-fluid justify-content-between">
+        <div className="d-flex flex-row justify-content-center ms-3">
+          <Categories />
+        </div>
+        <div className="align-items-start">
+          <Link to="/">
+            <img src={logo} style={{ height: "50px" }} />
+          </Link>
+        </div>
+        <div className="d-flex flex-row p-1 text-center">
+          <div className="d-flex align-items-center">
+            {!store.token ? (
+              <Signup />
+            ) : (
+              <>
+                <Link to="/Publish">
+                  <MyButton
+                    title="Publicar Artículo"
+                    classButton="btn signup__button--register me-2"
+                  />
+                </Link>
+                <Link to="/Buy">
+                  <MyButton
+                    title="Publicar Búsqueda"
+                    classButton="btn signup__button--register"
+                  />
+                </Link>
+                <button
+                  className="btn signup__button--register dropdown-toggle ddt ms-2"
+                  id="navbarScrollingDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Favoritos (
+                  {store.favorites.length > 0 ? store.favorites.length : 0})
+                </button>
+                <ul
+                  className="dropdown-menu ddt"
+                  aria-labelledby="navbarScrollingDropdown"
+                >
+                  {store.favorites.map((fav) => {
+                    return (
+                      <li key={fav.name}>
+                        <a href="#" className="dropdown-item">
+                          {fav.name}{" "}
+                          <button
+                            type="button"
+                            className="btn btn-danger mx-2 boton"
+                            onClick={(event) => actions.toggleFavorite(fav)}
+                          >
+                            <i className="fa-solid fa-trash"></i>
+                          </button>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            )}
+          </div>
+          <div className="d-flex align-items-between ms-1">
+            {!store.token ? (
+              <Login />
+            ) : (
+              <MyButton
+                title="Salir"
+                classButton="btn signup__button--register"
+                onClick={(event) => actions.logout()}
+              />
+            )}
+            <Search />
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };

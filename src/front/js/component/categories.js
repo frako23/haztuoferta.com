@@ -12,14 +12,20 @@ export const Categories = () => {
 
   return (
     <>
-      <Button variant="info" className="btn signup__button--register" onClick={handleShow}>
+      <Button
+        variant="info"
+        className="btn signup__button--register"
+        onClick={handleShow}
+      >
         <i className="fa-solid fa-bars"></i>
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
-            <span className="h2"><strong>CATEGORIAS</strong></span>
+            <span className="h2">
+              <strong>CATEGORIAS</strong>
+            </span>
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
@@ -43,7 +49,7 @@ export const Categories = () => {
               <li className="categories">Celulares</li>
             </Link>
             <Link to="/Computadoras">
-              <li className="categories">Computación</li>
+              <li className="categories">Computadoras</li>
             </Link>
             <Link to="/">
               <li className="categories">Consolas y Videojuegos</li>
