@@ -21,13 +21,26 @@ const getState = ({ getStore, getActions, setStore }) => {
       computadoras: [],
       celulares: [],
       ofertas: [],
-      search: "",
+      searchText: "",
+      searchResults: [],
     },
 
     actions: {
       // Use getActions to call a function within a fuction
-      handleSearch: (product) => {
-        setStore({ search: product });
+      setSearchResults: (searchText) => {
+        setStore({ searchText: searchText });
+      },
+
+      handleSearch: () => {
+        const store = getStore();
+
+        let modelosComp = store.computadoras.filter(computadora => {
+          return computadora.marca.toLowerCase() == store.searchText
+
+        })
+        console.log(modelosComp)
+
+        setStore({ searchResults: modelosComp })
       },
 
       login: async (email, password) => {
