@@ -5,7 +5,7 @@ export const AboutUs = () => {
   return (
     <>
       <div className="about-section">
-        <h1>About Us Page</h1>
+        <h1>¿Quienes somos?</h1>
         <p>Some text about who we are and what we do.</p>
         <p>
           Resize the browser window to see that this page is responsive by the
@@ -13,65 +13,116 @@ export const AboutUs = () => {
         </p>
       </div>
 
-      <h2 className="text-center">Our Team</h2>
-      <div className="container d-flex flex-wrap justify-content-center">
-        <div className="column">
-          <div className="card">
-            <img src="/w3images/team1.jpg" alt="Francisco" />
-            <div className="container">
-              <h2>Francisco Orozco</h2>
-              <p className="title">CEO & Founder</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>jane@example.com</p>
-              <p>
-                <button className="button">Contact</button>
-              </p>
-            </div>
+      <h2 className="text-center fw-bold my-4 fs-1 p-2">Nuestro Equipo</h2>
+
+      {/* Francisco */}
+      <div className="container py-5 border-top ">
+        <div className="row d-flex justify-content-center ">
+          <div className="col-8">
+            <p className="fs-2 text fw-bolder">
+              Francisco{" "}
+              <span
+                className="text-secondary
+                        "
+              >
+                CEO
+              </span>{" "}
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id
+              dolorem molestiae maiores autem, minus amet libero nihil odit
+              consectetur, provident magni harum fuga tempore sunt praesentium
+              magnam architecto. Quibusdam.
+            </p>
+          </div>
+          <div className="col-4 w-auto">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              alt="imagen"
+              width="300px"
+              style={{ "border-radius": "50%" }}
+            />
           </div>
         </div>
+      </div>
 
-        <div className="column">
-          <div className="card">
-            <img src="/w3images/team2.jpg" alt="Piero" />
-            <div className="container">
-              <h2>Piero</h2>
-              <p className="title">Art Director</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>mike@example.com</p>
-              <p>
-                <button className="button">Contact</button>
-              </p>
-            </div>
+      {/* Piero */}
+      <div className="container py-5 border-top ">
+        <div className="row d-flex justify-content-center ">
+          <div className="col-4 w-auto">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              alt="imagen"
+              width="300px"
+              style={{ "border-radius": "50%" }}
+            />
+          </div>
+          <div className="col-8">
+            <p className="fs-2 text fw-bolder">
+              Piero <span className="text-secondary">CEO</span>{" "}
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id
+              dolorem molestiae maiores autem, minus amet libero nihil odit
+              consectetur, provident magni harum fuga tempore sunt praesentium
+              magnam architecto. Quibusdam.
+            </p>
           </div>
         </div>
+      </div>
 
-        <div className="column">
-          <div className="card">
-            <img src="/w3images/team3.jpg" alt="Javier" />
-            <div className="container">
-              <h2>Javier</h2>
-              <p className="title">Designer</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>john@example.com</p>
-              <p>
-                <button className="button">Contact</button>
-              </p>
-            </div>
+      {/* Javier */}
+      <div className="container py-5 border-top ">
+        <div className="row d-flex justify-content-center ">
+          <div className="col-8">
+            <p className="fs-2 text fw-bolder">
+              Javier{" "}
+              <span
+                className="text-secondary
+                        "
+              >
+                CEO
+              </span>{" "}
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id
+              dolorem molestiae maiores autem, minus amet libero nihil odit
+              consectetur, provident magni harum fuga tempore sunt praesentium
+              magnam architecto. Quibusdam.
+            </p>
+          </div>
+          <div className="col-4 w-auto">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              alt="imagen"
+              width="300px"
+              style={{ "border-radius": "50%" }}
+            />
           </div>
         </div>
+      </div>
 
-        <div className="column">
-          <div className="card">
-            <img src="/w3images/team2.jpg" alt="Luis" />
-            <div className="container">
-              <h2>Luis Camargo</h2>
-              <p className="title">Art Director</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-              <p>mike@example.com</p>
-              <p>
-                <button className="button">Contact</button>
-              </p>
-            </div>
+      {/* Luis */}
+      <div className="container py-5 border-top ">
+        <div className="row d-flex justify-content-center ">
+          <div className="col-4 w-auto">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              alt="imagen"
+              width="300px"
+              style={{ "border-radius": "50%" }}
+            />
+          </div>
+          <div className="col-8">
+            <p className="fs-2 text fw-bolder">
+              Luis <span className="text-secondary">CEO</span>{" "}
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id
+              dolorem molestiae maiores autem, minus amet libero nihil odit
+              consectetur, provident magni harum fuga tempore sunt praesentium
+              magnam architecto. Quibusdam.
+            </p>
           </div>
         </div>
       </div>
