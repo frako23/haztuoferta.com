@@ -5,15 +5,8 @@ import "../../styles/segmento.css";
 export const Segmento = () => {
 	return (
 		<React.Fragment>
-			<section className="section-products">
+			<section className="section-products mb-2">
 				<div className="container">
-					<div className="row justify-content-center text-center">
-						<div className="col-md-8 col-lg-6">
-							<div className="header">
-								<h2 className="display-5">COMPRA DIFERENTE</h2>
-							</div>
-						</div>
-					</div>
 					<div className="row">
 						<div className="col-md-6 col-lg-4 col-xl-3">
 							<Link className="seccion-link" to="/demo">

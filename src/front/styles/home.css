@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   font-size: 1rem;
   align-items: center;
   justify-content: center;

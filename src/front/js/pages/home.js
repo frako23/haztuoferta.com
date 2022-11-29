@@ -26,8 +26,8 @@ export const Home = () => {
 				</div>
 			</section>
 			<div className="container">
-				<h2 className="text-center my-4 display-6">Los Mas Buscados</h2>
-				<div className="itemcard gap-5">
+				<h2 className="text-left mt-5 mb-3 display-5"><strong>Los Mas Buscados</strong></h2>
+				<div className="itemcard gap-4">
 					{store.computadoras.map((computadoras, index) => {
 						return <ItemCard computadoras={computadoras} key={index} />;
 					})}
