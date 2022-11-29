@@ -149,17 +149,20 @@ def get_celulares():
 ofertas_de_compras = []
 
 
-@api.route('/ofertas_de_compras', methods=['GET', 'POST'])
-@jwt_required()
+@api.route('/get_ofertas_de_compras', methods=['GET'])
 def get_ofertas_de_compras():
+    ofertas_de_compras = Compra.query.all()
+    ofertas_de_compras_dictionaries = []
+    for oferta_de_compra in ofertas_de_compras:
+        ofertas_de_compras_dictionaries.append(
+            oferta_de_compra.serialize())
+    return jsonify(ofertas_de_compras_dictionaries), 200
+
+
+@api.route('/post_ofertas_de_compras', methods=['POST'])
+@jwt_required()
+def post_ofertas_de_compras():
     user_id = get_jwt_identity()
-    if request.method == 'GET':
-        ofertas_de_compras = Compra.query.all()
-        ofertas_de_compras_dictionaries = []
-        for oferta_de_compra in ofertas_de_compras:
-            ofertas_de_compras_dictionaries.append(
-                oferta_de_compra.serialize())
-        return jsonify(ofertas_de_compras_dictionaries), 200
     new_oferta_de_compra_data = request.json
     try:
         if "titulo" not in new_oferta_de_compra_data or new_oferta_de_compra_data["titulo"] == "":
