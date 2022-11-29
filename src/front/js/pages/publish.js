@@ -108,7 +108,7 @@ export const Publish = () => {
             //  || tipo_de_negocio == "Subasta" ?
 
             // (<Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-            //   <Form.Label>Precio</Form.Label>
+            //   <Form.Label>Precio de inicio</Form.Label>
             //   <div className="d-flex">
             //     <Form.Select
             //       aria-label="dropdown select"

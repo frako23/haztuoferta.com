@@ -12,11 +12,12 @@ db = SQLAlchemy()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(250), unique=False, nullable=False)
+    name = db.Column(db.String(50), unique=False, nullable=False)
     lastname = db.Column(db.String(50), unique=False, nullable=False)
     phone = db.Column(db.String(50), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
+    compras = db.relationship("Compra", backref="user", uselist=True)
 
     def __init__(self, **kwargs):
         self.name = kwargs['name']
@@ -196,20 +197,14 @@ class Compra(db.Model):
     categoria = db.Column(db.String(250), unique=False, nullable=False)
     oferta = db.Column(db.String(50), unique=False, nullable=False)
     descripcion = db.Column(db.String(500), unique=False, nullable=False)
-    user_name = Column(String, ForeignKey('user.name'))
-    user_lastname = Column(String, ForeignKey(user.lastname))
-    user_email = Column(String, ForeignKey(user.email))
-    user_phone = Column(String, ForeignKey(user.phone))
+    user_id = db.Column(db.Integer(), ForeignKey('user.id'))
 
     def __init__(self, **kwargs):
         self.titulo = kwargs['titulo']
         self.categoria = kwargs['categoria']
         self.oferta = kwargs['oferta']
         self.descripcion = kwargs['descripcion']
-        self.user_name = kwargs['user_name']
-        self.user_lastname = kwargs['user_lastname']
-        self.user_email = kwargs['user_email']
-        self.user_phone = kwargs['user_phone']
+        self.user_id = kwargs['user_id']
 
     @classmethod
     def create(cls, **kwargs):
@@ -230,10 +225,10 @@ class Compra(db.Model):
             "categoria": self.categoria,
             "oferta": self.oferta,
             "descripcion": self.descripcion,
-            "user_name": self.user_name,
-            "user_lastname": self.user_lastname,
-            "user_email": self.user_email,
-            "user_phone": self.user_phone
+            "user_name": self.user.name,
+            "user_lastname": self.user.lastname,
+            "user_email": self.user.email,
+            "user_phone": self.user.phone
             # do not serialize the password, its a security breach
         }
 

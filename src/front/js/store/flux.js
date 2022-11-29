@@ -34,13 +34,12 @@ const getState = ({ getStore, getActions, setStore }) => {
       handleSearch: () => {
         const store = getStore();
 
-        let modelosComp = store.computadoras.filter(computadora => {
-          return computadora.marca.toLowerCase() == store.searchText
+        let modelosComp = store.computadoras.filter((computadora) => {
+          return computadora.marca.toLowerCase() == store.searchText;
+        });
+        console.log(modelosComp);
 
-        })
-        console.log(modelosComp)
-
-        setStore({ searchResults: modelosComp })
+        setStore({ searchResults: modelosComp });
       },
 
       login: async (email, password) => {
@@ -199,11 +198,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       postOfertas: (data) => {
         const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        const store = getStore();
         fetch(apiURL, {
           method: "POST", // or 'POST'
           body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
           headers: {
             "Content-Type": "application/json",
+            Authorization: "Bearer" + " " + store.token,
           },
         })
           .then((res) => {

@@ -21,7 +21,7 @@ def login():
     if user is None:
         return jsonify({"msg": "Mal Email o Password"}), 401
 
-    access_token = create_access_token(identity=email)
+    access_token = create_access_token(identity=user.id)
     return jsonify(access_token=access_token)
 
 
@@ -150,7 +150,9 @@ ofertas_de_compras = []
 
 
 @api.route('/ofertas_de_compras', methods=['GET', 'POST'])
+@jwt_required()
 def get_ofertas_de_compras():
+    user_id = get_jwt_identity()
     if request.method == 'GET':
         ofertas_de_compras = Compra.query.all()
         ofertas_de_compras_dictionaries = []
@@ -168,7 +170,8 @@ def get_ofertas_de_compras():
             raise Exception("No ingresaste la oferta", 400)
         if "descripcion" not in new_oferta_de_compra_data or new_oferta_de_compra_data["descripcion"] == "":
             raise Exception("No ingresaste la descripcion", 400)
-        new_oferta_de_compra = Compra.create(**new_oferta_de_compra_data)
+        new_oferta_de_compra = Compra.create(
+            **new_oferta_de_compra_data, user_id=user_id)
         return jsonify(new_oferta_de_compra.serialize()), 201
     except Exception as error:
         return jsonify(error.args[0]), error.args[1] if len(error.args) > 1 else 500
