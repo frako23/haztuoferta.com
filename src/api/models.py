@@ -53,6 +53,7 @@ class User(db.Model):
 
 class Computadora(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    titulo = db.Column(db.String(500), unique=False, nullable=False)
     marca = db.Column(db.String(50), unique=False, nullable=False)
     modelo = db.Column(db.String(250), unique=False, nullable=False)
     procesador = db.Column(db.String(250), unique=False, nullable=False)
@@ -60,11 +61,13 @@ class Computadora(db.Model):
     memoria_ram = db.Column(db.String(50), unique=False, nullable=False)
     disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
+    moneda = db.Column(db.String(5), unique=False, nullable=False)
     precio = db.Column(db.String(80), unique=False, nullable=False)
     tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
 
     def __init__(self, **kwargs):
+        self.titulo = kwargs['titulo']
         self.marca = kwargs['marca']
         self.modelo = kwargs['modelo']
         self.procesador = kwargs['procesador']
@@ -72,6 +75,7 @@ class Computadora(db.Model):
         self.memoria_ram = kwargs['memoria_ram']
         self.disco_duro = kwargs['disco_duro']
         self.sistema_operativo = kwargs['sistema_operativo']
+        self.moneda = kwargs['moneda']
         self.precio = kwargs['precio']
         self.tipo_de_negocio = kwargs['tipo_de_negocio']
         self.nuevo_usado = kwargs['nuevo_usado']
@@ -91,6 +95,7 @@ class Computadora(db.Model):
     def serialize(self):
         return {
             "id": self.id,
+            "titulo": self.titulo,
             "marca": self.marca,
             "modelo": self.modelo,
             "procesador": self.procesador,
@@ -98,6 +103,7 @@ class Computadora(db.Model):
             "memoria_ram": self.memoria_ram,
             "disco_duro": self.disco_duro,
             "sistema_operativo": self.sistema_operativo,
+            "moneda": self.moneda,
             "precio": self.precio,
             "tipo_de_negocio": self.tipo_de_negocio,
             "nuevo_usado": self.nuevo_usado

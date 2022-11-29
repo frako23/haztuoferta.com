@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           initial: "white",
         },
       ],
-
+      usuarios: [],
       favorites: [],
       computadoras: [],
       celulares: [],
@@ -127,6 +127,19 @@ const getState = ({ getStore, getActions, setStore }) => {
       //     console.log("Error loading message from backend", error);
       //   }
       // },
+      getUsuarios: () => {
+        const apiURL = `${process.env.BACKEND_URL}/api/users`;
+
+        fetch(apiURL)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error("Ha ocurrido un error");
+          })
+          .then((body) => setStore({ usuarios: body }))
+          .catch((error) => console.log(error));
+      },
 
       getComputadoras: () => {
         const apiURL = `${process.env.BACKEND_URL}/api/computadoras`;

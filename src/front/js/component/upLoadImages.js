@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
 
 class CloudinaryUploadWidget extends Component {
   componentDidMount() {
@@ -48,9 +49,9 @@ class CloudinaryUploadWidget extends Component {
 
   render() {
     return (
-      <button type="button" id="upload_widget" className="cloudinary-button">
+      <Button variant="secondary" type="button" id="upload_widget" className="">
         Upload
-      </button>
+      </Button>
     );
   }
 }

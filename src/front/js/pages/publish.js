@@ -40,38 +40,8 @@ export const Publish = () => {
               }}
             />
           </InputGroup>
-          <Form.Group className="mb-3" controlId="formFile">
-            <div>
-              {selectedImage && (
-                <div>
-                  <img
-                    alt="not found"
-                    width={"100%"}
-                    height={"500px"}
-                    src={URL.createObjectURL(selectedImage)}
-                  />
-                  <br />
-                  <button
-                    className="rounded p-2 btn btn-primary position-absolute b-20"
-                    onClick={() => setSelectedImage(null)}
-                  >
-                    Remove
-                  </button>
-                </div>
-              )}
-              <br />
-
-              <br />
-              <input
-                className="form-control"
-                type="file"
-                name="myImage"
-                onChange={(event) => {
-                  console.log(event.target.files[0]);
-                  setSelectedImage(event.target.files[0]);
-                }}
-              />
-            </div>
+          <Form.Group className="mb-3 d-grid gap-2" controlId="formFile">
+            <Form.Label>Agregar fotos </Form.Label>
             <CloudinaryUploadWidget />
           </Form.Group>
 
@@ -108,6 +78,7 @@ export const Publish = () => {
               <option value="ropa">Ropa y Zapatos</option>
               <option value="otros">Otras categorías</option>
             </Form.Select>
+            {/* {categoria == "computadoras" ?} */}
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
             <Form.Label>Precio</Form.Label>

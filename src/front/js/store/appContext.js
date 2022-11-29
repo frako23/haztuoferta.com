@@ -30,6 +30,7 @@ const injectContext = (PassedComponent) => {
        **/ // <---- calling this function from the flux.js actions
       state.actions.getComputadoras();
       state.actions.getOfertas();
+      state.actions.getUsuarios();
       // state.actions.postOfertas();
     }, []);
 
