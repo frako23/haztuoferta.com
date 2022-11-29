@@ -18,10 +18,10 @@ export const Home = () => {
 				<div className="container d-flex flex-column mb-2">
 					<header>
 						<h1 className="display-4 text-bold text-center">Has Tu Oferta</h1>
-						<p className="text-center text-bold"> Oferta, Intercambia o Subasta tus Productos. Que esperas para comprar a tu manera?</p>
+						<p className="text-center text-bold"> <i>Oferta, Intercambia o Subasta tus Productos. Que esperas para comprar a tu manera?</i></p>
 					</header>
 					<div className="call-to-action text-center">
-						<button className="btn btn-outline-secondary">Compra Diferente, Resgístrate Ya!</button>
+						<button className="btn btn-outline-secondary">Compra Diferente, Regístrate Ya!</button>
 					</div>
 				</div>
 			</section>
