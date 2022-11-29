@@ -236,3 +236,37 @@ class Compra(db.Model):
             "user_phone": self.user_phone
             # do not serialize the password, its a security breach
         }
+
+
+class Publicar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    author = db.Column(db.Integer, db.ForeignKey('user.id'))
+    titulo = db.Column(db.String(250), unique=False, nullable=False)
+    categoria = db.Column(db.String(250), unique=False, nullable=False)
+    precio = db.Column(db.Integer, unique=False)
+    oferta = db.Column(db.String(50), unique=False, nullable=False)
+    descripcion = db.Column(db.String(500), unique=False, nullable=False)
+
+    def __init__(self, **kwargs):
+        self.titulo = kwargs['titulo']
+        self.categoria = kwargs['categoria']
+        self.precio = kwargs['precio']
+        self.oferta = kwargs['oferta']
+        self.descripcion = kwargs['descripcion']
+        self.author = kwargs['author']
+
+    @classmethod
+    def create(cls, **kwargs):
+        new_publicacion = cls(**kwargs)
+        db.session.add(new_publicacion)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "author": self.author,
+            "titulo": self.titulo,
+            "categoria": self.categoria,
+            "precio": self.precio,
+            "oferta": self.oferta,
+            "descripcion": self.descripcion
+        }

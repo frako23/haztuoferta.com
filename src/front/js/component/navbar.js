@@ -7,7 +7,7 @@ import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
 import { Button as MyButton } from "./Button";
-import logo from "../../img/logoSimple.png";
+import logo from "../../img/logoNavbar.png";
 import { Search } from "./Search";
 
 export const Navbar = (props) => {
