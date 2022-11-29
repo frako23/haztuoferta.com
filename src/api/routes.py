@@ -84,9 +84,13 @@ def get_computadoras():
         if "sistema_operativo" not in new_computadora_data or new_computadora_data["sistema_operativo"] == "":
             raise Exception("No ingresaste el sistema operativo", 400)
         if "moneda" not in new_computadora_data or new_computadora_data["moneda"] == "":
-            raise Exception("No ingresaste la moneda", 400)
+            raise Exception("No ingresaste el tipo de moneda", 400)
         if "precio" not in new_computadora_data or new_computadora_data["precio"] == "":
             raise Exception("No ingresaste el precio", 400)
+        if "descripcion" not in new_computadora_data or new_computadora_data["descripcion"] == "":
+            raise Exception("No ingresaste descripcion", 400)
+        if "img_url" not in new_computadora_data or new_computadora_data["img_url"] == "":
+            raise Exception("No ingresaste imagenes", 400)
         new_computadora = Computadora.create(**new_computadora_data)
         return jsonify(new_computadora.serialize()), 201
     except Exception as error:
@@ -106,6 +110,8 @@ def get_celulares():
         return jsonify(celulares_dictionaries), 200
     new_celular_data = request.json
     try:
+        if "titulo" not in new_celular_data or new_celular_data["titulo"] == "":
+            raise Exception("No ingresaste el titulo", 400)
         if "marca" not in new_celular_data or new_celular_data["marca"] == "":
             raise Exception("No ingresaste la marca", 400)
         if "modelo" not in new_celular_data or new_celular_data["modelo"] == "":
@@ -116,10 +122,12 @@ def get_celulares():
             raise Exception("No ingresaste la pantalla", 400)
         if "memoria_ram" not in new_celular_data or new_celular_data["memoria_ram"] == "":
             raise Exception("No ingresaste la memoria Ram", 400)
-        if "disco_duro" not in new_celular_data or new_celular_data["disco_duro"] == "":
-            raise Exception("No ingresaste el disco duro", 400)
+        if "almacenamiento_interno" not in new_celular_data or new_celular_data["almacenamiento_interno"] == "":
+            raise Exception("No ingresaste el almacenamiento interno", 400)
         if "sistema_operativo" not in new_celular_data or new_celular_data["sistema_operativo"] == "":
             raise Exception("No ingresaste el sistema operativo", 400)
+        if "moneda" not in new_celular_data or new_celular_data["moneda"] == "":
+            raise Exception("No ingresaste el tipo de moneda", 400)
         if "precio" not in new_celular_data or new_celular_data["precio"] == "":
             raise Exception("No ingresaste el precio", 400)
         if "bateria" not in new_celular_data or new_celular_data["bateria"] == "":
@@ -128,6 +136,10 @@ def get_celulares():
             raise Exception("No ingresaste la camara frontal", 400)
         if "camara_trasera" not in new_celular_data or new_celular_data["camara_trasera"] == "":
             raise Exception("No ingresaste la camara trasera", 400)
+        if "descriptcion" not in new_celular_data or new_celular_data["descripcion"] == "":
+            raise Exception("No ingresaste la descripcion", 400)
+        if "img_url" not in new_celular_data or new_celular_data["img_url"] == "":
+            raise Exception("No ingresaste las imagenes", 400)
         new_celular = Celular.create(**new_celular_data)
         return jsonify(new_celular.serialize()), 201
     except Exception as error:

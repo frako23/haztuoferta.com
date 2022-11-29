@@ -134,7 +134,6 @@ export const Publish = () => {
             //     />
             //   </div>
             // </Form.Group>)
-
             ""
           )}
           <br></br>
@@ -284,6 +283,19 @@ export const Publish = () => {
               }}
             />
           </Form.Group>
+          <Button
+            variant="primary"
+            // onClick={() => {
+            //   actions.postOfertas({
+            //     titulo: titulo,
+            //     categoria: categoria,
+            //     oferta: oferta,
+            //     descripcion: descripcion,
+            //   });
+            // }}
+          >
+            Publica tu producto
+          </Button>
         </Form>
       </div>
     </>
