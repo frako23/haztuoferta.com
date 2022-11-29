@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import { ItemCard } from "../component/ItemCard";
 import { Carousel } from "../component/carousel.js";
 import { Segmento } from "../component/Segmento";
+import CloudinaryUploadWidget from "../component/upLoadImages";
 
 export const Computadoras = () => {
   const { store, actions } = useContext(Context);
