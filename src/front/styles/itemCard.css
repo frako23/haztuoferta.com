@@ -1,8 +1,5 @@
-:root {
-    --main-background-color: #F9FBF2;
-    --main-top-background-color: #FBFEF9;
-    --main-accent-color: #FB8F67;
-    --title-color: #1E2019;
+.card-body {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .button.is-primary {

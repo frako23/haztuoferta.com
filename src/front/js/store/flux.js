@@ -16,18 +16,31 @@ const getState = ({ getStore, getActions, setStore }) => {
           initial: "white",
         },
       ],
-
+      usuarios: [],
       favorites: [],
       computadoras: [],
       celulares: [],
       ofertas: [],
-      search: "",
+      searchText: "",
+      searchResults: [],
     },
 
     actions: {
       // Use getActions to call a function within a fuction
-      handleSearch: (product) => {
-        setStore({ search: product });
+      setSearchResults: (searchText) => {
+        setStore({ searchText: searchText });
+      },
+
+      handleSearch: () => {
+        const store = getStore();
+
+        let modelosComp = store.computadoras.filter(computadora => {
+          return computadora.marca.toLowerCase() == store.searchText
+
+        })
+        console.log(modelosComp)
+
+        setStore({ searchResults: modelosComp })
       },
 
       login: async (email, password) => {
@@ -127,6 +140,19 @@ const getState = ({ getStore, getActions, setStore }) => {
       //     console.log("Error loading message from backend", error);
       //   }
       // },
+      getUsuarios: () => {
+        const apiURL = `${process.env.BACKEND_URL}/api/users`;
+
+        fetch(apiURL)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error("Ha ocurrido un error");
+          })
+          .then((body) => setStore({ usuarios: body }))
+          .catch((error) => console.log(error));
+      },
 
       getComputadoras: () => {
         const apiURL = `${process.env.BACKEND_URL}/api/computadoras`;
