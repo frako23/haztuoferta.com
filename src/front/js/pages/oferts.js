@@ -44,11 +44,12 @@ export const Oferts = (props) => {
                       placement="top"
                       overlay={
                         <Tooltip id={`tooltip-top`}>
-                          Francisco Orozco
+                          {oferta.user_name + oferta.user_lastname}Francisco
+                          Orozco
                           <br></br>
-                          frako23@gmail.com
+                          {oferta.user_email}frako23@gmail.com
                           <br></br>
-                          04242526757
+                          {oferta.user_phone}04242526757
                         </Tooltip>
                       }
                     >
