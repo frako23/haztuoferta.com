@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import InputGroup from "react-bootstrap/InputGroup";
 import "../../styles/publish.css";
 import CloudinaryUploadWidget from "../component/upLoadImages";
+import context from "react-bootstrap/esm/AccordionContext";
 
 export const Publish = () => {
   const [titulo, setTitulo] = useState("");
@@ -23,6 +24,7 @@ export const Publish = () => {
   const [tipo_de_negocio, setTipo_de_negocio] = useState("");
   const [nuevo_usado, setNuevo_usado] = useState("");
   const [img_url, setImg_url] = useState("");
+  const { store, actions } = useContext(Context);
 
   return (
     <>
@@ -317,7 +319,7 @@ export const Publish = () => {
                     tipo_de_negocio: tipo_de_negocio,
                     nuevo_usado: nuevo_usado,
                     descripcion: descripcion,
-                    img_url: "imagen",
+                    img_url: store.imageUrl,
                   });
                 }}
               >
