@@ -302,7 +302,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ notification: mensaje });
         setTimeout(() => {
           setStore({ notification: undefined });
-        }, 3000);
+        }, 10000);
       },
     },
   };

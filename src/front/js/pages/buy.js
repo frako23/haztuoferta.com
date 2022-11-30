@@ -16,6 +16,15 @@ export const Buy = () => {
   const handleShow = () => setShow(true);
   const [selectedImage, setSelectedImage] = useState(null);
   const { store, actions } = useContext(Context);
+  const sendData = () => {
+    actions.postOfertas({
+      titulo: titulo,
+      categoria: categoria,
+      oferta: oferta,
+      descripcion: descripcion,
+    });
+    actions.setNotification("¡Has creado tu oferta de compra exitosamente!");
+  };
 
   return (
     <>
@@ -101,17 +110,7 @@ export const Buy = () => {
               }}
             />
           </Form.Group>
-          <Button
-            variant="primary"
-            onClick={() => {
-              actions.postOfertas({
-                titulo: titulo,
-                categoria: categoria,
-                oferta: oferta,
-                descripcion: descripcion,
-              });
-            }}
-          >
+          <Button variant="primary" onClick={sendData}>
             !Haz tu oferta!
           </Button>
         </Form>

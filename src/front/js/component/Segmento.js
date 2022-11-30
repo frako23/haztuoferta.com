@@ -17,7 +17,7 @@ export const Segmento = () => {
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
-                      <img src="https://placehold.co/600x400?text=QUIERO+VENDER" />
+                      <img src={vender} />
                     </span>
                   </div>
                   <div className="seccion-inner text-center pt-5">
@@ -34,7 +34,7 @@ export const Segmento = () => {
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
-                      <img src="https://placehold.co/600x400?text=QUIERO+COMPRAR" />
+                      <img src={comprar} />
                     </span>
                   </div>
                   <div className="seccion-inner text-center pt-5">
@@ -51,7 +51,7 @@ export const Segmento = () => {
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
-                      <img src="https://placehold.co/600x400?text=QUIERO+CAMBIAR" />
+                      <img src={intercambiar} />
                     </span>
                   </div>
                   <div className="seccion-inner text-center pt-5">
@@ -68,7 +68,7 @@ export const Segmento = () => {
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
-                      <img src="https://placehold.co/600x400?text=QUIERO+SUBASTAR" />
+                      <img src={subastar} />
                     </span>
                   </div>
                   <div className="seccion-inner text-center pt-5">
