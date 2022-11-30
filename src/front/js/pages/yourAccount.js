@@ -83,7 +83,7 @@ export const YourAccount = () => {
                     <label className="form-label">Username</label>
                     <input
                       type="text"
-                      className="form-control mb-1"
+                      className="form-control mb-2"
                       value="Usuario"
                     />
                   </div>
@@ -91,7 +91,7 @@ export const YourAccount = () => {
                     <label className="form-label">Name</label>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control mb-2"
                       value="nombre"
                     />
                   </div>
@@ -99,7 +99,7 @@ export const YourAccount = () => {
                     <label className="form-label">E-mail</label>
                     <input
                       type="text"
-                      className="form-control mb-1"
+                      className="form-control mb-2"
                       value="correo"
                     />
                     <div className="alert alert-warning mt-3">
