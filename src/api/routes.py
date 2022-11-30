@@ -136,7 +136,7 @@ def get_celulares():
             raise Exception("No ingresaste la camara frontal", 400)
         if "camara_trasera" not in new_celular_data or new_celular_data["camara_trasera"] == "":
             raise Exception("No ingresaste la camara trasera", 400)
-        if "descriptcion" not in new_celular_data or new_celular_data["descripcion"] == "":
+        if "descripcion" not in new_celular_data or new_celular_data["descripcion"] == "":
             raise Exception("No ingresaste la descripcion", 400)
         if "img_url" not in new_celular_data or new_celular_data["img_url"] == "":
             raise Exception("No ingresaste las imagenes", 400)
