@@ -23,6 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       ofertas: [],
       searchText: "",
       searchResults: [],
+      imageUrl: "",
     },
 
     actions: {
@@ -123,6 +124,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ token: null });
       },
 
+      addUrl: (url) => {
+        const store = getStore();
+        setStore({ imageUrl: url });
+      },
       // exampleFunction: () => {
       //   getActions().changeColor(0, "green");
       // },

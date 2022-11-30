@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
+import { Context } from "../store/appContext";
 
 class CloudinaryUploadWidget extends Component {
+  static contextType = Context;
+
   componentDidMount() {
     const cloudName = "dzryoj9vr"; // replace with your own cloud name
     const uploadPreset = "qlqinjdl"; // replace with your own upload preset
@@ -32,6 +35,7 @@ class CloudinaryUploadWidget extends Component {
       (error, result) => {
         if (!error && result && result.event === "success") {
           console.log("Done! Here is the image info: ", result.info);
+          this.context.actions.addUrl(result.info.url);
           document
             .getElementById("uploadedimage")
             .setAttribute("src", result.info.secure_url);
