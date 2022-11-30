@@ -9,6 +9,7 @@ import { Login } from "./login";
 import { Button as MyButton } from "./Button";
 import logo from "../../img/logoNavbar.png";
 import { Search } from "./Search";
+import { Button } from "bootstrap";
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
@@ -80,11 +81,12 @@ export const Navbar = (props) => {
             {!store.token ? (
               <Login />
             ) : (
-              <MyButton
-                title="Salir"
+              <button
                 classButton="btn signup__button--register"
                 onClick={(event) => actions.logout()}
-              />
+              >
+                Salir
+              </button>
             )}
             <Search />
           </div>
