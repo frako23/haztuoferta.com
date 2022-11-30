@@ -184,7 +184,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getOfertas: () => {
-        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        const apiURL = `${process.env.BACKEND_URL}/api/get_ofertas_de_compras`;
         fetch(apiURL)
           .then((response) => {
             if (response.ok) {
@@ -197,7 +197,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postOfertas: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        const apiURL = `${process.env.BACKEND_URL}/api/post_ofertas_de_compras`;
         const store = getStore();
         fetch(apiURL, {
           method: "POST", // or 'POST'
