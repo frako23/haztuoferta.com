@@ -8,9 +8,6 @@ import "../../styles/publish.css";
 import CloudinaryUploadWidget from "../component/upLoadImages";
 
 export const Publish = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   const [titulo, setTitulo] = useState("");
   const [categoria, setCategoria] = useState("");
   const [moneda, setMoneda] = useState("");
@@ -25,6 +22,7 @@ export const Publish = () => {
   const [sistema_operativo, setSistema_operativo] = useState("");
   const [tipo_de_negocio, setTipo_de_negocio] = useState("");
   const [nuevo_usado, setNuevo_usado] = useState("");
+  const [img_url, setImg_url] = useState("");
 
   return (
     <>
@@ -177,6 +175,7 @@ export const Publish = () => {
             <Form.Label>Categoria</Form.Label>
             <Form.Select
               aria-label="dropdown select"
+              className="mb-3"
               onChange={(e) => {
                 setCategoria(e.target.value);
               }}
@@ -303,14 +302,24 @@ export const Publish = () => {
               />
               <Button
                 variant="primary"
-                // onClick={() => {
-                //   actions.postOfertas({
-                //     titulo: titulo,
-                //     categoria: categoria,
-                //     oferta: oferta,
-                //     descripcion: descripcion,
-                //   });
-                // }}
+                onClick={() => {
+                  actions.postComputadoras({
+                    titulo: titulo,
+                    marca: marca,
+                    modelo: modelo,
+                    procesador: procesador,
+                    pantalla: pantalla,
+                    memoria_ram: memoria_ram,
+                    disco_duro: disco_duro,
+                    sistema_operativo: sistema_operativo,
+                    moneda: moneda,
+                    precio: precio,
+                    tipo_de_negocio: tipo_de_negocio,
+                    nuevo_usado: nuevo_usado,
+                    descripcion: descripcion,
+                    img_url: "imagen",
+                  });
+                }}
               >
                 Publica tu producto
               </Button>
