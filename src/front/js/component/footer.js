@@ -24,7 +24,9 @@ export const Footer = () => (
                 Inicia Hoy
               </h6>
               <p>
-                <a className="text-black">Tu Cuenta</a>
+                <a href="./Account" className="text-black">
+                  Tu Cuenta
+                </a>
               </p>
               <p>
                 <a className="text-black">Afilia tu Negocio</a>
@@ -84,7 +86,10 @@ export const Footer = () => (
             <div className="col-md-7 col-lg-8 text-center text-md-start">
               <div className="p-3">
                 Copyright © 2022
-                <a className="text-black m-1" href="https://github.com/frako23/haztuoferta.com">
+                <a
+                  className="text-black m-1"
+                  href="https://github.com/frako23/haztuoferta.com"
+                >
                   HazTuOferta.com
                 </a>
               </div>
