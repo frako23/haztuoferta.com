@@ -12,35 +12,50 @@ export const YourAccount = () => {
             <div className="list-group list-group-flush account-settings-links">
               <a
                 className="list-group-item list-group-item-action active"
-                data-toggle="list"
+                data-bs-toggle="list"
+                role="tab"
+                aria-controls="account-general"
                 href="#account-general"
+                id="list-general-list"
               >
                 General
               </a>
               <a
                 className="list-group-item list-group-item-action"
-                data-toggle="list"
+                data-bs-toggle="list"
+                role="tab"
+                aria-controls="account-change-password"
                 href="#account-change-password"
+                id="list-password-list"
               >
                 Cambiar contraseña
               </a>
               <a
                 className="list-group-item list-group-item-action"
-                data-toggle="list"
+                data-bs-toggle="list"
+                role="tab"
+                aria-controls="account-info"
                 href="#account-info"
+                id="list-info-list"
               >
                 Info
               </a>
               <a
                 className="list-group-item list-group-item-action"
-                data-toggle="list"
+                data-bs-toggle="list"
+                role="tab"
+                aria-controls="account-security"
+                id="list-security-list"
                 href="#account-security"
               >
                 Seguridad y Privacidad
               </a>
               <a
                 className="list-group-item list-group-item-action"
-                data-toggle="list"
+                data-bs-toggle="list"
+                role="tab"
+                aria-controls="account-notifications"
+                id="list-notification-list"
                 href="#account-notifications"
               >
                 Notificaciones
@@ -110,7 +125,11 @@ export const YourAccount = () => {
                   </div>
                 </div>
               </div>
-              <div className="tab-pane fade" id="account-change-password">
+              <div
+                className="tab-pane fade"
+                id="account-change-password"
+                aria-labelledby="list-password-list"
+              >
                 <div className="card-body pb-2">
                   <div className="form-group">
                     <label className="form-label">Current password</label>
