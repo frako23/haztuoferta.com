@@ -27,7 +27,7 @@ export const ItemCard = (props) => {
 						></img>
 					</figure>
 				</div>
-				<div className="card-body d-flex flex-column justify-content-between">
+				<div className="card-body d-flex flex-column text-center justify-content-between">
 					<Card.Title>{props.computadoras.marca}</Card.Title>
 					<ListGroup variant="flush">
 						<ListGroup.Item>{props.computadoras.modelo}</ListGroup.Item>
@@ -36,7 +36,7 @@ export const ItemCard = (props) => {
 						</ListGroup.Item>
 						<ListGroup.Item>{props.computadoras.precio}</ListGroup.Item>
 					</ListGroup>
-					<div>
+					<div className="d-flex justify-content-around">
 						<Button variant="success">Haz tu Oferta!</Button>{" "}
 						<Button variant="outline-danger">
 							<i className="fa-regular fa-heart"></i>

@@ -9,7 +9,7 @@ export const Segmento = () => {
 				<div className="container">
 					<div className="row">
 						<div className="col-md-6 col-lg-4 col-xl-3">
-							<Link className="seccion-link" to="/demo">
+							<Link className="seccion-link" to="/Secciones">
 								<div className="seccion">
 									<div className="image">
 										<span className="img-card">
@@ -26,7 +26,7 @@ export const Segmento = () => {
 							</Link>
 						</div>
 						<div className="col-md-6 col-lg-4 col-xl-3">
-							<Link className="seccion-link" to="/oferts">
+							<Link className="seccion-link" to="/Secciones">
 								<div className="seccion">
 									<div className="image">
 										<span className="img-card">
@@ -43,7 +43,7 @@ export const Segmento = () => {
 							</Link>
 						</div>
 						<div className="col-md-6 col-lg-4 col-xl-3">
-							<Link className="seccion-link" to="/demo">
+							<Link className="seccion-link" to="/Secciones">
 								<div className="seccion">
 									<div className="image">
 										<span className="img-card">
@@ -60,7 +60,7 @@ export const Segmento = () => {
 							</Link>
 						</div>
 						<div className="col-md-6 col-lg-4 col-xl-3">
-							<Link className="seccion-link" to="/demo">
+							<Link className="seccion-link" to="/Secciones">
 								<div className="seccion">
 									<div className="image">
 										<span className="img-card">
