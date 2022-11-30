@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
-import "../../styles/banner.css";
 import { ItemCard } from "../component/ItemCard";
 import { Carousel } from "../component/carousel.js";
 import { Segmento } from "../component/Segmento";
+import { Link } from "react-router-dom";
+import "../../styles/home.css";
+import "../../styles/banner.css";
 
 
 export const Home = () => {

@@ -8,7 +8,6 @@ import { Signup } from "./signup";
 import { Login } from "./login";
 import { Button as MyButton } from "./Button";
 import logo from "../../img/logoNavbar.png";
-import logo2 from "../../img/logo_2.png";
 import { Search } from "./Search";
 
 export const Navbar = (props) => {
@@ -20,7 +19,7 @@ export const Navbar = (props) => {
         <div className="d-flex flex-row justify-content-center ms-3">
           <Categories />
         </div>
-        <div className="align-items-start">
+        <div className="align-items-start my-1">
           <Link to="/">
             <img src={logo} style={{ height: "50px" }} />
           </Link>

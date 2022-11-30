@@ -20,7 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0px;
-  background-color: #ffffff;
+  background-color: #ffffff !important;
 }
 
 .carousel {
