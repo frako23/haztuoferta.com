@@ -45,7 +45,6 @@ export const Oferts = (props) => {
                       overlay={
                         <Tooltip id={`tooltip-top`}>
                           {oferta.user_name + " " + oferta.user_lastname}
-                          Orozco
                           <br></br>
                           {oferta.user_email}
                           <br></br>
