@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Computadoras } from "./pages/computadoras";
+import { Celulares } from "./pages/Celulares";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
@@ -42,6 +43,7 @@ const Layout = () => {
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />
             <Route element={<Computadoras />} path="/computadoras" />
+            <Route element={<Celulares />} path="/celulares" />
             <Route element={<Secciones />} path="/Secciones" />
             <Route element={<Single />} path="/single/:theid" />
             <Route element={<Publish />} path="/Publish" />
