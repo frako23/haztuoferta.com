@@ -22,12 +22,12 @@ export const ItemCard = (props) => {
           <img
             src={props.computadoras.img_url}
             className="card-img-top w-100"
-            style={{ height: "400px" }}>
+            style={{ height: "300px" }}>
           </img>
           <div className="card-body">
             <div className="d-flex justify-content-between">
               <span className="item-title font-weight-bold h5"><strong>{props.computadoras.marca} {props.computadoras.modelo}</strong></span>
-              <span className="item-price-weight-bold h5"><strong>$ {props.computadoras.precio}</strong></span>
+              <span className="item-price-weight-bold h5"><strong>{props.computadoras.moneda + " " + props.computadoras.precio}</strong></span>
             </div>
             <p className="item-description card-text mb-1 mt-1">
               {props.computadoras.titulo}
@@ -39,7 +39,7 @@ export const ItemCard = (props) => {
           <hr />
           <div className="card-body adjust-content-between">
             <div className="text-right buttons">
-              <button className="btn btn-outline-dark">Agregar a Favoritos</button> <button className="btn btn-dark">Ver más!</button> </div>
+              <button className="btn btn-outline-dark">Agregar a Favoritos</button> <Link to={`singleComp/${props.computadoras.id}`}><button className="btn btn-dark">Ver más!</button></Link> </div>
           </div>
         </div>
       </div>
