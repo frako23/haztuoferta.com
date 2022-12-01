@@ -22,7 +22,7 @@ export const Segmento = () => {
                   </div>
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
-                      <h2>VENDE</h2>
+                      <h2 className="pb-3">PRODUCTOS EN VENTA</h2>
                       <h3>Vende tu Producto!</h3>
                     </div>
                   </div>
@@ -39,7 +39,7 @@ export const Segmento = () => {
                   </div>
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
-                      <h2>COMPRA</h2>
+                      <h2 className="pb-3">OFERTAS DE COMPRA</h2>
                       <h3>Haz una Oferta!</h3>
                     </div>
                   </div>
@@ -56,7 +56,7 @@ export const Segmento = () => {
                   </div>
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
-                      <h2>INTERCAMBIA</h2>
+                      <h2 className="pb-3">INTERCAMBIOS</h2>
                       <h3>Porpón un Trueque!</h3>
                     </div>
                   </div>
@@ -73,7 +73,7 @@ export const Segmento = () => {
                   </div>
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
-                      <h2>SUBASTA</h2>
+                      <h2 className="pb-3">SUBASTAS</h2>
                       <h3>Subasta tu Producto!</h3>
                     </div>
                   </div>
