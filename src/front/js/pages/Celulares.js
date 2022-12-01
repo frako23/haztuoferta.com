@@ -26,19 +26,20 @@ export const Celulares = () => {
                                     </img>
                                     <div className="card-body">
                                         <div className="d-flex justify-content-between">
-                                            <span className="font-weight-bold"><strong>Título del Producto</strong></span>
-                                            <span className="font-weight-bold"><strong>$550</strong></span>
+                                            <span className="item-title font-weight-bold h5"><strong>Título del Producto</strong></span>
+                                            <span className="item-price-weight-bold h5"><strong>$550</strong></span>
                                         </div>
-                                        <p className="card-text mb-1 mt-1">
+                                        <p className="item-description card-text mb-1 mt-1">
                                             Breve descripcion del artículo, características.
                                         </p>
                                         <div className="d-flex align-items-center flex-row">
-                                            <span className="guarantee">Tipo de Oferta</span>
+                                            <span className="offer-type guarantee h6">Tipo de Oferta</span>
                                         </div>
                                     </div>
                                     <hr />
                                     <div className="card-body adjust-content-between">
-                                        <div className="text-right buttons"> <button className="btn btn-outline-dark">Agregar a Favoritos</button> <button className="btn btn-dark">Hacer una Oferta!</button> </div>
+                                        <div className="text-right buttons">
+                                            <button className="btn btn-outline-dark">Agregar a Favoritos</button> <button className="btn btn-dark">Ver más!</button> </div>
                                     </div>
                                 </div>
                             </div>

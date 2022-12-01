@@ -11,6 +11,12 @@ import "../../styles/banner.css";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
+	const { computadoras, celulares } = store;
+
+	let productos = computadoras.concat(celulares);
+
+	console.log(productos);
+
 	return (
 		<React.Fragment>
 			<Carousel />
@@ -29,7 +35,7 @@ export const Home = () => {
 			<div className="container">
 				<h2 className="text-left mt-5 mb-3 display-5"><strong>Los Mas Buscados</strong></h2>
 				<div className="itemcard gap-4">
-					{store.computadoras.map((computadoras, index) => {
+					{productos.map((computadoras, index) => {
 						return <ItemCard computadoras={computadoras} key={index} />;
 					})}
 				</div>

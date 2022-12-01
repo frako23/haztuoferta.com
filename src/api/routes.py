@@ -183,7 +183,7 @@ def post_ofertas_de_compras():
 @api.route('/producto/<string:product_name>', methods=['GET'])
 def get_products(product_name):
 
-    # product_name = f"%{product_name}%"image.png
+    # product_name = f"%{product_name}%"
 
     products = Computadora.query.filter(
         Computadora.modelo.ilike('%' + product_name + '%')).limit(10).all()

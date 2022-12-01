@@ -7,32 +7,14 @@ export const Search = () => {
 
   const [value, setValue] = useState("");
 
-  const onChange = (event) => {
-    setValue(event.target.value);
-  };
-
   const [searchResults, setSearchResults] = useState([]);
-
-  const onSearch = (searchTerm) => {
-    // API to fetch the search result
-    let matchComputers = [];
-    let matchCellphones = [];
-
-    if (searchTerm.length > 0) {
-      matchComputers = store.computadoras.filter((modelo) => {
-        return computadoras.modelo.match;
-      });
-    }
-
-    console.log("search", searchTerm);
-  };
 
   return (
     <React.Fragment>
       <div className="container">
         <div className="input-group">
           <input
-            value={store.searchText}
+            // value={value}
             onChange={(event) => actions.setSearchResults(event.target.value)}
             style={{ minWidth: "150px" }}
             type="text"
@@ -48,7 +30,7 @@ export const Search = () => {
               <i className="fa fa-search fa-fw"></i>
             </button>
           </span>
-          <div className="suggestions">{}</div>
+          <div className="suggestions">{ }</div>
         </div>
       </div>
     </React.Fragment>
