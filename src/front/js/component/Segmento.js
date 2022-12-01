@@ -30,7 +30,11 @@ export const Segmento = () => {
               </Link>
             </div>
             <div className="col-md-6 col-lg-4 col-xl-3">
-              <Link className="seccion-link" to="/Oferts">
+              <Link
+                className="seccion-link"
+                to="/Oferts"
+                preventScrollReset={true}
+              >
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
