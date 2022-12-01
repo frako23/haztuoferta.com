@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/segmento.css";
-import comprar from "../../img/compras.jpg";
-import vender from "../../img/vende.jpg";
-import intercambiar from "../../img/Screenshot 2022-11-30 3.17.53 PM.png";
-import subastar from "../../img/Screenshot 2022-11-30 3.21.02 PM.png";
+import comprar from "../../img/COMPRA.png";
+import vender from "../../img/VENTA.png";
+import intercambiar from "../../img/INTERCAMBIO.png";
+import subastar from "../../img/SUBASTAS.png";
 
 export const Segmento = () => {
   return (
