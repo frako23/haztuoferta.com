@@ -39,7 +39,9 @@ export const ItemCard = (props) => {
             </ListGroup.Item>
           </ListGroup>
           <div className="d-flex justify-content-around">
-            <Button variant="success">Haz tu Oferta!</Button>{" "}
+            <Link to={`singleComp/${props.computadoras.id}`}>
+              <Button variant="success">Haz tu Oferta!</Button>{" "}
+            </Link>
             <Button variant="outline-danger">
               <i className="fa-regular fa-heart"></i>
             </Button>
