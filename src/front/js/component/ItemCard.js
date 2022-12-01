@@ -34,7 +34,9 @@ export const ItemCard = (props) => {
             <ListGroup.Item>
               {props.computadoras.tipo_de_negocio}
             </ListGroup.Item>
-            <ListGroup.Item>{props.computadoras.precio}</ListGroup.Item>
+            <ListGroup.Item>
+              {props.computadoras.moneda + " " + props.computadoras.precio}
+            </ListGroup.Item>
           </ListGroup>
           <div className="d-flex justify-content-around">
             <Button variant="success">Haz tu Oferta!</Button>{" "}

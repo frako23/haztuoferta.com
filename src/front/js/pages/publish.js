@@ -321,6 +321,9 @@ export const Publish = () => {
                     descripcion: descripcion,
                     img_url: store.imageUrl,
                   });
+                  actions.setNotification(
+                    "¡Has publicado tu producto exitosamente!"
+                  );
                 }}
               >
                 Publica tu producto

@@ -8,7 +8,7 @@ import { Comments } from "../component/Comments";
 import "../../styles/comments.css";
 import "../../styles/single.css";
 
-export const Single = (props) => {
+export const SingleComp = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
 
