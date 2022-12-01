@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import { Comments } from "../component/Comments";
+import { ProductGallery } from "../component/productGallery";
 import "../../styles/comments.css";
 import "../../styles/single.css";
 
@@ -170,7 +171,6 @@ export const Single = (props) => {
         ;
       </div>
     </div>
-
     //   <h1 classNameName="display-4">This will show the demo element: </h1>
     //   <img src={rigoImageUrl} />
     //   <hr classNameName="my-4" />
