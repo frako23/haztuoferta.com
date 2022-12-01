@@ -48,9 +48,14 @@ export const ItemCard = (props) => {
               <button className="btn btn-outline-dark">
                 Agregar a Favoritos
               </button>{" "}
-              <Link to={`singleComp/${props.computadoras.id}`}>
-                <button className="btn btn-dark">Ver más!</button>
-              </Link>{" "}
+              <button
+                className="btn btn-dark"
+                onClick={(event) =>
+                  navigate(`/singleComp/${props.computadoras.id}`)
+                }
+              >
+                Ver más!
+              </button>
             </div>
           </div>
         </div>
