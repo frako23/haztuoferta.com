@@ -5,7 +5,7 @@ import { Computadoras } from "./pages/computadoras";
 import { Celulares } from "./pages/Celulares";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
+import { SingleComp } from "./pages/singleComp";
 import injectContext, { Context } from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -45,7 +45,7 @@ const Layout = () => {
             <Route element={<Computadoras />} path="/computadoras" />
             <Route element={<Celulares />} path="/celulares" />
             <Route element={<Secciones />} path="/Secciones" />
-            <Route element={<Single />} path="/single/:theid" />
+            <Route element={<SingleComp />} path="/singleComp/:id" />
             <Route element={<Publish />} path="/Publish" />
             <Route element={<Buy />} path="/Buy" />
             <Route element={<Oferts />} path="/Oferts" />

@@ -24,6 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       searchText: "",
       searchResults: [],
       imageUrl: "",
+      favoritos: [],
     },
 
     actions: {
@@ -310,6 +311,28 @@ const getState = ({ getStore, getActions, setStore }) => {
         setTimeout(() => {
           setStore({ notification: undefined });
         }, 10000);
+      },
+      toggleFavorite: (item) => {
+        const store = getStore();
+        const actions = getActions();
+        if (actions.isFavorite(item.name)) {
+          const newFavorites = store.favorites.filter((fav) => {
+            return fav.name !== item.name;
+          });
+          setStore({
+            favorites: newFavorites,
+          });
+        } else {
+          setStore({
+            favorites: [...store.favorites, item],
+          });
+        }
+      },
+      isFavorite: (name) => {
+        const store = getStore();
+        return store.favorites.find((favorite) => {
+          return favorite.name == name;
+        });
       },
     },
   };

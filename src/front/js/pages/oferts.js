@@ -19,7 +19,7 @@ export const Oferts = (props) => {
   return (
     <div className="container">
       <div className="text-center">
-        <h1>Ofertas de Compra 🤑</h1>
+        <h1 className="py-5">Ofertas de Compra 🤑</h1>
         <Table striped>
           <thead>
             <tr>
