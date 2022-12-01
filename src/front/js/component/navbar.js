@@ -82,7 +82,7 @@ export const Navbar = (props) => {
               <Login />
             ) : (
               <button
-                classButton="btn signup__button--register"
+                className="btn signup__button--register"
                 onClick={(event) => actions.logout()}
               >
                 Salir
