@@ -29,20 +29,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 
     actions: {
       // Use getActions to call a function within a fuction
-      setSearchResults: (searchText) => {
-        setStore({ searchText: searchText });
-      },
 
-      handleSearch: () => {
+      setSearchResults: (searchText) => {
         const store = getStore();
 
-        let modelosComp = store.computadoras.filter((computadora) => {
-          return computadora.marca.toLowerCase() == store.searchText;
-        });
-        console.log(modelosComp);
+        let productos = store.computadoras.concat(store.celulares);
 
-        setStore({ searchResults: modelosComp });
+        let formatSearchText = searchText.toLowerCase();
+
+        setStore({ searchResults: [] });
+
+        let results = productos.filter((product) => product.titulo.includes(formatSearchText))
+        console.log(results);
+
+        setStore({ searchResults: results });
       },
+
 
       login: async (email, password) => {
         const opts = {

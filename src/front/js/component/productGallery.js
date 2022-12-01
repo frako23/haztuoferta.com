@@ -1,5 +1,5 @@
 import React from "react";
-import $ from "jquery";
+// import $ from "jquery";
 import "../../styles/productGallery.css";
 
 export const ProductGallery = () => {
@@ -83,10 +83,10 @@ export const ProductGallery = () => {
       result.css(
         "backgroundPosition",
         "-" +
-          (x - img.offset().left) * cx +
-          "px -" +
-          (y - img.offset().top) * cy +
-          "px"
+        (x - img.offset().left) * cx +
+        "px -" +
+        (y - img.offset().top) * cy +
+        "px"
       );
     }
   }
