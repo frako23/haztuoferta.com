@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import { Comments } from "../component/Comments";
-import { ProductGallery } from "../component/productGallery";
+// import { ProductGallery } from "../component/productGallery";
 import "../../styles/comments.css";
 import "../../styles/single.css";
 
