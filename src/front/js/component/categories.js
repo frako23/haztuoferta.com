@@ -30,67 +30,67 @@ export const Categories = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul style={{ "list-style": "none" }}>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Accesorios para bebés</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Accesorios para mascotas</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Artículos de colección</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Carros y Motos</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Cámaras y Accesorios</li>
             </Link>
-            <Link to="/Celulares">
+            <Link to="/Celulares" onClick={handleClose}>
               <li className="categories">Celulares</li>
             </Link>
-            <Link to="/computadoras">
+            <Link to="/computadoras" onClick={handleClose}>
               <li className="categories">Computadoras</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Consolas y Videojuegos</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Electrodomésticos</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Deporte y Fitness</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Electrónica, audio y video</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Herramientas</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Hogar</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Inmuebles</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Instrumentos musicales</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Juguetes</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Joyas</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Libros</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Repuestos para vehículos</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Ropa y Zapatos</li>
             </Link>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <li className="categories">Otras categorías</li>
             </Link>
           </ul>
