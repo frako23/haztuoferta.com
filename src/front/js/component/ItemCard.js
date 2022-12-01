@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
@@ -8,7 +8,10 @@ import Card from "react-bootstrap/Card";
 import "../../styles/itemCard.css";
 
 export const ItemCard = (props) => {
+
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (store.computadoras.length > 0) {
       actions.getComputadoras();
@@ -39,7 +42,7 @@ export const ItemCard = (props) => {
           <hr />
           <div className="card-body adjust-content-between">
             <div className="text-right buttons">
-              <button className="btn btn-outline-dark">Agregar a Favoritos</button> <Link to={`singleComp/${props.computadoras.id}`}><button className="btn btn-dark">Ver más!</button></Link> </div>
+              <button className="btn btn-outline-dark">Agregar a Favoritos</button> <button className="btn btn-dark" onClick={(event) => navigate(`/singleComp/${props.computadoras.id}`)}>Ver más!</button></div>
           </div>
         </div>
       </div>
