@@ -77,7 +77,7 @@ export const SingleComp = (props) => {
                 <div className="mt-2 pr-3 content">
                   <div className="card-body">
                     <h1 className="card-title">
-                      {/* {comp.marca + " " + comp.modelo} */}
+                      {comp && comp.marca + " " + comp.modelo}
                     </h1>
                     <Table striped bordered hover variant="dark">
                       <thead>

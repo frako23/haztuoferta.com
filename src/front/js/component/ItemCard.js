@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
@@ -9,15 +9,11 @@ import "../../styles/itemCard.css";
 
 export const ItemCard = (props) => {
   const { store, actions } = useContext(Context);
-  useEffect(() => {
-    if (store.computadoras.length > 0) {
-      actions.getComputadoras();
-    }
-  }, []);
+  const navigate = useNavigate();
 
   return (
     <React.Fragment>
-      <div className="card col-12 col-md-3" style={{ minwidth: "14rem" }}>
+      <div className="card col-12 col-md-3" style={{ minWidth: "14rem" }}>
         <div className="card-image">
           <figure className="image">
             <img
@@ -39,9 +35,14 @@ export const ItemCard = (props) => {
             </ListGroup.Item>
           </ListGroup>
           <div className="d-flex justify-content-around">
-            <Link to={`singleComp/${props.computadoras.id}`}>
-              <Button variant="success">Haz tu Oferta!</Button>{" "}
-            </Link>
+            <Button
+              variant="success"
+              onClick={(event) =>
+                navigate(`/singleComp/${props.computadoras.id}`)
+              }
+            >
+              Haz tu Oferta!
+            </Button>{" "}
             <Button variant="outline-danger">
               <i className="fa-regular fa-heart"></i>
             </Button>
