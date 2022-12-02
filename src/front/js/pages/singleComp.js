@@ -89,7 +89,7 @@ export const SingleComp = (props) => {
                         <li className="list-group-item">Marca -  HP</li>
                         <li className="list-group-item">Pantalla 13.3</li>
                         <li className="list-group-item">Procesador AMD Ryzen™ 7</li>
-                        <li className="list-group-item">Unidad de estado sólido de 512 GB PCIe® NVMe™ M.2</li>
+                        <li className="list-group-item">Disco duro SSD de 512 GB </li>
                         <li className="list-group-item">8 GB de RAM DDR4-3200 MHz (integrada)</li>
                     </ul>
 
@@ -99,9 +99,8 @@ export const SingleComp = (props) => {
                     <div className="product-info-price">
                       <div className="price-box price-final_price">
                       <span className="price-container price-final_price tax weee" translate="no">
-                      <span id="product-price-9470" data-price-amount="28499" data-price-type="finalPrice" className="price-wrapper ">
                         <h5>Precio</h5>
-                        <span className="price">$28,499.00</span></span>
+                        <span className="price">$28,499.00</span>
                         </span>
                       </div>
                     </div>
