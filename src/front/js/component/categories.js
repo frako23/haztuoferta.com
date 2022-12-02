@@ -45,7 +45,7 @@ export const Categories = () => {
             <Link to="/">
               <li className="categories">Cámaras y Accesorios</li>
             </Link>
-            <Link to="/Celulares">
+            <Link to="/celulares">
               <li className="categories">Celulares</li>
             </Link>
             <Link to="/computadoras">

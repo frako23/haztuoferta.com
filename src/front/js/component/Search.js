@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Search = () => {
   const { store, actions } = useContext(Context);
+
+  const location = useLocation();
 
   const [value, setValue] = useState("");
 
@@ -15,7 +17,11 @@ export const Search = () => {
         <div className="input-group">
           <input
             // value={value}
-            onChange={(event) => actions.setSearchResults(event.target.value)}
+            onChange={(event) => actions.setSearchResults(event.target.value,
+              ["computadoras", "celulares"].includes(location.pathname.replace("/", ""))
+                ? location.pathname.replace("/", "")
+                : undefined
+            )}
             style={{ minWidth: "150px" }}
             type="text"
             className="form-control shadow-none border border-dark rounded-0"
@@ -25,7 +31,7 @@ export const Search = () => {
             <button
               className="btn btn-search"
               type="button"
-              onClick={() => actions.handleSearch()}
+              onClick={() => { }}
             >
               <i className="fa fa-search fa-fw"></i>
             </button>

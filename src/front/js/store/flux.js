@@ -30,14 +30,20 @@ const getState = ({ getStore, getActions, setStore }) => {
     actions: {
       // Use getActions to call a function within a fuction
 
-      setSearchResults: (searchText) => {
+      setSearchResults: (searchText, productType = undefined) => {
+
         const store = getStore();
 
-        let productos = store.computadoras.concat(store.celulares);
+        let productos = []
+
+        if (!productType) {
+          productos = store.computadoras.concat(store.celulares);
+        }
+        else {
+          productos = [...store[productType]]
+        }
 
         let formatSearchText = searchText.toLowerCase();
-
-        setStore({ searchResults: [] });
 
         let results = productos.filter((product) => product.titulo.includes(formatSearchText))
         console.log(results);
