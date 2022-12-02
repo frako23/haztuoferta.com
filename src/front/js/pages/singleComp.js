@@ -26,9 +26,10 @@ export const SingleComp = (props) => {
           <div className="row g-0">
             <div className="col-md-6 border-end">
               <div className="d-flex flex-column justify-content-center">
-                <div className="main_image">
+                      {/* items lado izquierdo */}
+                <div className="main_image">                      
                   <img
-                    src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07973337.png"
+                    src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-1_T1666984555.png"
                     id="main_product_image"
                     width="350"
                   ></img>
@@ -37,29 +38,29 @@ export const SingleComp = (props) => {
                   <ul id="thumbnail">
                     <li>
                       <img
-                        // onclick="changeImage(this)"
-                        src="https://www.shutterstock.com/image-photo/laptop-computer-mock-green-screen-600w-1959079696.jpg"
+                        onclick="changeImage(this)"
+                        src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-2_T1666984556.png"
                         width="70"
                       ></img>
                     </li>
                     <li>
                       <img
-                        // onclick="changeImage(this)"
-                        src="https://www.shutterstock.com/image-photo/mockup-green-screen-stanting-on-600w-1804298176.jpg"
+                        onclick="changeImage(this)"
+                        src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-3_T1666984556.png"
                         width="70"
                       ></img>
                     </li>
                     <li>
                       <img
-                        // onclick="changeImage(this)"
-                        src="https://www.shutterstock.com/image-photo/laptop-on-desk-office-shows-600w-1804298161.jpg"
+                        onclick="changeImage(this)"
+                        src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-4_T1666984557.png"
                         width="70"
                       ></img>
                     </li>
                     <li>
                       <img
-                        // onclick="changeImage(this)"
-                        src="https://www.shutterstock.com/image-photo/computer-peripherals-laptop-accessories-on-600w-1065152207.jpg"
+                        onclick="changeImage(this)"
+                        src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-7_T1666984558.png"
                         width="70"
                       ></img>
                     </li>
@@ -67,139 +68,106 @@ export const SingleComp = (props) => {
                 </div>
               </div>
             </div>
+
+                      {/* items lado derecho */}
+
             <div className="col-md-6">
               <div className="p-3 right-side">
                 <div className="d-flex justify-content-between align-items-center">
-                  <span className="heart">
-                    <i className="bx bx-heart"></i>
-                  </span>
+                  <h2>Vendo Laptop HP</h2>
+                </div>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h5>Modelo ENVY x360 convertible </h5>
                 </div>
                 <div className="mt-2 pr-3 content">
                   <div className="card-body">
                     <h1 className="card-title">
-                      {comp && comp.marca + " " + comp.modelo}
+                      {/* {comp.marca + " " + comp.modelo} */}
                     </h1>
-                    <Table striped bordered hover variant="dark">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td colSpan={2}>Larry the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                    </Table>
-                    {/* <table className="table table-striped">
-                      <tr>
-                        <td>Pantalla</td>
-                        <td>Procesador</td>
-                        <td>Memoria Ram</td>
-                        <td>Disco Duro</td>
-                      </tr>
-                      <tr>
-                        <td>15.6"</td>
-                        <td>Intel Core I5 3.36Ghz</td>
-                        <td>DDR 3 8GB</td>
-                        <td>SSD 264 GB</td>
-                      </tr>
-                    </table> */}
+
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">Marca -  HP</li>
+                        <li className="list-group-item">Pantalla 13.3</li>
+                        <li className="list-group-item">Procesador AMD Ryzen™ 7</li>
+                        <li className="list-group-item">Unidad de estado sólido de 512 GB PCIe® NVMe™ M.2</li>
+                        <li className="list-group-item">8 GB de RAM DDR4-3200 MHz (integrada)</li>
+                    </ul>
 
                     <hr></hr>
                     <br></br>
-                    <h5>Tipo de Oferta🤑: Subasta🔨</h5>
-                    <p>
-                      Haz tu oferta 💲:
-                      <input
-                        type="number"
-                        placeholder="Coloca tu oferta aqui"
-                        required
-                        min={1}
-                        // value={oferta}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="ms-4"
-                      />
-                    </p>
-                    <hr></hr>
-                    <br></br>
-                    <h5>Tipo de Oferta🤑: Venta🔨</h5>
-                    <p>
-                      Precio 💵:
-                      <button className="btn btn-primary ms-4">Comprar</button>
-                    </p>
+                      {/* precio */}
+                    <div className="product-info-price">
+                      <div className="price-box price-final_price">
+                      <span className="price-container price-final_price tax weee" translate="no">
+                      <span id="product-price-9470" data-price-amount="28499" data-price-type="finalPrice" className="price-wrapper ">
+                        <h5>Precio</h5>
+                        <span className="price">$28,499.00</span></span>
+                        </span>
+                      </div>
+                    </div>
                   </div>
+                      {/* modal */}
+
                   <div className="buttons d-flex flex-row mt-5 gap-3">
                     <button className="btn btn-outline-dark">Comprar</button>
-                    <button className="btn btn-dark">Haz tu oferta</button>
+                    <button className="btn signup__button--register me-2" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal">Haz tu oferta</button>
                   </div>
+
+                  <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">Nuevo mensaje</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div className="modal-body">
+                        <form>
+                        <h5>Venta</h5>
+                          <div className="input-group mb-3">
+                          <input type="text" 
+                          className="form-control" 
+                          placeholder="$" 
+                          aria-label="Nombre de usuario del destinatario" 
+                          aria-describedby="button-addon2">  
+                          </input>
+                          <button className="btn btn-outline-dark" type="button" id="button-addon2">Enviar</button>
+                          </div>
+
+                          <h5>Oferta</h5>
+                          <div className="input-group mb-3">
+                          <input type="text" 
+                          className="form-control" 
+                          placeholder="$" 
+                          aria-label="Nombre de usuario del destinatario" 
+                          aria-describedby="button-addon2">  
+                          </input>
+                          <button className="btn btn-outline-dark" type="button" id="button-addon2">Enviar</button>
+                          </div>
+
+                          <h5>Subasta</h5>
+                          <div className="input-group mb-3">
+                          <input type="text" 
+                          className="form-control" 
+                          placeholder="$" 
+                          aria-label="Nombre de usuario del destinatario" 
+                          aria-describedby="button-addon2">  
+                          </input>
+                          <button className="btn btn-outline-dark" type="button" id="button-addon2">Enviar</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <hr></hr>
-      {/* <div className="card-body">
-          <h1 className="card-title">HP 250 G9</h1>
-          <p className="card-text">
-            <table className="table table-striped">
-              <tr className="table-title">
-                <td>Pantalla</td>
-                <td>Procesador</td>
-                <td>Memoria Ram</td>
-                <td>Disco Duro</td>
-              </tr>
-              <tr>
-                <td>15.6"</td>
-                <td>Intel Core I5 3.36Ghz</td>
-                <td>DDR 3 8bg</td>
-                <td>SSD 264 GB</td>
-              </tr>
-            </table>
-          </p>
-          <hr></hr>
-          <br></br>
-          <h5>Tipo de Oferta🤑: Subasta🔨</h5>
-          <p>
-            Haz tu oferta 💲:
-            <input
-              type="number"
-              placeholder="Coloca tu oferta aqui"
-              required
-              min={1}
-              // value={oferta}
-              onChange={(e) => setEmail(e.target.value)}
-              className="ms-4"
-            />
-          </p>
-          <hr></hr>
-          <br></br>
-          <h5>Tipo de Oferta🤑: Venta🔨</h5>
-          <p>
-            Precio 💵: $500
-            <button className="btn btn-primary ms-4">Comprar</button>
-          </p>
-        </div> */}
-
       <div>
         <Comments
           commentsUrl="https://3000-frako23-haztuofertacom-c8ycfnd9gg3.ws-us77.gitpod.io/singleComp/1"

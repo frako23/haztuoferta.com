@@ -93,7 +93,7 @@ body {
 }
 
 .search-option:hover {
-  border-radius: 0px;
+  border-radius: 1px;
   width: 100%;
   left: 0px;
 }
@@ -121,5 +121,5 @@ body {
 .buttons .btn {
   height: 50px;
   width: 150px;
-  border-radius: 0px !important;
+  border-radius: 6px !important;
 }
