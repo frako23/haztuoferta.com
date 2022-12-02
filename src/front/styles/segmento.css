@@ -112,7 +112,7 @@ h1.heading {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 1.3rem;
     color: #444444;
 }
 
@@ -127,7 +127,7 @@ a:hover {
 }
 
 .section-products .header {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .section-products .header h3 {
@@ -137,14 +137,11 @@ a:hover {
 }
 
 .section-products .header h2 {
-    font-size: 2.2rem;
-    font-weight: 400;
+    font-size: 1.4rem;
+    font-weight: 500;
     color: #444444;
 }
 
-.section-products .single-product {
-    margin-bottom: 26px;
-}
 
 .section-products .single-product .part-1 {
     position: relative;

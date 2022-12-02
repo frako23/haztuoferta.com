@@ -123,3 +123,7 @@ h3 {
   height: 50px;
   text-overflow: hidden;
 }
+
+.section-products {
+  font-size: 1.3rem;
+}
