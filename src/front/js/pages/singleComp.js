@@ -26,10 +26,10 @@ export const SingleComp = (props) => {
           <div className="row g-0">
             <div className="col-md-6 border-end">
               <div className="d-flex flex-column justify-content-center">
-                      {/* items lado izquierdo */}
-                <div className="main_image">                      
+                {/* items lado izquierdo */}
+                <div className="main_image">
                   <img
-                    src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-1_T1666984555.png"
+                    src={comp && comp.img_url}
                     id="main_product_image"
                     width="350"
                   ></img>
@@ -69,97 +69,163 @@ export const SingleComp = (props) => {
               </div>
             </div>
 
-                      {/* items lado derecho */}
+            {/* items lado derecho */}
 
             <div className="col-md-6">
               <div className="p-3 right-side">
                 <div className="d-flex justify-content-between align-items-center">
-                  <h2>Vendo Laptop HP</h2>
+                  <h2>{comp && comp.titulo}</h2>
                 </div>
-                <div className="d-flex justify-content-between align-items-center">
-                  <h5>Modelo ENVY x360 convertible </h5>
-                </div>
+                <div className="d-flex justify-content-between align-items-center"></div>
                 <div className="mt-2 pr-3 content">
                   <div className="card-body">
-                    <h1 className="card-title">
-                      {/* {comp.marca + " " + comp.modelo} */}
-                    </h1>
+                    <h1 className="card-title"></h1>
 
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item">Marca -  HP</li>
-                        <li className="list-group-item">Pantalla 13.3</li>
-                        <li className="list-group-item">Procesador AMD Ryzen™ 7</li>
-                        <li className="list-group-item">Disco duro SSD de 512 GB </li>
-                        <li className="list-group-item">8 GB de RAM DDR4-3200 MHz (integrada)</li>
+                      <li className="list-group-item">
+                        <strong>Marca:</strong> {comp && comp.marca}
+                        <strong className="ms-3">Modelo:</strong>{" "}
+                        {comp && comp.modelo}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Pantalla:</strong> {comp && comp.pantalla}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Procesador:</strong> {comp && comp.procesador}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Disco Duro:</strong> {comp && comp.disco_duro}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Memoria RAM:</strong> {comp && comp.memoria_ram}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Sistema Operativo:</strong>{" "}
+                        {comp && comp.sistema_operativo}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Tipo de producto:</strong>{" "}
+                        {comp && comp.nuevo_usado}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Tipo de transacción:</strong>{" "}
+                        {comp && comp.tipo_de_negocio}
+                      </li>
+                      <li className="list-group-item">
+                        <strong>Descripcion:</strong> {comp && comp.descripcion}
+                      </li>
                     </ul>
 
                     <hr></hr>
                     <br></br>
-                      {/* precio */}
+                    {/* precio */}
                     <div className="product-info-price">
                       <div className="price-box price-final_price">
-                      <span className="price-container price-final_price tax weee" translate="no">
-                        <h5>Precio</h5>
-                        <span className="price">$28,499.00</span>
+                        <span
+                          className="price-container price-final_price tax weee"
+                          translate="no"
+                        >
+                          <h5>Precio</h5>
+                          <span className="price">
+                            {comp && comp.moneda + " " + comp.precio}
+                          </span>
                         </span>
                       </div>
                     </div>
                   </div>
-                      {/* modal */}
+                  {/* modal */}
 
                   <div className="buttons d-flex flex-row mt-5 gap-3">
                     <button className="btn btn-outline-dark">Comprar</button>
-                    <button className="btn signup__button--register me-2" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#exampleModal">Haz tu oferta</button>
+                    <button
+                      className="btn signup__button--register me-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      Haz tu oferta
+                    </button>
                   </div>
 
-                  <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div className="modal-dialog">
-                    <div className="modal-content">
-                      <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">Nuevo mensaje</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div className="modal-body">
-                        <form>
-                        <h5>Venta</h5>
-                          <div className="input-group mb-3">
-                          <input type="text" 
-                          className="form-control" 
-                          placeholder="$" 
-                          aria-label="Nombre de usuario del destinatario" 
-                          aria-describedby="button-addon2">  
-                          </input>
-                          <button className="btn btn-outline-dark" type="button" id="button-addon2">Enviar</button>
-                          </div>
+                  <div
+                    className="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="exampleModalLabel">
+                            Nuevo mensaje
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          <form>
+                            <h5>Venta</h5>
+                            <div className="input-group mb-3">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="$"
+                                aria-label="Nombre de usuario del destinatario"
+                                aria-describedby="button-addon2"
+                              ></input>
+                              <button
+                                className="btn btn-outline-dark"
+                                type="button"
+                                id="button-addon2"
+                              >
+                                Enviar
+                              </button>
+                            </div>
 
-                          <h5>Oferta</h5>
-                          <div className="input-group mb-3">
-                          <input type="text" 
-                          className="form-control" 
-                          placeholder="$" 
-                          aria-label="Nombre de usuario del destinatario" 
-                          aria-describedby="button-addon2">  
-                          </input>
-                          <button className="btn btn-outline-dark" type="button" id="button-addon2">Enviar</button>
-                          </div>
+                            <h5>Oferta</h5>
+                            <div className="input-group mb-3">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="$"
+                                aria-label="Nombre de usuario del destinatario"
+                                aria-describedby="button-addon2"
+                              ></input>
+                              <button
+                                className="btn btn-outline-dark"
+                                type="button"
+                                id="button-addon2"
+                              >
+                                Enviar
+                              </button>
+                            </div>
 
-                          <h5>Subasta</h5>
-                          <div className="input-group mb-3">
-                          <input type="text" 
-                          className="form-control" 
-                          placeholder="$" 
-                          aria-label="Nombre de usuario del destinatario" 
-                          aria-describedby="button-addon2">  
-                          </input>
-                          <button className="btn btn-outline-dark" type="button" id="button-addon2">Enviar</button>
-                          </div>
-                        </form>
+                            <h5>Subasta</h5>
+                            <div className="input-group mb-3">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="$"
+                                aria-label="Nombre de usuario del destinatario"
+                                aria-describedby="button-addon2"
+                              ></input>
+                              <button
+                                className="btn btn-outline-dark"
+                                type="button"
+                                id="button-addon2"
+                              >
+                                Enviar
+                              </button>
+                            </div>
+                          </form>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
                 </div>
               </div>
             </div>
