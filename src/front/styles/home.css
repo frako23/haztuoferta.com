@@ -127,3 +127,7 @@ h3 {
 .section-products {
   font-size: 1.3rem;
 }
+
+.suggestions {
+  width: 100px;
+}
