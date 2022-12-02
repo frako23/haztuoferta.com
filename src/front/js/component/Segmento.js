@@ -33,7 +33,7 @@ export const Segmento = () => {
               <Link
                 className="seccion-link"
                 to="/Oferts"
-                preventScrollReset={true}
+              // preventScrollReset={true}
               >
                 <div className="seccion">
                   <div className="image">

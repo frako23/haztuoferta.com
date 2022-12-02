@@ -35,64 +35,64 @@ export const Categories = () => {
               <li className="categories"><i className="fa-solid fa-baby-carriage"></i>&nbsp;&nbsp;Accesorios para bebés</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-paw"></i>&nbsp;&nbsp;Accesorios para mascotas</li>
+              <li className="categories"><i className="fa-solid fa-paw"></i>&nbsp;&nbsp;Accesorios para mascotas</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-building-columns"></i>&nbsp;&nbsp;Artículos de colección</li>
+              <li className="categories"><i className="fa-solid fa-building-columns"></i>&nbsp;&nbsp;Artículos de colección</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-car"></i>&nbsp;&nbsp;Carros y Motos</li>
+              <li className="categories"><i className="fa-solid fa-car"></i>&nbsp;&nbsp;Carros y Motos</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-camera"></i>&nbsp;&nbsp;Cámaras y Accesorios</li>
+              <li className="categories"><i className="fa-solid fa-camera"></i>&nbsp;&nbsp;Cámaras y Accesorios</li>
             </Link>
             <Link to="/celulares">
-              <li className="categories"><i class="fa-solid fa-mobile-screen-button"></i>&nbsp;&nbsp;&nbsp;Celulares</li>
+              <li className="categories"><i className="fa-solid fa-mobile-screen-button"></i>&nbsp;&nbsp;&nbsp;Celulares</li>
             </Link>
             <Link to="/computadoras" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-laptop"></i>&nbsp;Computadoras</li>
+              <li className="categories"><i className="fa-solid fa-laptop"></i>&nbsp;Computadoras</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-gamepad"></i>&nbsp;Consolas y Videojuegos</li>
+              <li className="categories"><i className="fa-solid fa-gamepad"></i>&nbsp;Consolas y Videojuegos</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-blender"></i>&nbsp;&nbsp;Electrodomésticos</li>
+              <li className="categories"><i className="fa-solid fa-blender"></i>&nbsp;&nbsp;Electrodomésticos</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-baseball-bat-ball"></i>&nbsp;Deporte y Fitness</li>
+              <li className="categories"><i className="fa-solid fa-baseball-bat-ball"></i>&nbsp;Deporte y Fitness</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-headphones-simple"></i>&nbsp;&nbsp;Electrónica, audio y video</li>
+              <li className="categories"><i className="fa-solid fa-headphones-simple"></i>&nbsp;&nbsp;Electrónica, audio y video</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;&nbsp;Herramientas</li>
+              <li className="categories"><i className="fa-solid fa-screwdriver-wrench"></i>&nbsp;&nbsp;Herramientas</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-house-chimney-window"></i>&nbsp;&nbsp;Hogar</li>
+              <li className="categories"><i className="fa-solid fa-house-chimney-window"></i>&nbsp;&nbsp;Hogar</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-building-user"></i>&nbsp;Inmuebles</li>
+              <li className="categories"><i className="fa-solid fa-building-user"></i>&nbsp;Inmuebles</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-guitar"></i>&nbsp;&nbsp;Instrumentos musicales</li>
+              <li className="categories"><i className="fa-solid fa-guitar"></i>&nbsp;&nbsp;Instrumentos musicales</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-puzzle-piece"></i>&nbsp;&nbsp;Juguetes</li>
+              <li className="categories"><i className="fa-solid fa-puzzle-piece"></i>&nbsp;&nbsp;Juguetes</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-gem"></i>&nbsp;&nbsp;Joyas</li>
+              <li className="categories"><i className="fa-solid fa-gem"></i>&nbsp;&nbsp;Joyas</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-book"></i>&nbsp;&nbsp;Libros</li>
+              <li className="categories"><i className="fa-solid fa-book"></i>&nbsp;&nbsp;Libros</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-car-battery"></i>&nbsp;&nbsp;Repuestos para vehículos</li>
+              <li className="categories"><i className="fa-solid fa-car-battery"></i>&nbsp;&nbsp;Repuestos para vehículos</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-shirt"></i>&nbsp;Ropa y Zapatos</li>
+              <li className="categories"><i className="fa-solid fa-shirt"></i>&nbsp;Ropa y Zapatos</li>
             </Link>
             <Link to="/" onClick={handleClose}>
-              <li className="categories"><i class="fa-solid fa-square-plus"></i>&nbsp;&nbsp;Otras categorías</li>
+              <li className="categories"><i className="fa-solid fa-square-plus"></i>&nbsp;&nbsp;Otras categorías</li>
             </Link>
           </ul>
         </Offcanvas.Body>
