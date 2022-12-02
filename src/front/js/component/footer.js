@@ -12,9 +12,7 @@ export const Footer = () => (
                 Haz Tu Oferta
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+                Una nueva propuesta en el mecado de compra-venta. Su principal caracteristica es proveer al usuario de una interfaz simple que le permita intercambiar sus productos y proponer ofertas.
               </p>
             </div>
 
