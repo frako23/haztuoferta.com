@@ -23,6 +23,7 @@ export const Segmento = () => {
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
                       <h2 className="">PRODUCTOS EN VENTA</h2>
+                      <h3>Vende tu Producto!</h3>
                     </div>
                   </div>
                 </div>
@@ -43,6 +44,7 @@ export const Segmento = () => {
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
                       <h2 className="">OFERTAS DE COMPRA</h2>
+                      <h3>Haz una Oferta!</h3>
                     </div>
                   </div>
                 </div>
@@ -59,6 +61,7 @@ export const Segmento = () => {
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
                       <h2 className="">INTERCAMBIOS</h2>
+                      <h3>Porpón un Trueque!</h3>
                     </div>
                   </div>
                 </div>
@@ -75,6 +78,7 @@ export const Segmento = () => {
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
                       <h2 className="">SUBASTAS</h2>
+                      <h3>Subasta tu Producto!</h3>
                     </div>
                   </div>
                 </div>
