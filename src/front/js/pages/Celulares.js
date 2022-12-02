@@ -9,7 +9,7 @@ export const Celulares = () => {
 
     return (
         <div className="text-center">
-            <h1 className="py-5">Celulares 📱</h1>
+            <h1 className="py-5"><i class="fa-solid fa-mobile-screen-button"></i>  Celulares</h1>
             <div className="container d-flex flex-wrap justify-content-center">
                 {store.searchResults == ""
                     ? store.celulares.map((celulares, index) => {

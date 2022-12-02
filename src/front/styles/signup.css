@@ -1,8 +1,8 @@
 .signup__button--register {
     background: #424242;
-    border-radius: 0;
+    border-radius: 0.3rem;
     color: #fff;
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
     border-color: #1c1c1c;
     font-weight: bold;
@@ -12,8 +12,9 @@
 
 .signup__button--register:hover {
     background-color: white;
+    border-radius: 0.3rem;
     color: black;
-    border: 2px solid black;
+    border: 1px solid black;
     font-weight: bold;
     letter-spacing: 1px;
 }

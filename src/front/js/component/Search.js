@@ -24,18 +24,9 @@ export const Search = () => {
             )}
             style={{ minWidth: "150px" }}
             type="text"
-            className="form-control shadow-none border border-dark rounded-0"
+            className="form-control shadow-none border border-secondary rounded"
             placeholder="Busca lo que quieras..."
           />
-          <span className="input-group-btn">
-            <button
-              className="btn btn-search"
-              type="button"
-              onClick={() => { }}
-            >
-              <i className="fa fa-search fa-fw"></i>
-            </button>
-          </span>
           <div className="suggestions">{ }</div>
         </div>
       </div>
