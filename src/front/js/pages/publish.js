@@ -7,6 +7,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import "../../styles/publish.css";
 import CloudinaryUploadWidget from "../component/upLoadImages";
 import context from "react-bootstrap/esm/AccordionContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const Publish = () => {
   const [titulo, setTitulo] = useState("");
@@ -25,6 +26,7 @@ export const Publish = () => {
   const [nuevo_usado, setNuevo_usado] = useState("");
   const [img_url, setImg_url] = useState("");
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -321,9 +323,10 @@ export const Publish = () => {
                     descripcion: descripcion,
                     img_url: store.imageUrl,
                   });
-                  actions.setNotification(
-                    "¡Has publicado tu producto exitosamente!"
-                  );
+                  navigate("/");
+                  // actions.setNotification(
+                  //   "¡Has publicado tu producto exitosamente!"
+                  // );
                 }}
               >
                 Publica tu producto

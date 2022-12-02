@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import { Context } from "../store/appContext";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Modal from "react-bootstrap/Modal";
@@ -12,6 +13,7 @@ export const Buy = () => {
   const [categoria, setCategoria] = useState("");
   const [oferta, setOferta] = useState("");
   const [descripcion, setDescripcion] = useState("");
+  const navigate = useNavigate();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -23,7 +25,8 @@ export const Buy = () => {
       oferta: oferta,
       descripcion: descripcion,
     });
-    actions.setNotification("¡Has creado tu oferta de compra exitosamente!");
+    // actions.setNotification("¡Has creado tu oferta de compra exitosamente!");
+    navigate("/");
   };
 
   return (
