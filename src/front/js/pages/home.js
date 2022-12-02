@@ -3,9 +3,10 @@ import { Context } from "../store/appContext";
 import { ItemCard } from "../component/ItemCard";
 import { Carousel } from "../component/carousel.js";
 import { Segmento } from "../component/Segmento";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "../../styles/home.css";
 import "../../styles/banner.css";
+import { Signup } from "../component/signup";
 
 
 export const Home = () => {
@@ -28,7 +29,13 @@ export const Home = () => {
 						<p className="text-center text-bold"> <i>Oferta, Intercambia o Subasta tus Productos. Que esperas para comprar a tu manera?</i></p>
 					</header>
 					<div className="call-to-action text-center">
-						<button className="btn btn-outline-secondary">Compra Diferente, Regístrate Ya!</button>
+						<button
+							className="btn btn-outline-secondary"
+							onClick={(event) =>
+								Navigate(<Signup />)
+							}>
+							Compra Diferente, Regístrate Ya!
+						</button>
 					</div>
 				</div>
 			</section>
