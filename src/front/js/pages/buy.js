@@ -59,27 +59,39 @@ export const Buy = () => {
               <option disabled selected>
                 Escoge una categoria
               </option>
-              <option value="bebes">Accesorios para bebés</option>
-              <option value="mascotas">Accesorios para mascotas</option>
-              <option value="coleccion">Artículos de colección</option>
-              <option value="automotor">Carros y Motos</option>
-              <option value="camaras">Cámaras y Accesorios</option>
-              <option value="celulares">Celulares</option>
-              <option value="computadoras">Computadoras</option>
-              <option value="videojuegos">Consolas y Videojuegos</option>
-              <option value="electrodomesticos">Electrodomésticos</option>
-              <option value="deporte">Deporte y Fitness</option>
-              <option value="electronica">Electrónica, audio y video</option>
-              <option value="herramientas">Herramientas</option>
-              <option value="hogar">Hogar</option>
-              <option value="inmuebles">Inmuebles</option>
-              <option value="musica">Instrumentos musicales</option>
-              <option value="juguetes">Juguetes</option>
-              <option value="joyas">Joyas</option>
-              <option value="libros">Libros</option>
-              <option value="repuestos">Repuestos para vehículos</option>
-              <option value="ropa">Ropa y Zapatos</option>
-              <option value="otros">Otras categorías</option>
+              <option value="Accesorios para bebés">
+                Accesorios para bebés
+              </option>
+              <option value="Accesorios para mascotas">
+                Accesorios para mascotas
+              </option>
+              <option value="Artículos de colección">
+                Artículos de colección
+              </option>
+              <option value="Carros y Motos">Carros y Motos</option>
+              <option value="Cámaras y Accesorios">Cámaras y Accesorios</option>
+              <option value="Celulares">Celulares</option>
+              <option value="Computadoras">Computadoras</option>
+              <option value="Consolas y Videojuegos">
+                Consolas y Videojuegos
+              </option>
+              <option value="Electrodomésticos">Electrodomésticos</option>
+              <option value="Deporte y Fitness">Deporte y Fitness</option>
+              <option value="Electrónica">Electrónica, audio y video</option>
+              <option value="Herramientas">Herramientas</option>
+              <option value="Hogar">Hogar</option>
+              <option value="Inmuebles">Inmuebles</option>
+              <option value="Instrumentos musicales">
+                Instrumentos musicales
+              </option>
+              <option value="Juguetes">Juguetes</option>
+              <option value="Joyas">Joyas</option>
+              <option value="Libros">Libros</option>
+              <option value="Repuestos para vehículos">
+                Repuestos para vehículos
+              </option>
+              <option value="Ropa y Zapatos">Ropa y Zapatos</option>
+              <option value="Otras categorías">Otras categorías</option>
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
