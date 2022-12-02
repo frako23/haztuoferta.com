@@ -125,10 +125,13 @@ export const SingleComp = (props) => {
                           className="price-container price-final_price tax weee"
                           translate="no"
                         >
-                          <h5>Precio</h5>
-                          <span className="price">
+                          <h5>
+                            <strong className="me-3">Precio:</strong>
                             {comp && comp.moneda + " " + comp.precio}
-                          </span>
+                          </h5>
+                          {/* <span className="price">
+                            
+                          </span> */}
                         </span>
                       </div>
                     </div>
