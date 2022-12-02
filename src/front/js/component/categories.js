@@ -13,8 +13,9 @@ export const Categories = () => {
   return (
     <>
       <Button
-        variant="info"
-        className="btn signup__button--register"
+        variant="white"
+        size="lg"
+        className="border-none"
         onClick={handleShow}
       >
         <i className="fa-solid fa-bars"></i>

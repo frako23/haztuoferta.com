@@ -8,8 +8,8 @@ export const Celulares = () => {
     const { store, actions } = useContext(Context);
 
     return (
-        <div className="text-center">
-            <h1 className="py-5"><i class="fa-solid fa-mobile-screen-button"></i>  Celulares</h1>
+        <div className="text-start mx-5 px-5">
+            <h1 className="ps-5 pt-5 pb-3 mb-5 display-5 border-bottom border-secondary"><i class="fa-solid fa-mobile-screen-button"></i>  Celulares</h1>
             <div className="container d-flex flex-wrap justify-content-center">
                 {store.searchResults == ""
                     ? store.celulares.map((celulares, index) => {
