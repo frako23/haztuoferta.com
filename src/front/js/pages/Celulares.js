@@ -5,22 +5,27 @@ import "../../styles/home.css";
 import CloudinaryUploadWidget from "../component/upLoadImages";
 
 export const Celulares = () => {
-    const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getCelulares();
+  }, []);
 
-    return (
-        <div className="text-start mx-5 px-5">
-            <h1 className="ps-5 pt-5 pb-3 mb-5 display-5 border-bottom border-secondary"><i class="fa-solid fa-mobile-screen-button"></i>  Celulares</h1>
-            <div className="container d-flex flex-wrap justify-content-center">
-                {store.searchResults == ""
-                    ? store.celulares.map((celulares, index) => {
-                        return <ItemCard computadoras={celulares} key={index} />;
-                    })
-                    : store.searchResults.map((celular, index) => {
-                        return <ItemCard computadoras={celular} key={index} />;
-                    })}
-            </div>
-        </div>
-    );
+  return (
+    <div className="text-start mx-5 px-5">
+      <h1 className="ps-5 pt-5 pb-3 mb-5 display-5 border-bottom border-secondary">
+        <i class="fa-solid fa-mobile-screen-button"></i> Celulares
+      </h1>
+      <div className="container d-flex flex-wrap justify-content-center">
+        {store.searchResults == ""
+          ? store.celulares.map((celulares, index) => {
+              return <ItemCard computadoras={celulares} key={index} />;
+            })
+          : store.searchResults.map((celular, index) => {
+              return <ItemCard computadoras={celular} key={index} />;
+            })}
+      </div>
+    </div>
+  );
 };
 
 // export const Celulares = () => {
@@ -68,4 +73,3 @@ export const Celulares = () => {
 //         </React.Fragment>
 //     );
 // };
-

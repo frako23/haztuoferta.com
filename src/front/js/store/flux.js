@@ -31,26 +31,25 @@ const getState = ({ getStore, getActions, setStore }) => {
       // Use getActions to call a function within a fuction
 
       setSearchResults: (searchText, productType = undefined) => {
-
         const store = getStore();
 
-        let productos = []
+        let productos = [];
 
         if (!productType) {
           productos = store.computadoras.concat(store.celulares);
-        }
-        else {
-          productos = [...store[productType]]
+        } else {
+          productos = [...store[productType]];
         }
 
         let formatSearchText = searchText.toLowerCase();
 
-        let results = productos.filter((product) => product.titulo.includes(formatSearchText))
+        let results = productos.filter((product) =>
+          product.titulo.includes(formatSearchText)
+        );
         console.log(results);
 
         setStore({ searchResults: results });
       },
-
 
       login: async (email, password) => {
         const opts = {
@@ -183,6 +182,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       postComputadoras: (data) => {
         const apiURL = `${process.env.BACKEND_URL}/api/computadoras`;
+        const store = getStore();
+        fetch(apiURL, {
+          method: "POST", // or 'POST'
+          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) throw Error(res.statusText);
+            return res.json();
+          })
+          .then((response) => console.log("Success:", response))
+          .catch((error) => console.error(error));
+      },
+
+      postCelulares: (data) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/celulares`;
         const store = getStore();
         fetch(apiURL, {
           method: "POST", // or 'POST'

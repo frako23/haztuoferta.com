@@ -25,6 +25,10 @@ export const Publish = () => {
   const [tipo_de_negocio, setTipo_de_negocio] = useState("");
   const [nuevo_usado, setNuevo_usado] = useState("");
   const [img_url, setImg_url] = useState("");
+  const [almacenamiento_interno, setAlmacenamiento_interno] = useState("");
+  const [camara_frontal, setCamara_frontal] = useState("");
+  const [camara_trasera, setCamara_trasera] = useState("");
+  const [bateria, setBateria] = useState("");
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
 
@@ -316,6 +320,158 @@ export const Publish = () => {
                     memoria_ram: memoria_ram,
                     disco_duro: disco_duro,
                     sistema_operativo: sistema_operativo,
+                    moneda: moneda,
+                    precio: precio,
+                    tipo_de_negocio: tipo_de_negocio,
+                    nuevo_usado: nuevo_usado,
+                    descripcion: descripcion,
+                    img_url: store.imageUrl,
+                  });
+                  navigate("/");
+                  // actions.setNotification(
+                  //   "¡Has publicado tu producto exitosamente!"
+                  // );
+                }}
+              >
+                Publica tu producto
+              </Button>
+            </div>
+          ) : categoria == "celulares" ? (
+            <div>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">Marca</InputGroup.Text>
+                <Form.Control
+                  placeholder="Marca"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  value={marca}
+                  onChange={(e) => {
+                    setMarca(e.target.value);
+                  }}
+                />
+
+                <InputGroup.Text id="basic-addon1">Modelo</InputGroup.Text>
+                <Form.Control
+                  placeholder="Modelo"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  value={modelo}
+                  onChange={(e) => {
+                    setModelo(e.target.value);
+                  }}
+                />
+              </InputGroup>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">Pantalla</InputGroup.Text>
+                <Form.Control
+                  placeholder="Pantalla"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  value={pantalla}
+                  onChange={(e) => {
+                    setPantalla(e.target.value);
+                  }}
+                />
+                <InputGroup.Text id="basic-addon1">Bateria</InputGroup.Text>
+                <Form.Control
+                  placeholder="Bateria"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  value={bateria}
+                  onChange={(e) => {
+                    setBateria(e.target.value);
+                  }}
+                />
+              </InputGroup>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">
+                  Camara Frontal
+                </InputGroup.Text>
+                <Form.Control
+                  placeholder="Camara Frontal"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  value={camara_frontal}
+                  onChange={(e) => {
+                    setCamara_frontal(e.target.value);
+                  }}
+                />
+                <InputGroup.Text id="basic-addon1">
+                  Camara Trasera
+                </InputGroup.Text>
+                <Form.Control
+                  placeholder="Camara Trasera"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  value={camara_trasera}
+                  onChange={(e) => {
+                    setCamara_trasera(e.target.value);
+                  }}
+                />
+              </InputGroup>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">
+                  Almacenamiento Interno
+                </InputGroup.Text>
+                <Form.Control
+                  placeholder="Almacenamiento Interno"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  value={almacenamiento_interno}
+                  onChange={(e) => {
+                    setAlmacenamiento_interno(e.target.value);
+                  }}
+                />
+                <InputGroup.Text id="basic-addon1">Memoria Ram</InputGroup.Text>
+                <Form.Control
+                  placeholder="Memoria Ram"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  value={memoria_ram}
+                  onChange={(e) => {
+                    setMemoria_ram(e.target.value);
+                  }}
+                />
+              </InputGroup>
+              <Form.Label>Sistema Operativo</Form.Label>
+              <Form.Select
+                aria-label="dropdown select"
+                className="mb-3"
+                onChange={(e) => {
+                  setSistema_operativo(e.target.value);
+                }}
+              >
+                <option disabled selected>
+                  Escoge una categoria
+                </option>
+                <option value="Windows">Android</option>
+                <option value="macOS">iOS</option>
+              </Form.Select>
+              <Form.Label>Descripción</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={5}
+                className="mb-3"
+                value={descripcion}
+                onChange={(e) => {
+                  setDescripcion(e.target.value);
+                }}
+              />
+              <Button
+                variant="primary"
+                onClick={() => {
+                  actions.postCelulares({
+                    titulo: titulo,
+                    marca: marca,
+                    modelo: modelo,
+                    procesador: procesador,
+                    pantalla: pantalla,
+                    memoria_ram: memoria_ram,
+                    almacenamiento_interno: almacenamiento_interno,
+                    sistema_operativo: sistema_operativo,
+                    bateria: bateria,
+                    camara_frontal: camara_frontal,
+                    camara_trasera: camara_trasera,
                     moneda: moneda,
                     precio: precio,
                     tipo_de_negocio: tipo_de_negocio,

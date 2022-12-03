@@ -116,8 +116,6 @@ def get_celulares():
             raise Exception("No ingresaste la marca", 400)
         if "modelo" not in new_celular_data or new_celular_data["modelo"] == "":
             raise Exception("No ingresaste el modelo", 400)
-        if "procesador" not in new_celular_data or new_celular_data["procesador"] == "":
-            raise Exception("No ingresaste el procesador", 400)
         if "pantalla" not in new_celular_data or new_celular_data["pantalla"] == "":
             raise Exception("No ingresaste la pantalla", 400)
         if "memoria_ram" not in new_celular_data or new_celular_data["memoria_ram"] == "":
