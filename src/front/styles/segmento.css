@@ -267,3 +267,9 @@ a:hover {
     background-color: #444444;
     transform: translateY(-50%);
 }
+
+.containersegmento {
+    font-size: calc(1.475rem+ 2.7vw);
+    font-weight: 300;
+    line-height: 1.2;
+}
