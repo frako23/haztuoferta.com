@@ -8,8 +8,9 @@ export const AboutUs = () => {
         <h1>¿Quienes somos?</h1>
         <p>Some text about who we are and what we do.</p>
         <p>
-          Resize the browser window to see that this page is responsive by the
-          way.
+          Una nueva propuesta en el mecado de compra-venta. Su principal
+          caracteristica es proveer al usuario de una interfaz simple que le
+          permita intercambiar sus productos y proponer ofertas.
         </p>
       </div>
 

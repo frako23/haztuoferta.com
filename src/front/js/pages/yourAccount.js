@@ -96,15 +96,15 @@ export const YourAccount = () => {
                 <div className="card-body">
                   <div className="form-group">
                     <label className="form-label">Username</label>
-                    <input type="text" className="form-control mb-2" value="" />
+                    <input type="text" className="form-control mb-2" />
                   </div>
                   <div className="form-group">
                     <label className="form-label">Name</label>
-                    <input type="text" className="form-control mb-2" value="" />
+                    <input type="text" className="form-control mb-2" />
                   </div>
                   <div className="form-group">
                     <label className="form-label">E-mail</label>
-                    <input type="text" className="form-control mb-2" value="" />
+                    <input type="text" className="form-control mb-2" />
                     <div className="alert alert-warning mt-3">
                       Your email is not confirmed. Please check your inbox.
                       <br />

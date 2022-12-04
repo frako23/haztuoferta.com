@@ -11,9 +11,7 @@ export const Footer = () => (
               <h6 className="text-uppercase mb-4 font-weight-bold">
                 Haz Tu Oferta
               </h6>
-              <p>
-                Una nueva propuesta en el mecado de compra-venta. Su principal caracteristica es proveer al usuario de una interfaz simple que le permita intercambiar sus productos y proponer ofertas.
-              </p>
+              <p>Compra y vende a tu propia manera.</p>
             </div>
 
             <hr className="w-100 clearfix d-md-none" />
