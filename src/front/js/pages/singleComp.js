@@ -44,28 +44,28 @@ export const SingleComp = (props) => {
                   <ul id="thumbnail">
                     <li>
                       <img
-                        onClick={(event) => handleClick(event, "hello")}
+                        onClick={(event) => handleClick(event)}
                         src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-2_T1666984556.png"
                         width="70"
                       ></img>
                     </li>
                     <li>
                       <img
-                        onClick={(event) => handleClick(event, "hello")}
+                        onClick={(event) => handleClick(event)}
                         src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-3_T1666984556.png"
                         width="70"
                       ></img>
                     </li>
                     <li>
                       <img
-                        onClick={(event) => handleClick(event, "hello")}
+                        onClick={(event) => handleClick(event)}
                         src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-4_T1666984557.png"
                         width="70"
                       ></img>
                     </li>
                     <li>
                       <img
-                        onClick={(event) => handleClick(event, "hello")}
+                        onClick={(event) => handleClick(event)}
                         src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-7_T1666984558.png"
                         width="70"
                       ></img>
