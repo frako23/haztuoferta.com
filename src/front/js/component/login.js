@@ -77,7 +77,7 @@ export const Login = () => {
       )}
       <MyButton
         title="Ingresa"
-        classButton="btn signup__button--register"
+        classButton="btn signup__button--login"
         handleShow={handleShow}
       />
       {/* <Button

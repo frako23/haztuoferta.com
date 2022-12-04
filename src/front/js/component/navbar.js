@@ -7,23 +7,24 @@ import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
 import { Button as MyButton } from "./Button";
-import logo from "../../img/logoNavbar.png";
+import logo from "../../img/LOGOHAZTUOFERTA.png";
 import { Search } from "./Search";
 import { Button } from "bootstrap";
+
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
-    <nav className="navbar navbar-white bg-white text-light sticky-top">
+    <nav className="navbar navbar-expand-md navbar-white bg-white navbar-expand-md text-light sticky-top">
       <div className="container-fluid justify-content-between">
         <div className="d-flex flex-row justify-content-center ms-3">
           <Categories />
-        </div>
-        <div className="align-items-start my-1">
-          <Link to="/">
-            <img src={logo} style={{ height: "50px" }} />
-          </Link>
+          <div className="navbar-brand align-items-start my-1">
+            <Link to="/">
+              <img src={logo} style={{ height: "50px" }} />
+            </Link>
+          </div>
         </div>
         <div className="d-flex flex-row p-1 text-center">
           <div className="d-flex align-items-center">
@@ -82,7 +83,7 @@ export const Navbar = (props) => {
               <Login />
             ) : (
               <button
-                className="btn signup__button--register"
+                className="btn signup__button--login"
                 onClick={(event) => actions.logout()}
               >
                 Salir
@@ -92,6 +93,6 @@ export const Navbar = (props) => {
           </div>
         </div>
       </div>
-    </nav>
+    </nav >
   );
 };

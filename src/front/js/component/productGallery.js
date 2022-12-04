@@ -119,17 +119,17 @@ export const ProductGallery = () => {
 
       <div id="result"></div>
 
-      <div class="row">
+      <div className="row">
         <img
-          class="slideshow-thumbnails active"
+          className="slideshow-thumbnails active"
           src="https://images.unsplash.com/photo-1512054502232-10a0a035d672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
         />
         <img
-          class="slideshow-thumbnails"
+          className="slideshow-thumbnails"
           src="https://images.unsplash.com/photo-1539341029274-a659646db47c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
         />
         <img
-          class="slideshow-thumbnails"
+          className="slideshow-thumbnails"
           src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
         />
       </div>

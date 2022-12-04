@@ -29,8 +29,8 @@ body {
 .navbar {
 
     border-bottom: 1px solid #00000012;
-    padding-top: 0rem !important;
-    padding-bottom: 0rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
     background-color: #ffffff !important;
 }
 
