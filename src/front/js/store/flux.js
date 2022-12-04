@@ -17,7 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       usuarios: [],
-      favorites: [],
+      favoritos: [],
       computadoras: [],
       celulares: [],
       ofertas: [],
@@ -338,22 +338,22 @@ const getState = ({ getStore, getActions, setStore }) => {
       toggleFavorite: (item) => {
         const store = getStore();
         const actions = getActions();
-        if (actions.isFavorite(item.name)) {
-          const newFavorites = store.favorites.filter((fav) => {
-            return fav.name !== item.name;
+        if (actions.isFavorite(item.titulo)) {
+          const newfavoritos = store.favoritos.filter((fav) => {
+            return fav.titulo !== item.titulo;
           });
           setStore({
-            favorites: newFavorites,
+            favoritos: newfavoritos,
           });
         } else {
           setStore({
-            favorites: [...store.favorites, item],
+            favoritos: [...store.favoritos, item],
           });
         }
       },
       isFavorite: (name) => {
         const store = getStore();
-        return store.favorites.find((favorite) => {
+        return store.favoritos.find((favorite) => {
           return favorite.name == name;
         });
       },

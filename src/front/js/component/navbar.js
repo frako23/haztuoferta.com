@@ -44,24 +44,24 @@ export const Navbar = (props) => {
                   />
                 </Link>
                 <button
-                  className="btn signup__button--register dropdown-toggle ddt ms-2"
+                  className="btn signup__button--register dropdown-toggle"
                   id="navbarScrollingDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Favoritos (
-                  {store.favorites.length > 0 ? store.favorites.length : 0})
+                  {store.favoritos.length > 0 ? store.favoritos.length : 0})
                 </button>
                 <ul
-                  className="dropdown-menu ddt"
+                  className="dropdown-menu"
                   aria-labelledby="navbarScrollingDropdown"
                 >
-                  {store.favorites.map((fav) => {
+                  {store.favoritos.map((fav) => {
                     return (
-                      <li key={fav.name}>
+                      <li key={fav.titulo}>
                         <a href="#" className="dropdown-item">
-                          {fav.name}{" "}
+                          {fav.titulo}{" "}
                           <button
                             type="button"
                             className="btn btn-danger mx-2 boton"

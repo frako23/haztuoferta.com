@@ -45,7 +45,12 @@ export const ItemCard = (props) => {
           <hr />
           <div className="card-body adjust-content-between">
             <div className="text-right buttons">
-              <button className="btn btn-outline-dark">
+              <button
+                className="btn btn-outline-dark"
+                onClick={(event) =>
+                  actions.toggleFavorite(props.computadoras.titulo)
+                }
+              >
                 Agregar a Favoritos
               </button>{" "}
               <button
