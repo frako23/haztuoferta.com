@@ -47,7 +47,7 @@ export const Navbar = (props) => {
                   </Link>
                   <Dropdown>
                     <Dropdown.Toggle
-                      className="btn signup__button--register"
+                      className="btn signup__button--register ms-2"
                       variant="success"
                       id="dropdown-basic"
                     >
