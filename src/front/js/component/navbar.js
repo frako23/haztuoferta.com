@@ -6,6 +6,7 @@ import { Categories } from "./categories";
 import "../../styles/publish.css";
 import { Signup } from "./signup";
 import { Login } from "./login";
+import Dropdown from "react-bootstrap/Dropdown";
 import { Button as MyButton } from "./Button";
 import logo from "../../img/LOGOHAZTUOFERTA.png";
 import { Search } from "./Search";
@@ -44,25 +45,20 @@ export const Navbar = (props) => {
                       classButton="btn signup__button--register"
                     />
                   </Link>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="btn signup__button--register"
+                      variant="success"
+                      id="dropdown-basic"
+                    >
+                      Favoritos (
+                      {store.favoritos.length > 0 ? store.favoritos.length : 0})
+                    </Dropdown.Toggle>
 
-                  <button
-                    className="btn signup__button--register dropdown-toggle"
-                    id="dropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Favoritos (
-                    {store.favoritos.length > 0 ? store.favoritos.length : 0})
-                  </button>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarScrollingDropdown"
-                  >
-                    {store.favoritos.map((fav) => {
-                      return (
-                        <li key={fav}>
-                          <a href="#" className="dropdown-item">
+                    <Dropdown.Menu>
+                      {store.favoritos.map((fav) => {
+                        return (
+                          <Dropdown.Item key={fav} href="#/action-1">
                             {fav}{" "}
                             <button
                               type="button"
@@ -71,11 +67,11 @@ export const Navbar = (props) => {
                             >
                               <i className="fa-solid fa-trash"></i>
                             </button>
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                          </Dropdown.Item>
+                        );
+                      })}
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </>
               )}
             </div>
