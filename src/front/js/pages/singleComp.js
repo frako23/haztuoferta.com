@@ -11,7 +11,7 @@ import "../../styles/single.css";
 
 export const SingleComp = (props) => {
   const { store, actions } = useContext(Context);
-
+  const [negocio, setNegocio] = useState("");
   const handleClick = (event) => {
     console.log(event.target);
     console.log("Image clicked");
@@ -164,88 +164,90 @@ export const SingleComp = (props) => {
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                   >
-                    <div className="modal-dialog">
-                      <div className="modal-content">
-                        <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLabel">
-                            Nuevo mensaje
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div className="modal-body">
-                          <form>
-                            <div>
-                              <h5>Venta</h5>
-                              <div className="input-group mb-3">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  placeholder="$"
-                                  aria-label="Nombre de usuario del destinatario"
-                                  aria-describedby="button-addon2"
-                                ></input>
-                                <button
-                                  className="btn btn-outline-dark"
-                                  type="button"
-                                  id="button-addon2"
-                                >
-                                  Enviar
-                                </button>
+                    {comp && comp.tipo_de_negocio == "Venta" ? (
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">
+                              Nuevo mensaje
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div className="modal-body">
+                            <form>
+                              <div>
+                                <h5>Venta</h5>
+                                <div className="input-group mb-3">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="$"
+                                    aria-label="Nombre de usuario del destinatario"
+                                    aria-describedby="button-addon2"
+                                  ></input>
+                                  <button
+                                    className="btn btn-outline-dark"
+                                    type="button"
+                                    id="button-addon2"
+                                  >
+                                    Enviar
+                                  </button>
+                                </div>
                               </div>
-                            </div>
 
-                            {/* {tipo_de_negocio
-                              ? tipo_de_negocio == "Intercambio" && ( */}
-                            <div>
-                              <h5>Oferta</h5>
-                              <div className="input-group mb-3">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  placeholder="$"
-                                  aria-label="Nombre de usuario del destinatario"
-                                  aria-describedby="button-addon2"
-                                ></input>
-                                <button
-                                  className="btn btn-outline-dark"
-                                  type="button"
-                                  id="button-addon2"
-                                >
-                                  Enviar
-                                </button>
+                              <div>
+                                <h5>Oferta</h5>
+                                <div className="input-group mb-3">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="$"
+                                    aria-label="Nombre de usuario del destinatario"
+                                    aria-describedby="button-addon2"
+                                  ></input>
+                                  <button
+                                    className="btn btn-outline-dark"
+                                    type="button"
+                                    id="button-addon2"
+                                  >
+                                    Enviar
+                                  </button>
+                                </div>
                               </div>
-                            </div>
-                            {/* )
+                              {/* )
                               : ""} */}
 
-                            <div>
-                              <h5>Subasta</h5>
-                              <div className="input-group mb-3">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  placeholder="$"
-                                  aria-label="Nombre de usuario del destinatario"
-                                  aria-describedby="button-addon2"
-                                ></input>
-                                <button
-                                  className="btn btn-outline-dark"
-                                  type="button"
-                                  id="button-addon2"
-                                >
-                                  Enviar
-                                </button>
+                              <div>
+                                <h5>Subasta</h5>
+                                <div className="input-group mb-3">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="$"
+                                    aria-label="Nombre de usuario del destinatario"
+                                    aria-describedby="button-addon2"
+                                  ></input>
+                                  <button
+                                    className="btn btn-outline-dark"
+                                    type="button"
+                                    id="button-addon2"
+                                  >
+                                    Enviar
+                                  </button>
+                                </div>
                               </div>
-                            </div>
-                          </form>
+                            </form>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
               </div>

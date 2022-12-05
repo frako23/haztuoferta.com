@@ -480,9 +480,9 @@ export const Publish = () => {
                     img_url: store.imageUrl,
                   });
                   navigate("/");
-                  // actions.setNotification(
-                  //   "¡Has publicado tu producto exitosamente!"
-                  // );
+                  actions.setNotification(
+                    "¡Has publicado tu producto exitosamente!"
+                  );
                 }}
               >
                 Publica tu producto

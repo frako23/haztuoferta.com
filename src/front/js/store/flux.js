@@ -338,8 +338,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       isFavorite: (name) => {
         const store = getStore();
-        return store.favoritos.find((favorite) => {
-          return favorite.name == name;
+        return store.favoritos.find((favoritos) => {
+          return favoritos == name;
         });
       },
     },
