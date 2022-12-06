@@ -45,7 +45,7 @@ export const SearchBar = () => {
                 type="text"
                 placeholder="Search"
                 value={inputValue}
-                className="input input-search"
+                className="input input-search shadow-none border border-secondary rounded"
                 onChange={(event) => {
                     onChangeHandler(event.target.value.trim());
                 }}

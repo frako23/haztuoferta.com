@@ -46,17 +46,17 @@ body {
 }
 
 .seccion {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: #fff;
+  background-color: transparent;
+  border-radius: 10px;
 }
 
 .seccion:hover {
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  color: black;
+  box-shadow: 0 5px 6px rgba(68, 68, 68, 0.19);
+  color: rgb(97, 97, 97);
 }
 
 .seccion>.seccion-inner {
@@ -137,5 +137,5 @@ h3 {
   text-decoration: none;
   color: black;
   position: absolute;
-  z-index: -1;
+  z-index: 200;
 }

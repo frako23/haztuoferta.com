@@ -14,7 +14,7 @@ export const ItemCard = (props) => {
   return (
     <React.Fragment>
       <div className="col-md-4">
-        <div className="card ">
+        <div className="item-card">
           <img
             src={props.computadoras.img_url}
             className="card-img-top w-100"
