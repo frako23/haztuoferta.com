@@ -157,7 +157,7 @@ export const Modal = (props) => {
                 </div>
                 <div className="modal-body d-flex">
                   <h1>
-                    <i class="fa-duotone fa-file-check"></i>
+                    <i className="fa-duotone fa-file-check"></i>
                   </h1>
                 </div>
                 <div className="modal-footer">
@@ -242,7 +242,7 @@ export const Modal = (props) => {
                 </div>
                 <div className="modal-body d-flex">
                   <h1>
-                    <i class="fa-duotone fa-file-check"></i>
+                    <i className="fa-duotone fa-file-check"></i>
                   </h1>
                 </div>
                 <div className="modal-footer">
