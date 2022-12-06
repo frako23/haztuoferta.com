@@ -16,16 +16,16 @@ export const Computadoras = () => {
   return (
     <div className="text-start mx-5 px-5">
       <h1 className="ps-5 pt-5 pb-3 mb-5 display-5 border-bottom border-secondary">
-        <i class="fa-solid fa-desktop"></i> Computadoras
+        <i className="fa-solid fa-desktop"></i> Computadoras
       </h1>
       <div className="container d-flex flex-wrap justify-content-center">
         {store.searchResults == ""
           ? store.computadoras.map((computadoras, index) => {
-            return <ItemCard computadoras={computadoras} key={index} />;
-          })
+              return <ItemCard computadoras={computadoras} key={index} />;
+            })
           : store.searchResults.map((computadora, index) => {
-            return <ItemCard computadoras={computadora} key={index} />;
-          })}
+              return <ItemCard computadoras={computadora} key={index} />;
+            })}
       </div>
     </div>
   );
