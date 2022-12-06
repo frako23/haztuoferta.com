@@ -68,6 +68,7 @@ class Computadora(db.Model):
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
     descripcion = db.Column(db.String(500), unique=False, nullable=False)
     img_url = db.Column(db.String(250), unique=False, nullable=False)
+    user_id = db.Column(db.Integer(), ForeignKey('user.id'))
 
     def __init__(self, **kwargs):
         self.titulo = kwargs['titulo']
@@ -84,6 +85,7 @@ class Computadora(db.Model):
         self.nuevo_usado = kwargs['nuevo_usado']
         self.descripcion = kwargs['descripcion']
         self.img_url = kwargs['img_url']
+        self.user_id = kwargs['user_id']
 
     @classmethod
     def create(cls, **kwargs):
@@ -113,7 +115,8 @@ class Computadora(db.Model):
             "tipo_de_negocio": self.tipo_de_negocio,
             "nuevo_usado": self.nuevo_usado,
             "descripcion": self.descripcion,
-            "img_url": self.img_url
+            "img_url": self.img_url,
+            "user_id": self.user_id,
             # do not serialize the password, its a security breach
         }
 
@@ -137,6 +140,7 @@ class Celular(db.Model):
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
     descripcion = db.Column(db.String(500), unique=False, nullable=False)
     img_url = db.Column(db.String(250), unique=False, nullable=False)
+    user_id = db.Column(db.Integer(), ForeignKey('user.id'))
 
     def __init__(self, **kwargs):
         self.titulo = kwargs['titulo']
@@ -155,6 +159,7 @@ class Celular(db.Model):
         self.nuevo_usado = kwargs['nuevo_usado']
         self.descripcion = kwargs['descripcion']
         self.img_url = kwargs['img_url']
+        self.user_id = kwargs['user_id']
 
     @classmethod
     def create(cls, **kwargs):
@@ -186,7 +191,8 @@ class Celular(db.Model):
             "tipo_de_negocio": self.tipo_de_negocio,
             "nuevo_usado": self.nuevo_usado,
             "descripcion": self.descripcion,
-            "img_url": self.img_url
+            "img_url": self.img_url,
+            "user_id": self.user_id,
             # do not serialize the password, its a security breach
         }
 
@@ -228,7 +234,7 @@ class Compra(db.Model):
             "user_name": self.user.name,
             "user_lastname": self.user.lastname,
             "user_email": self.user.email,
-            "user_phone": self.user.phone
+            "user_phone": self.user.phone,
             # do not serialize the password, its a security breach
         }
 

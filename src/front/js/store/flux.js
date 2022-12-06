@@ -19,7 +19,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       usuarios: [],
       favoritos: [],
       computadoras: [],
+      computadora: [],
       celulares: [],
+      celular: [],
       ofertas: [],
       searchText: "",
       searchResults: [],
@@ -152,7 +154,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getComputadoras: () => {
-        const apiURL = `${process.env.BACKEND_URL}/api/computadoras`;
+        const apiURL = `${process.env.BACKEND_URL}/api/get_computadoras`;
 
         fetch(apiURL)
           .then((response) => {
@@ -165,14 +167,29 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log(error));
       },
 
+      getComputadoraId: (computadoraId) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/get_computadora_id/${computadoraId}`;
+
+        fetch(apiURL)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error("Ha ocurrido un error");
+          })
+          .then((body) => setStore({ computadora: body }))
+          .catch((error) => console.log(error));
+      },
+
       postComputadoras: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/computadoras`;
+        const apiURL = `${process.env.BACKEND_URL}/api/post_computadoras`;
         const store = getStore();
         fetch(apiURL, {
           method: "POST", // or 'POST'
           body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
           headers: {
             "Content-Type": "application/json",
+            Authorization: "Bearer" + " " + store.token,
           },
         })
           .then((res) => {
@@ -184,13 +201,14 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postCelulares: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/celulares`;
+        const apiURL = `${process.env.BACKEND_URL}/api/post_celulares`;
         const store = getStore();
         fetch(apiURL, {
           method: "POST", // or 'POST'
           body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
           headers: {
             "Content-Type": "application/json",
+            Authorization: "Bearer" + " " + store.token,
           },
         })
           .then((res) => {
@@ -202,7 +220,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getCelulares: async () => {
-        const cellURL = `${process.env.BACKEND_URL}/api/celulares`;
+        const cellURL = `${process.env.BACKEND_URL}/api/get_celulares`;
 
         try {
           let response = await fetch(cellURL);

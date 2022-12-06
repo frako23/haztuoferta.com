@@ -57,14 +57,29 @@ def get_users():
 computadoras = []
 
 
-@api.route('/computadoras', methods=['GET', 'POST'])
+@api.route('/get_computadoras', methods=['GET'])
 def get_computadoras():
-    if request.method == 'GET':
-        computadoras = Computadora.query.all()
-        computadoras_dictionaries = []
-        for computadora in computadoras:
-            computadoras_dictionaries.append(computadora.serialize())
-        return jsonify(computadoras_dictionaries), 200
+    computadoras = Computadora.query.all()
+    computadoras_dictionaries = []
+    for computadora in computadoras:
+        computadoras_dictionaries.append(computadora.serialize())
+    return jsonify(computadoras_dictionaries), 200
+
+
+@api.route('/get_computadora_id/<int:comp_id>', methods=['GET'])
+def get_computadora_id(comp_id):
+    computadora = Computadora.query.filter_by(id=comp_id).first()
+    user = User.query.filter_by(id=computadora.user_id).first()
+    try:
+        return jsonify(user.serialize())
+    except Exception as error:
+        return jsonify(error.args[0]), error.args[1] if len(error.args) > 1 else 500
+
+
+@api.route('/post_computadoras', methods=['POST'])
+@jwt_required()
+def post_computadoras():
+    user_id = get_jwt_identity()
     new_computadora_data = request.json
     try:
         if "titulo" not in new_computadora_data or new_computadora_data["titulo"] == "":
@@ -91,23 +106,29 @@ def get_computadoras():
             raise Exception("No ingresaste descripcion", 400)
         if "img_url" not in new_computadora_data or new_computadora_data["img_url"] == "":
             raise Exception("No ingresaste imagenes", 400)
-        new_computadora = Computadora.create(**new_computadora_data)
+        new_computadora = Computadora.create(
+            **new_computadora_data, user_id=user_id)
         return jsonify(new_computadora.serialize()), 201
     except Exception as error:
-        return jsonify(error.args[0]), error.args[1]
+        return jsonify(error.args[0]), error.args[1] if len(error.args) > 1 else 500
 
 
 celulares = []
 
 
-@api.route('/celulares', methods=['GET', 'POST'])
+@api.route('/get_celulares', methods=['GET'])
 def get_celulares():
-    if request.method == 'GET':
-        celulares = Celular.query.all()
-        celulares_dictionaries = []
-        for celular in celulares:
-            celulares_dictionaries.append(celular.serialize())
-        return jsonify(celulares_dictionaries), 200
+    celulares = Celular.query.all()
+    celulares_dictionaries = []
+    for celular in celulares:
+        celulares_dictionaries.append(celular.serialize())
+    return jsonify(celulares_dictionaries), 200
+
+
+@api.route('/post_celulares', methods=['POST'])
+@jwt_required()
+def post_celulares():
+    user_id = get_jwt_identity()
     new_celular_data = request.json
     try:
         if "titulo" not in new_celular_data or new_celular_data["titulo"] == "":
@@ -138,10 +159,10 @@ def get_celulares():
             raise Exception("No ingresaste la descripcion", 400)
         if "img_url" not in new_celular_data or new_celular_data["img_url"] == "":
             raise Exception("No ingresaste las imagenes", 400)
-        new_celular = Celular.create(**new_celular_data)
+        new_celular = Celular.create(**new_celular_data, user_id=user_id)
         return jsonify(new_celular.serialize()), 201
     except Exception as error:
-        return jsonify(error.args[0]), error.args[1]
+        return jsonify(error.args[0]), error.args[1] if len(error.args) > 1 else 500
 
 
 ofertas_de_compras = []
