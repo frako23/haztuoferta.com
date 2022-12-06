@@ -64,7 +64,7 @@
     text-decoration: none !important;
 }
 
-ee body {
+body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 1.3rem;
     color: #444444;
@@ -81,9 +81,6 @@ a:hover {
     padding: 80px 0 54px;
 }
 
-.section-products .header {
-    margin-bottom: 20px;
-}
 
 .section-products .header h3 {
     font-size: 1.2rem;

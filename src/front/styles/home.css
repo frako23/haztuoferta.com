@@ -49,13 +49,12 @@ body {
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
   margin-top: 10px;
-  margin-bottom: 10px;
   background-color: transparent;
   border-radius: 10px;
 }
 
 .seccion:hover {
-  box-shadow: 0 5px 6px rgba(68, 68, 68, 0.19);
+  box-shadow: 0 6px rgba(68, 68, 68, 0.19);
   color: rgb(97, 97, 97);
 }
 
@@ -69,9 +68,6 @@ h3 {
   margin-top: 0px;
 }
 
-.seccion .header {
-  margin-bottom: 5px;
-}
 
 .seccion img {
   width: 100%;
