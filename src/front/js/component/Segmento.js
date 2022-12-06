@@ -16,7 +16,7 @@ export const Segmento = () => {
           </div>
           <br></br>
           <div className="containersegmento d-flex justify-content-center">
-            <p class="display-7 text-bold text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
+            <p className="display-7 text-bold text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
           </div>
 
           <br></br>
@@ -31,10 +31,10 @@ export const Segmento = () => {
                     </span>
                   </div>
                   <div className="seccion-inner text-center pt-5">
-                  <div className="header text-center">
+                    <div className="header text-center">
                       <h2 className="">PRODUCTOS EN VENTA</h2>
                       <h3>Vende tu Producto!</h3>
-                  </div>
+                    </div>
                   </div>
                 </div>
               </Link>

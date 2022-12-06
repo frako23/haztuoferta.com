@@ -86,7 +86,7 @@ export const Navbar = (props) => {
                   Salir
                 </button>
               )}
-              <Search />
+              {/* <Search /> */}
             </div>
           </div>
         </div>
