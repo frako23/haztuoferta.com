@@ -2,61 +2,59 @@ import { text } from "@cloudinary/url-gen/qualifiers/source";
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/searchBar.css";
 
 export const SearchBar = () => {
-    const { store, actions } = useContext(Context);
-    const [inputValue, setInputValue] = useState("");
-    const [suggestions, setSuggestions] = useState([]);
+  const { store, actions } = useContext(Context);
+  const [inputValue, setInputValue] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
 
+  const onChangeHandler = (text) => {
+    let matchCelulares = [];
+    let matchComputadoras = [];
 
-    const onChangeHandler = (text) => {
-        let matchCelulares = [];
-        let matchComputadoras = [];
+    if (text.length > 0) {
+      matchCelulares = store.celulares.filter((celular) => {
+        const regex = new RegExp(`${text}`, "gi");
+        return celular.titulo.match(regex);
+      });
 
+      matchComputadoras = store.computadoras.filter((computadora) => {
+        const regex = new RegExp(`${text}`, "gi");
+        return computadora.titulo.match(regex);
+      });
+      console.log(matchComputadoras);
+    }
 
-        if (text.length > 0) {
-            matchCelulares = store.celulares.filter((celular) => {
-                const regex = new RegExp(`${text}`, "gi");
-                return celular.titulo.match(regex);
-            });
+    let searches = [...matchComputadoras, ...matchCelulares];
+    console.log("match", searches);
 
-            matchComputadoras = store.computadoras.filter((computadora) => {
-                const regex = new RegExp(`${text}`, "gi");
-                return computadora.titulo.match(regex);
-            });
-            console.log(matchComputadoras);
-        }
+    setSuggestions(searches);
+    setInputValue(text);
+  };
 
-        let searches = [...matchComputadoras, ...matchCelulares];
-        console.log('match', searches);
+  // const onSuggestHandler = (text) => {
+  //     setInputValue(text);
+  //     setSuggestions([]);
+  // };
 
-        setSuggestions(searches);
-        setInputValue(text);
-    };
-
-    // const onSuggestHandler = (text) => {
-    //     setInputValue(text);
-    //     setSuggestions([]);
-    // };
-
-    return (
-        <div className="container">
-            <input
-                type="text"
-                placeholder="Search"
-                value={inputValue}
-                className="input input-search shadow-none border border-secondary rounded"
-                onChange={(event) => {
-                    onChangeHandler(event.target.value.trim());
-                }}
-            ></input>
-            {suggestions && suggestions.map((suggestion, index) =>
-                <div
-                    key={index}
-                    className="suggestions justify-content-md-center">
-                    {suggestion.titulo}
-                </div>
-            )}
-        </div>
-    );
+  return (
+    <div className="container wrap">
+      <input
+        type="text"
+        placeholder="Search"
+        value={inputValue}
+        className="input input-search shadow-none border border-secondary rounded"
+        onChange={(event) => {
+          onChangeHandler(event.target.value.trim());
+        }}
+      ></input>
+      {suggestions &&
+        suggestions.map((suggestion, index) => (
+          <div key={index} className="suggestions justify-content-md-center">
+            {suggestion.titulo}
+          </div>
+        ))}
+    </div>
+  );
 };
