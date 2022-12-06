@@ -18,9 +18,10 @@ gunicorn = "*"
 cloudinary = "*"
 flask-admin = "*"
 flask-jwt-extended = "*"
+typing-extensions = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.10"
 
 [scripts]
 start="flask run -p 3001 -h 0.0.0.0"
