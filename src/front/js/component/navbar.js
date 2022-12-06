@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Categories } from "./categories";
@@ -14,7 +14,7 @@ import { Button } from "bootstrap";
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
-
+  const navigate = useNavigate();
   return (
     <>
       <nav className="navbar navbar-expand-md navbar-white bg-white navbar-expand-md text-light sticky-top d-flex flex-column">
@@ -58,7 +58,7 @@ export const Navbar = (props) => {
                     <Dropdown.Menu>
                       {store.favoritos.map((fav) => {
                         return (
-                          <Dropdown.Item key={fav} href="#/action-1">
+                          <Dropdown.Item key={fav}>
                             {fav}{" "}
                             <button
                               type="button"

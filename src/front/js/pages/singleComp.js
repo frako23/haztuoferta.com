@@ -5,25 +5,25 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import { Comments } from "../component/Comments";
 import Table from "react-bootstrap/Table";
+import { Modal } from "../component/modal";
 // import { ProductGallery } from "../component/productGallery";
 import "../../styles/comments.css";
 import "../../styles/single.css";
 
 export const SingleComp = (props) => {
   const { store, actions } = useContext(Context);
-  const [negocio, setNegocio] = useState("");
-  const handleClick = (event) => {
-    console.log(event.target);
-    console.log("Image clicked");
-  };
-
   const params = useParams();
   console.log(params);
-
   let comp = store.computadoras.find((computadora) => {
     return computadora.id == params.id;
   });
   console.log(comp);
+  const [img, setImg] = useState("");
+  const handleClick = (event) => {
+    console.log(event.target);
+    console.log("Image clicked");
+    // setImg(event.target);
+  };
 
   return (
     <div className="container">
@@ -156,11 +156,11 @@ export const SingleComp = (props) => {
                       Haz tu Oferta
                     </button>
                   </div>
-
+                  <Modal />
                   <div
                     className="modal fade"
                     id="exampleModal"
-                    tabindex="-1"
+                    tabIndex={-1}
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                   >
@@ -171,7 +171,7 @@ export const SingleComp = (props) => {
                             <div className="modal-header">
                               <h5
                                 className="modal-title"
-                                id="exampleModalLabel"
+                                id="exampleModalToggleLabel"
                               >
                                 Venta
                               </h5>
@@ -183,30 +183,26 @@ export const SingleComp = (props) => {
                               ></button>
                             </div>
                             <div className="modal-body">
-                              <form>
-                                <div>
-                                  <h5>
-                                    Deseas comprar este producto por{" "}
-                                    {comp && comp.moneda + " " + comp.precio}?
-                                  </h5>
+                              <h5>
+                                Deseas comprar este producto por{" "}
+                                {comp && comp.moneda + " " + comp.precio}?
+                              </h5>
 
-                                  <button
-                                    className="btn signup__button--register me-2"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal2"
-                                  >
-                                    Comprar
-                                  </button>
-                                </div>
-                              </form>
+                              <button
+                                className="btn signup__button--register me-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModalToggle2"
+                              >
+                                Comprar
+                              </button>
                             </div>
                           </div>
                         </div>
                         <div
-                          className="modal fade"
-                          id="exampleModal2"
-                          tabindex="-1"
-                          aria-labelledby="exampleModalLabel"
+                          className="modal"
+                          id="exampleModalToggle2"
+                          tabIndex={-1}
+                          aria-labelledby="exampleModalToggleLabel2"
                           aria-hidden="true"
                         >
                           <div className="modal-dialog">
@@ -214,7 +210,7 @@ export const SingleComp = (props) => {
                               <div className="modal-header">
                                 <h5
                                   className="modal-title"
-                                  id="exampleModalLabel"
+                                  id="exampleModalToggleLabel2"
                                 >
                                   Datos del vendedor
                                 </h5>
@@ -226,11 +222,17 @@ export const SingleComp = (props) => {
                                 ></button>
                               </div>
                               <div className="modal-body">
-                                <form>
-                                  <div>
-                                    <h5>D</h5>
-                                  </div>
-                                </form>
+                                <h5>D</h5>
+                              </div>
+                              <div className="modal-footer">
+                                <button
+                                  className="btn btn-primary"
+                                  data-bs-target="#exampleModalToggle"
+                                  data-bs-toggle="modal"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Back to first
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -251,27 +253,25 @@ export const SingleComp = (props) => {
                             ></button>
                           </div>
                           <div className="modal-body">
-                            <form>
-                              <div>
-                                <h5>Que ofreces para el intercambio?</h5>
-                                <div className="input-group mb-3">
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Haz tu oferta aqui"
-                                    aria-label="Nombre de usuario del destinatario"
-                                    aria-describedby="button-addon2"
-                                  ></input>
-                                  <button
-                                    className="btn btn-outline-dark"
-                                    type="button"
-                                    id="button-addon2"
-                                  >
-                                    Enviar
-                                  </button>
-                                </div>
+                            <div>
+                              <h5>Que ofreces para el intercambio?</h5>
+                              <div className="input-group mb-3">
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  placeholder="Haz tu oferta aqui"
+                                  aria-label="Nombre de usuario del destinatario"
+                                  aria-describedby="button-addon2"
+                                ></input>
+                                <button
+                                  className="btn btn-outline-dark"
+                                  type="button"
+                                  id="button-addon2"
+                                >
+                                  Enviar
+                                </button>
                               </div>
-                            </form>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -290,27 +290,25 @@ export const SingleComp = (props) => {
                             ></button>
                           </div>
                           <div className="modal-body">
-                            <form>
-                              <div>
-                                <h5>Haz tu oferta</h5>
-                                <div className="input-group mb-3">
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="$"
-                                    aria-label="Nombre de usuario del destinatario"
-                                    aria-describedby="button-addon2"
-                                  ></input>
-                                  <button
-                                    className="btn btn-outline-dark"
-                                    type="button"
-                                    id="button-addon2"
-                                  >
-                                    Enviar
-                                  </button>
-                                </div>
+                            <div>
+                              <h5>Haz tu oferta</h5>
+                              <div className="input-group mb-3">
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  placeholder="$"
+                                  aria-label="Nombre de usuario del destinatario"
+                                  aria-describedby="button-addon2"
+                                ></input>
+                                <button
+                                  className="btn btn-outline-dark"
+                                  type="button"
+                                  id="button-addon2"
+                                >
+                                  Enviar
+                                </button>
                               </div>
-                            </form>
+                            </div>
                           </div>
                         </div>
                       </div>
