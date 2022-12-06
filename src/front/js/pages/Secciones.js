@@ -13,10 +13,12 @@ export const Secciones = () => {
                     <div className="container-fluid d-flex">
                         <a className="navbar-brand" href="#">SECCIONES</a>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
-                            <li className="nav-item " role="presentation"> <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Ofertas</a> </li>
-                            <li className="nav-item" role="presentation"> <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ventas</a> </li>
-                            <li className="nav-item" role="presentation"> <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"> <i class="fa-regular fa-handshake"></i> Intercambios</a> </li>
-                            <li className="nav-item" role="presentation"> <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Subastas</a> </li>
+                            <li
+                                className="nav-item "
+                                role="presentation"> <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa-solid fa-comments-dollar"></i> Ofertas</a> </li>
+                            <li className="nav-item" role="presentation"> <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fa-solid fa-hand-holding-dollar"></i> Ventas</a> </li>
+                            <li className="nav-item" role="presentation"> <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"> <i class="fa-solid fa-handshake"></i> Intercambios</a> </li>
+                            <li className="nav-item" role="presentation"> <a className="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fa-solid fa-gavel"></i> Subastas</a> </li>
                         </ul>
                     </div>
                 </nav>

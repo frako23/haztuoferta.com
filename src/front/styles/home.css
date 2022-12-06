@@ -82,7 +82,7 @@ h3 {
   background: #424242;
   border-radius: 0;
   color: #fff;
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   border-color: #1c1c1c;
   font-size: 1rem;
@@ -97,8 +97,7 @@ h3 {
 .btn-search:hover {
   background-color: white;
   color: black;
-  border: 1px solid black;
-  font-weight: bold;
+  border: 1px solid rgb(102, 102, 102);
   letter-spacing: 1px;
   font-size: 1rem;
 }
@@ -113,7 +112,7 @@ h3 {
   background-color: transparent;
   border-bottom: 1px solid burlywood;
   color: darkslategrey;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .item-description {
@@ -127,11 +126,16 @@ h3 {
 
 .suggestions {
   background-color: rgb(228, 228, 228);
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  color: darkslategrey;
+  font-size: 0.9rem;
 }
 
-.suggestions a {
+.suggestions:hover {
   text-decoration: none;
   color: black;
-  position: absolute;
-  z-index: 200;
+  font-size: 1rem;
+
 }
