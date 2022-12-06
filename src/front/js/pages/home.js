@@ -12,7 +12,6 @@ import { SearchBar } from "../component/SearchBar";
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
-<<<<<<< HEAD
   const { computadoras, celulares } = store;
 
   let productos = computadoras.concat(celulares);
@@ -56,23 +55,4 @@ export const Home = () => {
       </div>
     </React.Fragment>
   );
-=======
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
-			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://start.4geeksacademy.com/starters/react-flask">
-					Read documentation
-				</a>
-			</p>
-		</div>
-	);
->>>>>>> f3e26151041d2590f35927fe1a161bfd6b18453e
 };
