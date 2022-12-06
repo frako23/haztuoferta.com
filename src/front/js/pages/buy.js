@@ -25,7 +25,7 @@ export const Buy = () => {
       oferta: oferta,
       descripcion: descripcion,
     });
-    // actions.setNotification("¡Has creado tu oferta de compra exitosamente!");
+    actions.setNotification("¡Has creado tu oferta de compra exitosamente!");
     navigate("/");
   };
 

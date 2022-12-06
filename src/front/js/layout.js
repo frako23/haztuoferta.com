@@ -29,15 +29,6 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          {store.notification && (
-            <div
-              className="alert alert-success"
-              onClick={(e) => actions.setNotification(undefined)}
-              role="alert"
-            >
-              {store.notification}
-            </div>
-          )}
           <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />

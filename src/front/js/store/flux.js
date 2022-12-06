@@ -323,9 +323,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       toggleFavorite: (item) => {
         const store = getStore();
         const actions = getActions();
-        if (actions.isFavorite(item.titulo)) {
+        if (actions.isFavorite(item)) {
           const newfavoritos = store.favoritos.filter((fav) => {
-            return fav.titulo !== item.titulo;
+            return fav !== item;
           });
           setStore({
             favoritos: newfavoritos,
@@ -338,8 +338,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       isFavorite: (name) => {
         const store = getStore();
-        return store.favoritos.find((favorite) => {
-          return favorite.name == name;
+        return store.favoritos.find((favoritos) => {
+          return favoritos == name;
         });
       },
     },

@@ -11,7 +11,7 @@ import "../../styles/single.css";
 
 export const SingleComp = (props) => {
   const { store, actions } = useContext(Context);
-
+  const [negocio, setNegocio] = useState("");
   const handleClick = (event) => {
     console.log(event.target);
     console.log("Image clicked");
@@ -164,88 +164,159 @@ export const SingleComp = (props) => {
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                   >
-                    <div className="modal-dialog">
-                      <div className="modal-content">
-                        <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLabel">
-                            Nuevo mensaje
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
+                    {comp && comp.tipo_de_negocio == "Venta" ? (
+                      <>
+                        <div className="modal-dialog">
+                          <div className="modal-content">
+                            <div className="modal-header">
+                              <h5
+                                className="modal-title"
+                                id="exampleModalLabel"
+                              >
+                                Venta
+                              </h5>
+                              <button
+                                type="button"
+                                className="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div className="modal-body">
+                              <form>
+                                <div>
+                                  <h5>
+                                    Deseas comprar este producto por{" "}
+                                    {comp && comp.moneda + " " + comp.precio}?
+                                  </h5>
+
+                                  <button
+                                    className="btn signup__button--register me-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal2"
+                                  >
+                                    Comprar
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
                         </div>
-                        <div className="modal-body">
-                          <form>
-                            <div>
-                              <h5>Venta</h5>
-                              <div className="input-group mb-3">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  placeholder="$"
-                                  aria-label="Nombre de usuario del destinatario"
-                                  aria-describedby="button-addon2"
-                                ></input>
-                                <button
-                                  className="btn btn-outline-dark"
-                                  type="button"
-                                  id="button-addon2"
+                        <div
+                          className="modal fade"
+                          id="exampleModal2"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true"
+                        >
+                          <div className="modal-dialog">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h5
+                                  className="modal-title"
+                                  id="exampleModalLabel"
                                 >
-                                  Enviar
-                                </button>
+                                  Datos del vendedor
+                                </h5>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div className="modal-body">
+                                <form>
+                                  <div>
+                                    <h5>D</h5>
+                                  </div>
+                                </form>
                               </div>
                             </div>
-
-                            {/* {tipo_de_negocio
-                              ? tipo_de_negocio == "Intercambio" && ( */}
-                            <div>
-                              <h5>Oferta</h5>
-                              <div className="input-group mb-3">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  placeholder="$"
-                                  aria-label="Nombre de usuario del destinatario"
-                                  aria-describedby="button-addon2"
-                                ></input>
-                                <button
-                                  className="btn btn-outline-dark"
-                                  type="button"
-                                  id="button-addon2"
-                                >
-                                  Enviar
-                                </button>
+                          </div>
+                        </div>
+                      </>
+                    ) : comp && comp.tipo_de_negocio == "Intercambio" ? (
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">
+                              Intercambio
+                            </h5>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div className="modal-body">
+                            <form>
+                              <div>
+                                <h5>Que ofreces para el intercambio?</h5>
+                                <div className="input-group mb-3">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Haz tu oferta aqui"
+                                    aria-label="Nombre de usuario del destinatario"
+                                    aria-describedby="button-addon2"
+                                  ></input>
+                                  <button
+                                    className="btn btn-outline-dark"
+                                    type="button"
+                                    id="button-addon2"
+                                  >
+                                    Enviar
+                                  </button>
+                                </div>
                               </div>
-                            </div>
-                            {/* )
-                              : ""} */}
-
-                            <div>
-                              <h5>Subasta</h5>
-                              <div className="input-group mb-3">
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  placeholder="$"
-                                  aria-label="Nombre de usuario del destinatario"
-                                  aria-describedby="button-addon2"
-                                ></input>
-                                <button
-                                  className="btn btn-outline-dark"
-                                  type="button"
-                                  id="button-addon2"
-                                >
-                                  Enviar
-                                </button>
-                              </div>
-                            </div>
-                          </form>
+                            </form>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    ) : comp && comp.tipo_de_negocio == "Subasta" ? (
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">
+                              Cuanto quieres ofrecer?
+                            </h5>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div className="modal-body">
+                            <form>
+                              <div>
+                                <h5>Haz tu oferta</h5>
+                                <div className="input-group mb-3">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="$"
+                                    aria-label="Nombre de usuario del destinatario"
+                                    aria-describedby="button-addon2"
+                                  ></input>
+                                  <button
+                                    className="btn btn-outline-dark"
+                                    type="button"
+                                    id="button-addon2"
+                                  >
+                                    Enviar
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
               </div>
