@@ -25,7 +25,7 @@ export const Secciones = () => {
                   aria-controls="home"
                   aria-selected="true"
                 >
-                  Ofertas
+                  <i className="fa-solid fa-comments-dollar"></i>  Ofertas
                 </a>{" "}
               </li>
               <li className="nav-item" role="presentation">
@@ -39,7 +39,7 @@ export const Secciones = () => {
                   aria-controls="profile"
                   aria-selected="false"
                 >
-                  Ventas
+                  <i className="fa-solid fa-hand-holding-dollar"></i>  Ventas
                 </a>{" "}
               </li>
               <li className="nav-item" role="presentation">
@@ -54,7 +54,7 @@ export const Secciones = () => {
                   aria-selected="false"
                 >
                   {" "}
-                  <i className="fa-regular fa-handshake"></i> Intercambios
+                  <i className="fa-solid fa-handshake"></i> Intercambios
                 </a>{" "}
               </li>
               <li className="nav-item" role="presentation">
@@ -68,7 +68,7 @@ export const Secciones = () => {
                   aria-controls="contact"
                   aria-selected="false"
                 >
-                  Subastas
+                  <i className="fa-solid fa-gavel"></i> Subastas
                 </a>{" "}
               </li>
             </ul>

@@ -34,18 +34,19 @@ export const SearchBar = () => {
         setInputValue(text);
     };
 
-    // const onSuggestHandler = (text) => {
-    //     setInputValue(text);
-    //     setSuggestions([]);
-    // };
+    const onSuggestHandler = (text) => {
+        setInputValue(text);
+        setSuggestions([]);
+    };
 
     return (
         <div className="container">
             <input
                 type="text"
-                placeholder="Search"
                 value={inputValue}
-                className="input input-search shadow-none border border-secondary rounded"
+                style={{ minWidth: "150px" }}
+                className="form-control shadow-none border-secondary rounded"
+                placeholder="Busca lo que quieras..."
                 onChange={(event) => {
                     onChangeHandler(event.target.value.trim());
                 }}
@@ -53,7 +54,8 @@ export const SearchBar = () => {
             {suggestions && suggestions.map((suggestion, index) =>
                 <div
                     key={index}
-                    className="suggestions justify-content-md-center">
+                    className="suggestions col-md-12 justify-content-md-center"
+                    onClick={(event) => onSuggestHandler(suggestion.titulo)}>
                     {suggestion.titulo}
                 </div>
             )}

@@ -29,11 +29,11 @@ export const Oferts = (props) => {
         <Table striped>
           <thead>
             <tr>
-              <th>Titulo</th>
-              <th>Categoría</th>
-              <th>Se Ofrecen</th>
-              <th>Descripción</th>
-              <th>Contacto</th>
+              <th style={{ minWidth: "50px" }}>Título</th>
+              <th style={{ minWidth: "50px" }}>Categoría</th>
+              <th style={{ minWidth: "50px" }}>Se Ofrecen</th>
+              <th style={{ minWidth: "50px" }}>Descripción</th>
+              <th style={{ minWidth: "50px" }}>Contacto</th>
             </tr>
           </thead>
           <tbody>
