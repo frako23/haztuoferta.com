@@ -20,9 +20,9 @@ export const Navbar = (props) => {
       <div className="container-fluid justify-content-between">
         <div className="d-flex flex-row justify-content-center ms-3">
           <Categories />
-          <div className="navbar-brand align-items-start my-1">
+          <div className="navbar-brand align-items-start">
             <Link to="/">
-              <img src={logo} style={{ height: "50px" }} />
+              <img src={logo} style={{ height: "60px" }} />
             </Link>
           </div>
         </div>
@@ -89,9 +89,9 @@ export const Navbar = (props) => {
                 Salir
               </button>
             )}
-            <Search />
           </div>
         </div>
+        {/* <Search /> */}
       </div>
     </nav >
   );

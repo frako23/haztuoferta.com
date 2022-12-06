@@ -130,5 +130,12 @@ h3 {
 }
 
 .suggestions {
-  width: 100px;
+  background-color: rgb(228, 228, 228);
+}
+
+.suggestions a {
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  z-index: -1;
 }
