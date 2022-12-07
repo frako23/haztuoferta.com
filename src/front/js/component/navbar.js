@@ -27,8 +27,11 @@ export const Navbar = (props) => {
               </Link>
             </div>
           </div>
+          <div>
+            <SearchBar />
+          </div>
           <div className="d-flex flex-row p-1 text-center">
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-end">
               {!store.token ? (
                 <Signup />
               ) : (
@@ -77,7 +80,6 @@ export const Navbar = (props) => {
             </div>
 
             <div className="d-flex align-items-between ms-1">
-
               {!store.token ? (
                 <Login />
               ) : (
@@ -91,7 +93,6 @@ export const Navbar = (props) => {
             </div>
           </div>
         </div>
-        <SearchBar />
         <div>
           {store.notification && (
             <div
