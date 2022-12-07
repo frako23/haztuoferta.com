@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       ofertas: [],
       searchText: "",
       searchResults: [],
-      imageUrl: "",
+      imageUrl: [],
       favoritos: [],
     },
 
@@ -128,6 +128,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.error("There has been an error login in");
         }
       },
+
       logout: () => {
         const token = sessionStorage.removeItem("token");
         console.log("Se han borrado todos los tokens");
@@ -137,6 +138,38 @@ const getState = ({ getStore, getActions, setStore }) => {
       addUrl: (url) => {
         const store = getStore();
         setStore({ imageUrl: url });
+      },
+
+      postImgurl: (data) => {
+        const apiURL = `${process.env.BACKEND_URL}/api/imgurl`;
+        const store = getStore();
+        fetch(apiURL, {
+          method: "POST", // or 'POST'
+          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (!res.ok) throw Error(res.statusText);
+            return res.json();
+          })
+          .then((response) => console.log("Success:", response))
+          .catch((error) => console.error(error));
+      },
+
+      getImgurl: () => {
+        const apiURL = `${process.env.BACKEND_URL}/api/imgurl`;
+
+        fetch(apiURL)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error("Ha ocurrido un error");
+          })
+          .then((body) => setStore({ imageUrl: body }))
+          .catch((error) => console.log(error));
       },
 
       getUsuarios: () => {
