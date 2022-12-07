@@ -36,7 +36,7 @@ export const Segmento = () => {
           <br></br>
           <div className="row">
             <div className="col-md-6 col-lg-4 col-xl-3">
-              <Link className="seccion-link" to="/Secciones">
+              <Link className="seccion-link" to="/ventas">
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
@@ -56,7 +56,7 @@ export const Segmento = () => {
               <Link
                 className="seccion-link"
                 to="/Oferts"
-                // preventScrollReset={true}
+              // preventScrollReset={true}
               >
                 <div className="seccion">
                   <div className="image">

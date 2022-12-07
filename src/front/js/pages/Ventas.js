@@ -9,15 +9,18 @@ export const Ventas = () => {
     const { computadoras, celulares } = store;
 
     let productos = computadoras.concat(celulares);
+    let productosVenta = productos.filter(producto => {
+        return producto.tipo_de_negocio == "Venta"
+    });
 
     return (
         <div className="text-start mx-5 px-5">
             <h1 className="ps-5 pt-5 pb-3 mb-5 display-5 border-bottom border-secondary">
                 <i className="fa-solid fa-hand-holding-dollar"></i>  Artículos en Venta
             </h1>
-            <div className="container d-flex flex-wrap justify-content-center shadow">
-                {productos.map((computadoras, index) => {
-                    return <ItemCard computadoras={computadoras} key={index} />;
+            <div className="container d-flex flex-wrap justify-content-center">
+                {productosVenta.map((producto, index) => {
+                    return <ItemCard computadoras={producto} key={index} />;
                 })};
             </div>
         </div>
