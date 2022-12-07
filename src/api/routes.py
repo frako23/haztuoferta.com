@@ -104,8 +104,6 @@ def post_computadoras():
             raise Exception("No ingresaste el precio", 400)
         if "descripcion" not in new_computadora_data or new_computadora_data["descripcion"] == "":
             raise Exception("No ingresaste descripcion", 400)
-        if "img_url" not in new_computadora_data or new_computadora_data["img_url"] == "":
-            raise Exception("No ingresaste imagenes", 400)
         new_computadora = Computadora.create(
             **new_computadora_data, user_id=user_id)
         return jsonify(new_computadora.serialize()), 201
@@ -157,8 +155,6 @@ def post_celulares():
             raise Exception("No ingresaste la camara trasera", 400)
         if "descripcion" not in new_celular_data or new_celular_data["descripcion"] == "":
             raise Exception("No ingresaste la descripcion", 400)
-        if "img_url" not in new_celular_data or new_celular_data["img_url"] == "":
-            raise Exception("No ingresaste las imagenes", 400)
         new_celular = Celular.create(**new_celular_data, user_id=user_id)
         return jsonify(new_celular.serialize()), 201
     except Exception as error:
@@ -211,3 +207,24 @@ def get_products(product_name):
     else:
         response = list(map(lambda item: item.serialize(), products))
         return jsonify(response), 200
+
+
+imgurl = []
+
+
+@api.route('/imgurl', methods=['GET', 'POST'])
+def get_imgurl():
+    if request.method == 'GET':
+        imgurl = Imgurl.query.all()
+        imgurl_dictionaries = []
+        for url in imgurl:
+            imgurl_dictionaries.append(url.serialize())
+        return jsonify(imgurl_dictionaries), 200
+    new_url_data = request.json
+    try:
+        if "url" not in new_url_data or new_url_data["url"] == "":
+            raise Exception("No ingresaste la url de la imágen", 400)
+        new_url = Imgurl.create(**new_url_data)
+        return jsonify(new_url.serialize()), 201
+    except Exception as error:
+        return jsonify(error.args[0]), error.args[1]
