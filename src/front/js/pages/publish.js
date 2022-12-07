@@ -8,6 +8,7 @@ import "../../styles/publish.css";
 import CloudinaryUploadWidget from "../component/upLoadImages";
 import context from "react-bootstrap/esm/AccordionContext";
 import { Navigate, useNavigate } from "react-router-dom";
+import { AvatarImage } from "../component/avatarImage";
 
 export const Publish = () => {
   const [titulo, setTitulo] = useState("");
@@ -36,7 +37,7 @@ export const Publish = () => {
     <>
       <div id="container">
         <div id="container1" className="">
-          <h1>¿Qué deseas vender?</h1>
+          <h1 className="">¿Qué deseas vender?</h1>
         </div>
         <div className="containerpublish mb-5">
           <Form
@@ -175,7 +176,7 @@ export const Publish = () => {
             ) : (
               ""
             )}
-            <Form.Group className="mb-3 d-grid gap-2" controlId="formFile">
+            <Form.Group className="mb-2 mt-3 d-grid gap-2" controlId="formFile">
               <Form.Label>Agregar fotos </Form.Label>
               <CloudinaryUploadWidget />
             </Form.Group>
@@ -241,7 +242,9 @@ export const Publish = () => {
                   />
                 </InputGroup>
                 <InputGroup className="mb-3">
-                  <InputGroup.Text id="basic-addon1">Procesador</InputGroup.Text>
+                  <InputGroup.Text id="basic-addon1">
+                    Procesador
+                  </InputGroup.Text>
                   <Form.Control
                     placeholder="Procesador"
                     aria-label="Username"
@@ -263,7 +266,9 @@ export const Publish = () => {
                   />
                 </InputGroup>
                 <InputGroup className="mb-3">
-                  <InputGroup.Text id="basic-addon1">Disco duro</InputGroup.Text>
+                  <InputGroup.Text id="basic-addon1">
+                    Disco duro
+                  </InputGroup.Text>
                   <Form.Control
                     placeholder="Disco duro"
                     aria-label="Username"
@@ -273,7 +278,9 @@ export const Publish = () => {
                       setDisco_duro(e.target.value);
                     }}
                   />
-                  <InputGroup.Text id="basic-addon1">Memoria Ram</InputGroup.Text>
+                  <InputGroup.Text id="basic-addon1">
+                    Memoria Ram
+                  </InputGroup.Text>
                   <Form.Control
                     placeholder="Memoria Ram"
                     aria-label="Username"
@@ -423,7 +430,9 @@ export const Publish = () => {
                       setAlmacenamiento_interno(e.target.value);
                     }}
                   />
-                  <InputGroup.Text id="basic-addon1">Memoria Ram</InputGroup.Text>
+                  <InputGroup.Text id="basic-addon1">
+                    Memoria Ram
+                  </InputGroup.Text>
                   <Form.Control
                     placeholder="Memoria Ram"
                     aria-label="Username"
@@ -494,8 +503,7 @@ export const Publish = () => {
             )}
           </Form>
         </div>
-      </div>  
-      </>
-
+      </div>
+    </>
   );
 };
