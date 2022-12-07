@@ -19,7 +19,7 @@ export const Segmento = () => {
           <br></br>
           <div className="containersegmento d-flex justify-content-center">
             <p className="lead text-bold text-center">
-            Encontraras todo tipo de productos con opcion a intercambio y precios a justados al mercado
+              Encontraras todo tipo de productos con opcion a intercambio y precios a justados al mercado
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export const Segmento = () => {
               </Link>
             </div>
             <div className="col-md-6 col-lg-4 col-xl-3">
-              <Link className="seccion-link" to="/Secciones">
+              <Link className="seccion-link" to="/intercambios">
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
@@ -82,7 +82,7 @@ export const Segmento = () => {
               </Link>
             </div>
             <div className="col-md-6 col-lg-4 col-xl-3">
-              <Link className="seccion-link" to="/Secciones">
+              <Link className="seccion-link" to="/subastas">
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
