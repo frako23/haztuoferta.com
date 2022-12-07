@@ -20,15 +20,7 @@ export const AboutUs = () => {
       <div className="container py-5 border-top ">
         <div className="row d-flex justify-content-center ">
           <div className="col-8">
-            <p className="fs-1 text fw-bolder">
-              Francisco Orozco{" "}
-              <span
-                className="text-secondary
-                        "
-              >
-                CEO
-              </span>{" "}
-            </p>
+            <p className="fs-1 text fw-bolder">Francisco Orozco </p>
             <p className="fs-5 text">
               37 años, Ingeniero de Producción de la USB, con mas de 13 años de
               experiencia en marketing y ventas, papá de Sebastián
@@ -58,9 +50,7 @@ export const AboutUs = () => {
             />
           </div>
           <div className="col-8">
-            <p className="fs-1 text fw-bolder">
-              Piero Mastrogiacomo<span className="text-secondary"> CEO</span>{" "}
-            </p>
+            <p className="fs-1 text fw-bolder">Piero Mastrogiacomo</p>
             <p className="fs-5 text">
               Medico de profesión, 40 años. Orgulloso padre.
             </p>
@@ -76,15 +66,7 @@ export const AboutUs = () => {
       <div className="container py-5 border-top ">
         <div className="row d-flex justify-content-center ">
           <div className="col-8">
-            <p className="fs-1 text fw-bolder">
-              Javier Klie{" "}
-              <span
-                className="text-secondary
-                        "
-              >
-                CEO
-              </span>{" "}
-            </p>
+            <p className="fs-1 text fw-bolder">Javier Klie </p>
             <p className="fs-5 text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id
               dolorem molestiae maiores autem, minus amet libero nihil odit
@@ -115,14 +97,9 @@ export const AboutUs = () => {
             />
           </div>
           <div className="col-8">
-            <p className="fs-1 text fw-bolder">
-              Luis Camargo<span className="text-secondary"> CEO</span>{" "}
-            </p>
+            <p className="fs-1 text fw-bolder">Luis Camargo</p>
             <p className="fs-5 text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id
-              dolorem molestiae maiores autem, minus amet libero nihil odit
-              consectetur, provident magni harum fuga tempore sunt praesentium
-              magnam architecto. Quibusdam.
+              Estudiante de Medicina, 23 años <br />
             </p>
           </div>
         </div>
