@@ -106,18 +106,8 @@ export const AboutUs = () => {
       </div>
       <div className="container py-5 border-top ">
         <div className="row d-flex justify-content-center ">
-          <div className="col-4 w-auto">
-            <img
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
-              alt="imagen"
-              width="300px"
-              style={{ "border-radius": "50%" }}
-            />
-          </div>
-          <div className="col-8">
-            <p className="fs-1 text fw-bolder">
-              Tecnologias que usamos<span className="text-secondary"> CEO</span>{" "}
-            </p>
+          <div className="text-center">
+            <p className="fs-1 text fw-bolder">Tecnologias que usamos</p>
           </div>
         </div>
       </div>
