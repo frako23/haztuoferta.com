@@ -2,6 +2,7 @@ import { text } from "@cloudinary/url-gen/qualifiers/source";
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/searchBar.css";
 
 export const SearchBar = () => {
     const { store, actions } = useContext(Context);
@@ -40,12 +41,14 @@ export const SearchBar = () => {
     };
 
     return (
-        <div className="container">
+        <div class="search-box">
+            <button class="btn-search">
+                <i class="fas fa-search"></i>
+            </button>
             <input
                 type="text"
                 value={inputValue}
-                style={{ minWidth: "150px" }}
-                className="form-control shadow-none border-secondary rounded"
+                className="input-search"
                 placeholder="Busca lo que quieras..."
                 onChange={(event) => {
                     onChangeHandler(event.target.value.trim());
