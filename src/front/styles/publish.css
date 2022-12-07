@@ -19,15 +19,20 @@ input[type="number"] {
 }
 
 #container {
-  display: flex;
-  flex-direction: row;
+
+  justify-content: center;
 }
 
 #container1 {
   display: flex;
-  width: 40%;
-  background-color: blue;
-  border-radius: 0 10px 10px 0;
+  justify-content: center;
+
+}
+
+.containerpublish {
+  display: flex;
+  justify-content: center;
+
 }
 
 #container1 h1 {
@@ -35,7 +40,7 @@ input[type="number"] {
   display: flex;
   justify-content: center;
   align-self: center;
-  color: #ffffff;
+
 }
 
 option:first-of-type {
