@@ -148,16 +148,17 @@ export const SingleComp = (props) => {
                     <button className="btn btn-outline-dark">
                       Agregar a Favoritos
                     </button>
-                    <button
+                    {/* <button
                       className="btn signup__button--register me-2"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"
                     >
                       Haz tu Oferta
-                    </button>
+                    </button> */}
+                    <Modal />
                   </div>
-                  <Modal />
-                  <div
+
+                  {/* <div
                     className="modal fade"
                     id="exampleModal"
                     tabIndex={-1}
@@ -315,7 +316,7 @@ export const SingleComp = (props) => {
                     ) : (
                       ""
                     )}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

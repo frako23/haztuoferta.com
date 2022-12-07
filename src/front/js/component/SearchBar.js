@@ -39,19 +39,24 @@ export const SearchBar = () => {
   // };
 
   return (
-    <div className="container wrap">
+    <div className="container">
       <input
         type="text"
-        placeholder="Search"
         value={inputValue}
-        className="input input-search shadow-none border border-secondary rounded"
+        style={{ minWidth: "150px" }}
+        className="form-control shadow-none border-secondary rounded"
+        placeholder="Busca lo que quieras..."
         onChange={(event) => {
           onChangeHandler(event.target.value.trim());
         }}
       ></input>
       {suggestions &&
         suggestions.map((suggestion, index) => (
-          <div key={index} className="suggestions justify-content-md-center">
+          <div
+            key={index}
+            className="suggestions col-md-12 justify-content-md-center"
+            onClick={(event) => onSuggestHandler(suggestion.titulo)}
+          >
             {suggestion.titulo}
           </div>
         ))}

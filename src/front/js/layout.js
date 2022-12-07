@@ -16,6 +16,7 @@ import { Oferts } from "./pages/oferts";
 import { AboutUs } from "./pages/AboutUs";
 import { Secciones } from "./pages/Secciones";
 import { YourAccount } from "./pages/yourAccount";
+import { Ventas } from "./pages/Ventas";
 
 //create your first component
 
@@ -36,6 +37,7 @@ const Layout = () => {
             <Route element={<Computadoras />} path="/computadoras" />
             <Route element={<Celulares />} path="/celulares" />
             <Route element={<Secciones />} path="/Secciones" />
+            <Route element={<Ventas />} path="/ventas" />
             <Route element={<SingleComp />} path="/singleComp/:id" />
             <Route element={<Publish />} path="/Publish" />
             <Route element={<Buy />} path="/Buy" />

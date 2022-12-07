@@ -12,18 +12,31 @@ export const Segmento = () => {
       <section className="section-products mb-2">
         <div className="container">
           <div className="containersegmento d-flex justify-content-center">
-            <h1 class="display-6 text-bold text-center">Que encontrarias en haztuoferta?</h1>
+            <h1 className="display-6 text-bold text-center">
+              Que encontrarias en haztuoferta?
+            </h1>
           </div>
           <br></br>
           <div className="containersegmento d-flex justify-content-center">
-            <p className="lead text-bold text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
+            <p className="lead text-bold text-center">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here,
+              content here', making it look like readable English. Many desktop
+              publishing packages and web page editors now use Lorem Ipsum as
+              their default model text, and a search for 'lorem ipsum' will
+              uncover many web sites still in their infancy. Various versions
+              have evolved over the years, sometimes by accident, sometimes on
+              purpose{" "}
+            </p>
           </div>
 
           <br></br>
           <br></br>
           <div className="row">
             <div className="col-md-6 col-lg-4 col-xl-3">
-              <Link className="seccion-link" to="/Secciones">
+              <Link className="seccion-link" to="/ventas">
                 <div className="seccion">
                   <div className="image">
                     <span className="img-card">
@@ -99,4 +112,4 @@ export const Segmento = () => {
       </section>
     </React.Fragment>
   );
-}
+};
