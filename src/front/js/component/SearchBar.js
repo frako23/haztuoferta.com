@@ -33,19 +33,20 @@ export const SearchBar = () => {
     setInputValue(text);
   };
 
-  // const onSuggestHandler = (text) => {
-  //     setInputValue(text);
-  //     setSuggestions([]);
-  // };
+  const onSuggestHandler = (text) => {
+    setInputValue(text);
+    setSuggestions([]);
+  };
 
-<<<<<<< HEAD
   return (
-    <div className="container">
+    <div class="search-box">
+      <button class="btn-search">
+        <i class="fas fa-search"></i>
+      </button>
       <input
         type="text"
         value={inputValue}
-        style={{ minWidth: "150px" }}
-        className="form-control shadow-none border-secondary rounded"
+        className="input-search"
         placeholder="Busca lo que quieras..."
         onChange={(event) => {
           onChangeHandler(event.target.value.trim());
@@ -63,39 +64,4 @@ export const SearchBar = () => {
         ))}
     </div>
   );
-=======
-        setSuggestions(searches);
-        setInputValue(text);
-    };
-
-    const onSuggestHandler = (text) => {
-        setInputValue(text);
-        setSuggestions([]);
-    };
-
-    return (
-        <div class="search-box">
-            <button class="btn-search">
-                <i class="fas fa-search"></i>
-            </button>
-            <input
-                type="text"
-                value={inputValue}
-                className="input-search"
-                placeholder="Busca lo que quieras..."
-                onChange={(event) => {
-                    onChangeHandler(event.target.value.trim());
-                }}
-            ></input>
-            {suggestions && suggestions.map((suggestion, index) =>
-                <div
-                    key={index}
-                    className="suggestions col-md-12 justify-content-md-center"
-                    onClick={(event) => onSuggestHandler(suggestion.titulo)}>
-                    {suggestion.titulo}
-                </div>
-            )}
-        </div>
-    );
->>>>>>> 13614b14ba7351958c3dd717917b2ff526490e7c
 };
