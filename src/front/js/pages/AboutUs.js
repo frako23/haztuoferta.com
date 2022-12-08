@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/AboutUs.css";
+import piero from "../../img/Piero.png"
 
 export const AboutUs = () => {
   return (
@@ -51,7 +52,7 @@ export const AboutUs = () => {
         <div className="row d-flex justify-content-center ">
           <div className="col-4 w-auto">
             <img
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              src={piero}
               alt="imagen"
               width="300px"
               style={{ "border-radius": "50%" }}
@@ -59,13 +60,14 @@ export const AboutUs = () => {
           </div>
           <div className="col-8">
             <p className="fs-1 text fw-bolder">
-              Piero Mastrogiacomo<span className="text-secondary"> CEO</span>{" "}
+              Piero Mastrogiacomo
+              <span className="text-secondary"></span>{" "}
             </p>
             <p className="fs-5 text">
-              Medico de profesión, 40 años. Orgulloso padre.
+              Médico de profesión, 40 años. Orgulloso padre.
             </p>
             <p className="fs-5 text">
-              Amante de la tecnologia, en busca de un giro profesional de 180
+              Amante de la tecnología en busca de un giro profesional de 180
               grados.
             </p>
           </div>
