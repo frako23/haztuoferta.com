@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Computadora, Celular, Compra
+from api.models import db, User, Computadora, Celular, Compra, Imgurl
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -98,8 +98,6 @@ def post_computadoras():
             raise Exception("No ingresaste el disco duro", 400)
         if "sistema_operativo" not in new_computadora_data or new_computadora_data["sistema_operativo"] == "":
             raise Exception("No ingresaste el sistema operativo", 400)
-        if "moneda" not in new_computadora_data or new_computadora_data["moneda"] == "":
-            raise Exception("No ingresaste el tipo de moneda", 400)
         if "precio" not in new_computadora_data or new_computadora_data["precio"] == "":
             raise Exception("No ingresaste el precio", 400)
         if "descripcion" not in new_computadora_data or new_computadora_data["descripcion"] == "":
@@ -143,8 +141,6 @@ def post_celulares():
             raise Exception("No ingresaste el almacenamiento interno", 400)
         if "sistema_operativo" not in new_celular_data or new_celular_data["sistema_operativo"] == "":
             raise Exception("No ingresaste el sistema operativo", 400)
-        if "moneda" not in new_celular_data or new_celular_data["moneda"] == "":
-            raise Exception("No ingresaste el tipo de moneda", 400)
         if "precio" not in new_celular_data or new_celular_data["precio"] == "":
             raise Exception("No ingresaste el precio", 400)
         if "bateria" not in new_celular_data or new_celular_data["bateria"] == "":
@@ -209,22 +205,38 @@ def get_products(product_name):
         return jsonify(response), 200
 
 
-imgurl = []
+# imgurl = []
 
 
-@api.route('/imgurl', methods=['GET', 'POST'])
-def get_imgurl():
-    if request.method == 'GET':
-        imgurl = Imgurl.query.all()
+@api.route('/imgurl/<string:product_name>/<int:product_id>', methods=['GET'])
+def get_imgurl(product_name, product_id):
+    if product_name == "computadoras":
+        imgurl = Imgurl.query.filter_by(computadora_id=product_id)
         imgurl_dictionaries = []
         for url in imgurl:
             imgurl_dictionaries.append(url.serialize())
         return jsonify(imgurl_dictionaries), 200
+    if product_name == "celulares":
+        imgurl = Imgurl.query.filter_by(celular_id=product_id)
+        imgurl_dictionaries = []
+        for url in imgurl:
+            imgurl_dictionaries.append(url.serialize())
+        return jsonify(imgurl_dictionaries), 200
+
+
+@api.route('/imgurl/<string:product_name>/<int:product_id>', methods=['POST'])
+def post_imgurl(product_name, product_id):
     new_url_data = request.json
     try:
-        if "url" not in new_url_data or new_url_data["url"] == "":
-            raise Exception("No ingresaste la url de la imágen", 400)
-        new_url = Imgurl.create(**new_url_data)
+        if product_name == "computadoras":
+            if "url" not in new_url_data or new_url_data["url"] == "":
+                raise Exception("No ingresaste la url de la imagen", 400)
+            new_url = Imgurl.create(computadora_id=product_id, **new_url_data)
+        return jsonify(new_url.serialize()), 201
+        if product_name == "celulares":
+            if "url" not in new_url_data or new_url_data["url"] == "":
+                raise Exception("No ingresaste la url de la imagen", 400)
+            new_url = Imgurl.create(celular_id=product_id, **new_url_data)
         return jsonify(new_url.serialize()), 201
     except Exception as error:
         return jsonify(error.args[0]), error.args[1]
