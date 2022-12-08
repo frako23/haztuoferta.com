@@ -31,6 +31,38 @@ export const Publish = () => {
   const [bateria, setBateria] = useState("");
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
+  if (store.computadoras.length > 0) {
+    console.log(
+      store.computadoras.length,
+      store.computadoras[store.computadoras.length - 1].titulo,
+      store.computadoras[store.computadoras.length - 1].id + 1
+    );
+  }
+  const dataComputadora = async () => {
+    let variable = await actions.postComputadoras({
+      titulo: titulo,
+      marca: marca,
+      modelo: modelo,
+      procesador: procesador,
+      pantalla: pantalla,
+      memoria_ram: memoria_ram,
+      disco_duro: disco_duro,
+      sistema_operativo: sistema_operativo,
+      moneda: moneda,
+      precio: precio,
+      tipo_de_negocio: tipo_de_negocio,
+      nuevo_usado: nuevo_usado,
+      descripcion: descripcion,
+    });
+
+    actions.postImgurl(
+      store.imageUrl,
+      categoria,
+      store.computadoras[store.computadoras.length - 1].id + 1
+    );
+    navigate("/");
+    actions.setNotification("¡Has publicado tu producto exitosamente!");
+  };
 
   return (
     <>
@@ -177,6 +209,13 @@ export const Publish = () => {
           <Form.Group className="mb-3 d-grid gap-2" controlId="formFile">
             <Form.Label>Agregar fotos </Form.Label>
             <CloudinaryUploadWidget />
+            {store.imageUrl.length > 0 && (
+              <div>
+                {store.imageUrl.map((img) => {
+                  return <img className="p-2" src={img.thumbnail} />;
+                })}
+              </div>
+            )}
           </Form.Group>
 
           <Form.Group className="" controlId="exampleForm.ControlInput2">
@@ -308,31 +347,7 @@ export const Publish = () => {
                   setDescripcion(e.target.value);
                 }}
               />
-              <Button
-                variant="primary"
-                onClick={() => {
-                  actions.postComputadoras({
-                    titulo: titulo,
-                    marca: marca,
-                    modelo: modelo,
-                    procesador: procesador,
-                    pantalla: pantalla,
-                    memoria_ram: memoria_ram,
-                    disco_duro: disco_duro,
-                    sistema_operativo: sistema_operativo,
-                    moneda: moneda,
-                    precio: precio,
-                    tipo_de_negocio: tipo_de_negocio,
-                    nuevo_usado: nuevo_usado,
-                    descripcion: descripcion,
-                    img_url: store.imageUrl,
-                  });
-                  navigate("/");
-                  actions.setNotification(
-                    "¡Has publicado tu producto exitosamente!"
-                  );
-                }}
-              >
+              <Button variant="primary" onClick={dataComputadora}>
                 Publica tu producto
               </Button>
             </div>
@@ -479,6 +494,7 @@ export const Publish = () => {
                     descripcion: descripcion,
                     img_url: store.imageUrl,
                   });
+                  actions.getComputadoras();
                   navigate("/");
                   actions.setNotification(
                     "¡Has publicado tu producto exitosamente!"

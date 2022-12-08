@@ -15,11 +15,13 @@ export const ItemCard = (props) => {
     <React.Fragment>
       <div className="col-md-4">
         <div className="item-card">
-          <img
-            src={props.computadoras.img_url}
-            className="card-img-top w-100"
-            style={{ height: "300px" }}
-          ></img>
+          {store.imgSingleUrl !== "" && (
+            <img
+              src={store.imgSingleUrl[0].url}
+              className="card-img-top w-100"
+              style={{ height: "300px" }}
+            ></img>
+          )}
           <div className="card-body">
             <div className="d-flex justify-content-between">
               <span className="item-title font-weight-bold h5">
