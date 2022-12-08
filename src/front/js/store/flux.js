@@ -27,6 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       searchResults: [],
       imageUrl: [],
       favoritos: [],
+      imgSingleUrl: JSON.parse(sessionStorage.getItem("imageUrl")) || [],
     },
 
     actions: {
@@ -135,32 +136,41 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ token: null });
       },
 
-      addUrl: (url) => {
+      addUrl: (url, thumbnail) => {
         const store = getStore();
-        setStore({ imageUrl: url });
+        setStore({
+          imageUrl: [...store.imageUrl, { url: url, thumbnail: thumbnail }],
+        });
       },
 
-      postImgurl: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/imgurl`;
+      postImgurl: (data, productName, productId) => {
+        console.log(data, productName, productId);
+        const apiURL = `${process.env.BACKEND_URL}/api/imgurl/${productName}/${productId}`;
         const store = getStore();
-        fetch(apiURL, {
-          method: "POST", // or 'POST'
-          body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((res) => {
-            if (!res.ok) throw Error(res.statusText);
-            return res.json();
+        for (const url of data) {
+          fetch(apiURL, {
+            method: "POST", // or 'POST'
+            body: JSON.stringify({ url: url["url"] }), // data can be a `string` or  an {object} which comes from somewhere further above in our application
+            headers: {
+              "Content-Type": "application/json",
+            },
           })
-          .then((response) => console.log("Success:", response))
-          .catch((error) => console.error(error));
+            .then((res) => {
+              if (!res.ok) throw Error(res.statusText);
+              return res.json();
+            })
+            .then((response) => {
+              console.log("Success:", response);
+            })
+            .catch((error) => console.error(error));
+          // console.log(url["url"]);
+        }
+        setStore({ imageUrl: [] });
       },
 
-      getImgurl: () => {
-        const apiURL = `${process.env.BACKEND_URL}/api/imgurl`;
-
+      getImgurl: (productName, productId) => {
+        // console.log(productName, productId);
+        const apiURL = `${process.env.BACKEND_URL}/api/imgurl/computadoras/27`;
         fetch(apiURL)
           .then((response) => {
             if (response.ok) {
@@ -168,7 +178,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             }
             throw new Error("Ha ocurrido un error");
           })
-          .then((body) => setStore({ imageUrl: body }))
+          .then((body) => {
+            setStore({ imgSingleUrl: body });
+            sessionStorage.setItem("imageUrl", JSON.stringify(body));
+          })
           .catch((error) => console.log(error));
       },
 
@@ -217,6 +230,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       postComputadoras: (data) => {
         const apiURL = `${process.env.BACKEND_URL}/api/post_computadoras`;
         const store = getStore();
+        const actions = getActions();
         fetch(apiURL, {
           method: "POST", // or 'POST'
           body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
@@ -229,7 +243,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             if (!res.ok) throw Error(res.statusText);
             return res.json();
           })
-          .then((response) => console.log("Success:", response))
+          .then((response) => {
+            console.log("Success:", response);
+
+            actions.getComputadoras();
+          })
           .catch((error) => console.error(error));
       },
 

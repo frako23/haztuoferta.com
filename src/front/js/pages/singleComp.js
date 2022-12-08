@@ -12,19 +12,26 @@ import "../../styles/single.css";
 
 export const SingleComp = (props) => {
   const { store, actions } = useContext(Context);
+  const [imgurl, SetImgurl] = useState("");
   const params = useParams();
   console.log(params);
   let comp = store.computadoras.find((computadora) => {
     return computadora.id == params.id;
   });
-  console.log(comp);
   const [img, setImg] = useState("");
   const handleClick = (event) => {
     console.log(event.target);
     console.log("Image clicked");
     // setImg(event.target);
   };
-
+  useEffect(() => {
+    if (comp !== undefined) {
+      actions.getImgurl(comp.categorias, comp.id);
+    }
+  }, []);
+  console.log(store.imgSingleUrl);
+  // console.log(store.imgSingleUrl[0].url);
+  // console.log(comp);
   return (
     <div className="container">
       <div className="container mt-5 mb-5">
@@ -33,23 +40,29 @@ export const SingleComp = (props) => {
             <div className="col-md-6 border-end">
               <div className="d-flex flex-column justify-content-center">
                 {/* items lado izquierdo */}
-                <div className="main_image">
-                  <img
-                    src={comp && comp.img_url}
-                    id="main_product_image"
-                    width="350"
-                  ></img>
-                </div>
+                {store.imgSingleUrl !== "" && (
+                  <div className="main_image">
+                    <img
+                      src={store.imgSingleUrl[0].url}
+                      id="main_product_image"
+                      width="350"
+                    ></img>
+                  </div>
+                )}
                 <div className="thumbnail_images">
                   <ul id="thumbnail">
-                    <li>
-                      <img
-                        onClick={(event) => handleClick(event)}
-                        src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-2_T1666984556.png"
-                        width="70"
-                      ></img>
-                    </li>
-                    <li>
+                    {store.imgSingleUrl !== "" &&
+                      store.imgSingleUrl.map((img) => {
+                        <li>
+                          <img
+                            // onClick={(event) => handleClick(event)}
+                            src={img.url}
+                            width="70"
+                          ></img>
+                        </li>;
+                      })}
+
+                    {/* <li>
                       <img
                         onClick={(event) => handleClick(event)}
                         src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-3_T1666984556.png"
@@ -69,7 +82,7 @@ export const SingleComp = (props) => {
                         src="https://d22k5h68hofcrd.cloudfront.net/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/6/1/612H9LA-7_T1666984558.png"
                         width="70"
                       ></img>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
