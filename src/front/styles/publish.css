@@ -19,20 +19,17 @@ input[type="number"] {
 }
 
 #container {
-
   justify-content: center;
 }
 
 #container1 {
   display: flex;
   justify-content: center;
-
 }
 
 .containerpublish {
   display: flex;
   justify-content: center;
-
 }
 
 #container1 h1 {
@@ -40,7 +37,6 @@ input[type="number"] {
   display: flex;
   justify-content: center;
   align-self: center;
-
 }
 
 option:first-of-type {
@@ -54,7 +50,7 @@ option:first-of-type {
 }
 
 #form {
-  width: 500px;
+  width: 1000px;
 }
 
 textarea {
