@@ -52,14 +52,16 @@ export const SingleComp = (props) => {
                 <div className="thumbnail_images">
                   <ul id="thumbnail">
                     {store.imgSingleUrl !== "" &&
-                      store.imgSingleUrl.map((img) => {
-                        <li>
-                          <img
-                            // onClick={(event) => handleClick(event)}
-                            src={img.url}
-                            width="70"
-                          ></img>
-                        </li>;
+                      store.imgSingleUrl.map((img, index) => {
+                        return (
+                          <li key={index}>
+                            <img
+                              // onClick={(event) => handleClick(event)}
+                              src={img.url}
+                              width="70"
+                            ></img>
+                          </li>
+                        );
                       })}
 
                     {/* <li>

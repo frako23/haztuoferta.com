@@ -170,7 +170,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       getImgurl: (productName, productId) => {
         // console.log(productName, productId);
-        const apiURL = `${process.env.BACKEND_URL}/api/imgurl/computadoras/27`;
+        const apiURL = `${process.env.BACKEND_URL}/api/imgurl/${productName}/${productId}`;
         fetch(apiURL)
           .then((response) => {
             if (response.ok) {
