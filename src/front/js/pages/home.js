@@ -7,7 +7,6 @@ import { Link, Navigate } from "react-router-dom";
 import "../../styles/home.css";
 import "../../styles/banner.css";
 import { Signup } from "../component/signup";
-import { SearchBar } from "../component/SearchBar";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -18,7 +17,6 @@ export const Home = () => {
 
   return (
     <React.Fragment>
-      <SearchBar />
       <Carousel />
       <Segmento />
       <section className="banner">

@@ -78,7 +78,7 @@ h3 {
   color: black;
 }
 
-.btn-search {
+/* .btn-search {
   background: #424242;
   border-radius: 0;
   color: #fff;
@@ -100,7 +100,7 @@ h3 {
   border: 1px solid rgb(102, 102, 102);
   letter-spacing: 1px;
   font-size: 1rem;
-}
+} */
 
 .categories {
   color: darkslategrey;
@@ -122,20 +122,4 @@ h3 {
 
 .section-products {
   font-size: 1.3rem;
-}
-
-.suggestions {
-  background-color: rgb(228, 228, 228);
-  cursor: pointer;
-  text-decoration: none;
-  background-color: transparent;
-  color: darkslategrey;
-  font-size: 0.9rem;
-}
-
-.suggestions:hover {
-  text-decoration: none;
-  color: black;
-  font-size: 1rem;
-
 }
