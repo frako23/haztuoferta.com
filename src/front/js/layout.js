@@ -19,6 +19,7 @@ import { YourAccount } from "./pages/yourAccount";
 import { Ventas } from "./pages/Ventas";
 import { Subastas } from "./pages/Subastas";
 import { Intercambios } from "./pages/Intercambios";
+import { SubMenu } from "./pages/SubMenu.jsx";
 
 //create your first component
 
@@ -33,6 +34,7 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
+          <SubMenu />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />

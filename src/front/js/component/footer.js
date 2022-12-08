@@ -38,7 +38,7 @@ export const Footer = () => (
             <hr className="w-100 clearfix d-md-none" />
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 className="text-uppercase mb-4 font-weight-bold border-bottom">
-                Compañia
+                Compañía
               </h6>
               <p>
                 <a href="./AboutUs" className="text-black">
@@ -46,10 +46,10 @@ export const Footer = () => (
                 </a>
               </p>
               <p>
-                <a className="text-black">Politica de Privacidad</a>
+                <a className="text-black">Política de Privacidad</a>
               </p>
               <p>
-                <a className="text-black">Terminos y Condiciones</a>
+                <a className="text-black">Términos y Condiciones</a>
               </p>
             </div>
 
@@ -60,16 +60,16 @@ export const Footer = () => (
                 Contacto
               </h6>
               <p>
-                <i className="fas fa-home mr-3"></i> New York, NY 10012, US
+                <i className="fas fa-home mr-3"></i> Macaracuay, Caracas 1071, VE
               </p>
               <p>
-                <i className="fas fa-envelope mr-3"></i> info@gmail.com
+                <i className="fas fa-envelope mr-3"></i> haztuoferta@gmail.com
               </p>
               <p>
-                <i className="fas fa-phone mr-3"></i> + 01 234 567 88
+                <i className="fas fa-phone mr-3"></i> +58 212 257 2582
               </p>
               <p>
-                <i className="fas fa-print mr-3"></i> + 01 234 567 89
+                <i className="fas fa-print mr-3"></i> +58 212 257 2582
               </p>
             </div>
           </div>

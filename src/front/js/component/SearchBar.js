@@ -1,6 +1,6 @@
 import { text } from "@cloudinary/url-gen/qualifiers/source";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/searchBar.css";
 
@@ -8,6 +8,7 @@ export const SearchBar = () => {
   const { store, actions } = useContext(Context);
   const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const navigate = useNavigate();
 
   const onChangeHandler = (text) => {
     let matchCelulares = [];
@@ -33,8 +34,10 @@ export const SearchBar = () => {
     setInputValue(text);
   };
 
-  const onSuggestHandler = (text) => {
-    setInputValue(text);
+  const onSuggestHandler = (id) => {
+    console.log(id);
+    navigate(`/singleComp/${id}`)
+    // setInputValue("");
     setSuggestions([]);
   };
 
@@ -57,7 +60,7 @@ export const SearchBar = () => {
           <div
             key={index}
             className="suggestions col-md-12 justify-content-md-center"
-            onClick={(event) => onSuggestHandler(suggestion.titulo)}
+            onClick={(event) => onSuggestHandler(suggestion.id)}
           >
             {suggestion.titulo}
           </div>

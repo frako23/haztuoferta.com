@@ -24,9 +24,9 @@ export const SingleComp = (props) => {
     console.log("Image clicked");
     // setImg(event.target);
   };
-  useEffect(() => {
-    actions.getImgurl(comp.categorias, comp.id);
-  }, []);
+  // useEffect(() => {
+  //   actions.getImgurl(comp.categorias, comp.id);
+  // }, []);
   console.log(store.imgSingleUrl);
   // console.log(store.imgSingleUrl[0].url);
   // console.log(comp);
@@ -41,7 +41,7 @@ export const SingleComp = (props) => {
                 {store.imgSingleUrl !== "" && (
                   <div className="main_image">
                     <img
-                      src={store.imgSingleUrl[0].url}
+                      // src={store.imgSingleUrl[0].url}
                       id="main_product_image"
                       width="350"
                     ></img>
