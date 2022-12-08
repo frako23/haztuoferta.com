@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
 }
 
@@ -13,6 +13,16 @@ html {
   box-sizing: inherit;
 }
 
+#descripcion {
+  font-size: 1.8rem;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
@@ -20,9 +30,10 @@ html {
 
 .about-section {
   padding: 50px;
+  height: 300px;
   text-align: center;
-  background-color: #474e5d;
-  color: white;
+  background-color: orange;
+  color: #fff;
 }
 
 .container {

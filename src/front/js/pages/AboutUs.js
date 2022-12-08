@@ -3,13 +3,14 @@ import "../../styles/AboutUs.css";
 import piero from "../../img/Piero.png";
 import logo from "../../img/TECNOLOGIAS.png";
 import francisco from "../../img/foto_francisco.jpg";
+import luis from "../../img/Foto_Luis.jpg";
 
 export const AboutUs = () => {
   return (
     <>
       <div className="about-section">
         <h1>¿Quienes somos?</h1>
-        <p>
+        <p id="descripcion">
           Una nueva propuesta en el mercado de compra-venta. Su principal
           caracteristica es proveer al usuario de una interfaz simple que le
           permita intercambiar sus productos y proponer ofertas.
@@ -89,7 +90,7 @@ export const AboutUs = () => {
         <div className="row d-flex justify-content-center ">
           <div className="col-4 w-auto">
             <img
-              src="../../img/foto_luis.jpg"
+              src={luis}
               alt="imagen"
               width="300px"
               style={{ "border-radius": "50%" }}
