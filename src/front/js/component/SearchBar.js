@@ -39,9 +39,9 @@ export const SearchBar = () => {
   };
 
   return (
-    <div class="search-box">
-      <button class="btn-search">
-        <i class="fas fa-search"></i>
+    <div className="search-box">
+      <button className="btn-search">
+        <i className="fas fa-search"></i>
       </button>
       <input
         type="text"

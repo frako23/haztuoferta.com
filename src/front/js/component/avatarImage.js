@@ -20,17 +20,17 @@ export const AvatarImage = () => {
   });
 
   return (
-    <div class="container">
+    <div className="container">
       <h1>
         jQuery Image Upload
         <small>with preview</small>
       </h1>
-      <div class="avatar-upload">
-        <div class="avatar-edit">
+      <div className="avatar-upload">
+        <div className="avatar-edit">
           <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
           <label for="imageUpload"></label>
         </div>
-        <div class="avatar-preview">
+        <div className="avatar-preview">
           <div
             id="imagePreview"
             style="background-image: url(http://i.pravatar.cc/500?img=7);"
