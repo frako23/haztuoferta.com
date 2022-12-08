@@ -1,7 +1,8 @@
 import React from "react";
 import "../../styles/AboutUs.css";
-import piero from "../../img/Piero.png"
+import piero from "../../img/Piero.png";
 import logo from "../../img/TECNOLOGIAS.png";
+import francisco from "../../img/foto_francisco.jpg";
 
 export const AboutUs = () => {
   return (
@@ -30,7 +31,7 @@ export const AboutUs = () => {
           </div>
           <div className="col-4 w-auto">
             <img
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              src={francisco}
               alt="imagen"
               width="300px"
               style={{ "border-radius": "50%" }}
@@ -112,8 +113,6 @@ export const AboutUs = () => {
               width="500px"
               style={{ "border-radius": "10%" }}
             />
-
-
           </div>
         </div>
       </div>
