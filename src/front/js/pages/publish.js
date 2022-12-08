@@ -79,7 +79,7 @@ export const Publish = () => {
           }}
         >
           <option disabled selected>
-            Escoge una categoria
+            ¿Es nuevo o usado?
           </option>
           <option value="Nuevo">Nuevo</option>
           <option value="Usado">Usado</option>
@@ -189,35 +189,9 @@ export const Publish = () => {
         </Form.Group>
         <Form.Group className="" controlId="exampleForm.ControlInput2">
           <Form.Label>Categoria</Form.Label>
-          <Form.Select
-            aria-label="dropdown select"
-            onChange={(e) => {
-              setNuevo_usado(e.target.value);
-            }}
-          >
-            <option disabled selected>
-              Escoge una categoria
-            </option>
-            <option value="Nuevo">Nuevo</option>
-            <option value="Usado">Usado</option>
-          </Form.Select>
         </Form.Group>
         <br></br>
-        <Form.Label>Tipo de negocio</Form.Label>
-        <Form.Select
-          aria-label="dropdown select"
-          className="mb-3"
-          onChange={(e) => {
-            setTipo_de_negocio(e.target.value);
-          }}
-        >
-          <option disabled selected>
-            Escoge una categoria
-          </option>
-          <option value="Venta">Venta</option>
-          <option value="Intercambio">Intercambio</option>
-          <option value="Subasta">Subasta</option>
-        </Form.Select>
+
         {tipo_de_negocio == "Venta" ? (
           <Form.Group className="" controlId="exampleForm.ControlInput3">
             <Form.Label>Precio</Form.Label>
