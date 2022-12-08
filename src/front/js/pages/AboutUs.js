@@ -90,7 +90,7 @@ export const AboutUs = () => {
         <div className="row d-flex justify-content-center ">
           <div className="col-4 w-auto">
             <img
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              src="../../img/foto_luis.jpg"
               alt="imagen"
               width="300px"
               style={{ "border-radius": "50%" }}
