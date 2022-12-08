@@ -1,45 +1,46 @@
 .card-body {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .button.is-primary {
-    background-color: var(--main-accent-color);
+  background-color: var(--main-accent-color);
 }
 
 .button.is-primary:hover {
-    background-color: var(--title-color);
+  background-color: var(--title-color);
 }
 
 .title {
-    color: var(--main-accent-color);
-    font-family: 'Inconsolata', monospace;
-    font-size: 3em;
+  color: var(--main-accent-color);
+  font-family: "Inconsolata", monospace;
+  font-size: 3em;
 }
 
 #inner-large-banner {
-    height: 40%;
-    width: 100%;
-    background-size: cover;
-    background-position: 50% 25%;
+  height: 40%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 25%;
 }
 
 #wrapper {
-    width: 80%;
-    min-height: 70%;
-    /* margin-top: -100px; */
-    background-color: var(--main-top-background-color);
-    margin: -100px auto 0 auto;
-    padding: 30px;
-    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-    border-radius: .25rem;
+  width: 80%;
+  min-height: 70%;
+  /* margin-top: -100px; */
+  background-color: var(--main-top-background-color);
+  margin: -100px auto 0 auto;
+  padding: 30px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%);
+  border-radius: 0.25rem;
 }
 
 #product-catalog {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
 }
 
 .product-title {
-    font-size: 2em;
+  font-size: 2em;
 }

@@ -67,6 +67,7 @@ class Computadora(db.Model):
     tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
     descripcion = db.Column(db.String(500), unique=False, nullable=False)
+    imagen = db.Column(db.String(500), unique=False, nullable=False)
     user_id = db.Column(db.Integer(), ForeignKey('user.id'))
 
     def __init__(self, **kwargs):
@@ -84,6 +85,7 @@ class Computadora(db.Model):
         self.nuevo_usado = kwargs['nuevo_usado']
         self.descripcion = kwargs['descripcion']
         self.user_id = kwargs['user_id']
+        self.imagen = kwargs['imagen']
 
     @classmethod
     def create(cls, **kwargs):
@@ -114,7 +116,8 @@ class Computadora(db.Model):
             "nuevo_usado": self.nuevo_usado,
             "descripcion": self.descripcion,
             "user_id": self.user_id,
-            "categorias": "computadoras"
+            "categorias": "computadoras",
+            "imagen": self.imagen
             # do not serialize the password, its a security breach
         }
 
@@ -137,6 +140,7 @@ class Celular(db.Model):
     tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
     descripcion = db.Column(db.String(500), unique=False, nullable=False)
+    imagen = db.Column(db.String(500), unique=False, nullable=False)
     user_id = db.Column(db.Integer(), ForeignKey('user.id'))
 
     def __init__(self, **kwargs):
@@ -156,6 +160,7 @@ class Celular(db.Model):
         self.nuevo_usado = kwargs['nuevo_usado']
         self.descripcion = kwargs['descripcion']
         self.user_id = kwargs['user_id']
+        self.imagen = kwargs['imagen']
 
     @classmethod
     def create(cls, **kwargs):
@@ -188,7 +193,8 @@ class Celular(db.Model):
             "nuevo_usado": self.nuevo_usado,
             "descripcion": self.descripcion,
             "user_id": self.user_id,
-            "categorias": "computadoras"
+            "categorias": "computadoras",
+            "imagen": self.imagen
             # do not serialize the password, its a security breach
         }
 

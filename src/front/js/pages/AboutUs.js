@@ -1,15 +1,17 @@
 import React from "react";
 import "../../styles/AboutUs.css";
-import piero from "../../img/Piero.png"
+import piero from "../../img/Piero.png";
+import logo from "../../img/TECNOLOGIAS.png";
+import francisco from "../../img/foto_francisco.jpg";
+import luis from "../../img/Foto_Luis.jpg";
 
 export const AboutUs = () => {
   return (
     <>
       <div className="about-section">
         <h1>¿Quienes somos?</h1>
-        <p>Some text about who we are and what we do.</p>
-        <p>
-          Una nueva propuesta en el mecado de compra-venta. Su principal
+        <p id="descripcion">
+          Una nueva propuesta en el mercado de compra-venta. Su principal
           caracteristica es proveer al usuario de una interfaz simple que le
           permita intercambiar sus productos y proponer ofertas.
         </p>
@@ -30,7 +32,7 @@ export const AboutUs = () => {
           </div>
           <div className="col-4 w-auto">
             <img
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              src={francisco}
               alt="imagen"
               width="300px"
               style={{ "border-radius": "50%" }}
@@ -69,10 +71,7 @@ export const AboutUs = () => {
           <div className="col-8">
             <p className="fs-1 text fw-bolder">Javier Klie </p>
             <p className="fs-5 text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, id
-              dolorem molestiae maiores autem, minus amet libero nihil odit
-              consectetur, provident magni harum fuga tempore sunt praesentium
-              magnam architecto. Quibusdam.
+              Diseñador grafico 3D con 8 años de experiencia, 28 años
             </p>
           </div>
           <div className="col-4 w-auto">
@@ -91,7 +90,7 @@ export const AboutUs = () => {
         <div className="row d-flex justify-content-center ">
           <div className="col-4 w-auto">
             <img
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              src={luis}
               alt="imagen"
               width="300px"
               style={{ "border-radius": "50%" }}
@@ -109,6 +108,12 @@ export const AboutUs = () => {
         <div className="row d-flex justify-content-center ">
           <div className="text-center">
             <p className="fs-1 text fw-bolder">Tecnologias que usamos</p>
+            <img
+              src={logo}
+              alt="imagen"
+              width="500px"
+              style={{ "border-radius": "10%" }}
+            />
           </div>
         </div>
       </div>

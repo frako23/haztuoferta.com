@@ -15,14 +15,14 @@ export const Celulares = () => {
       <h1 className="ps-5 pt-5 pb-3 mb-4 display-5 border-bottom border-warning">
         <i className="fa-solid fa-mobile-screen-button"></i> Celulares
       </h1>
-      <div className="product-page container d-flex flex-wrap justify-content-center gap-2">
+      <div className="container d-flex flex-wrap justify-content-center">
         {store.searchResults == ""
           ? store.celulares.map((celulares, index) => {
-            return <ItemCard computadoras={celulares} key={index} />;
-          })
+              return <ItemCard computadoras={celulares} key={index} />;
+            })
           : store.searchResults.map((celular, index) => {
-            return <ItemCard computadoras={celular} key={index} />;
-          })}
+              return <ItemCard computadoras={celular} key={index} />;
+            })}
       </div>
     </div>
   );

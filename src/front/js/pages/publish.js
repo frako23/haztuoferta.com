@@ -39,31 +39,6 @@ export const Publish = () => {
       store.computadoras[store.computadoras.length - 1].id + 1
     );
   }
-  const dataComputadora = async () => {
-    let variable = await actions.postComputadoras({
-      titulo: titulo,
-      marca: marca,
-      modelo: modelo,
-      procesador: procesador,
-      pantalla: pantalla,
-      memoria_ram: memoria_ram,
-      disco_duro: disco_duro,
-      sistema_operativo: sistema_operativo,
-      moneda: moneda,
-      precio: precio,
-      tipo_de_negocio: tipo_de_negocio,
-      nuevo_usado: nuevo_usado,
-      descripcion: descripcion,
-    });
-
-    actions.postImgurl(
-      store.imageUrl,
-      categoria,
-      store.computadoras[store.computadoras.length - 1].id + 1
-    );
-    navigate("/");
-    actions.setNotification("¡Has publicado tu producto exitosamente!");
-  };
 
   return (
     <>
@@ -101,7 +76,6 @@ export const Publish = () => {
               <option value="Nuevo">Nuevo</option>
               <option value="Usado">Usado</option>
             </Form.Select>
-
             <br></br>
             <Form.Label>Tipo de negocio</Form.Label>
             <Form.Select
@@ -118,7 +92,6 @@ export const Publish = () => {
               <option value="Intercambio">Intercambio</option>
               <option value="Subasta">Subasta</option>
             </Form.Select>
-
             {tipo_de_negocio == "Venta" ? (
               <Form.Group className="" controlId="exampleForm.ControlInput3">
                 <Form.Label>Precio</Form.Label>
@@ -188,7 +161,7 @@ export const Publish = () => {
                     }}
                   />
                   <Form.Text id="passwordHelpBlock" muted>
-                    Coloca los productos que deseas como intercambio
+                    Coloca los productos que deseas como interncambio
                   </Form.Text>
                 </div>
               </Form.Group>
@@ -206,7 +179,6 @@ export const Publish = () => {
                 </div>
               )}
             </Form.Group>
-
             <Form.Group className="" controlId="exampleForm.ControlInput2">
               <Form.Label>Categoria</Form.Label>
               <Form.Select
@@ -346,7 +318,33 @@ export const Publish = () => {
                 <Button
                   variant="primary"
                   onClick={() => {
-                    dataComputadora;
+                    actions.postComputadoras({
+                      titulo: titulo,
+                      marca: marca,
+                      modelo: modelo,
+                      procesador: procesador,
+                      pantalla: pantalla,
+                      memoria_ram: memoria_ram,
+                      disco_duro: disco_duro,
+                      sistema_operativo: sistema_operativo,
+                      moneda: moneda,
+                      precio: precio,
+                      tipo_de_negocio: tipo_de_negocio,
+                      nuevo_usado: nuevo_usado,
+                      descripcion: descripcion,
+                      imagen: store.imageUrl[0].url,
+                    });
+
+                    actions.postImgurl(
+                      store.imageUrl,
+                      categoria,
+                      store.computadoras[store.computadoras.length - 1].id + 1
+                    );
+
+                    navigate("/");
+                    actions.setNotification(
+                      "¡Has publicado tu producto exitosamente!"
+                    );
                   }}
                 >
                   Publica tu producto
@@ -500,7 +498,7 @@ export const Publish = () => {
                     actions.postImgurl(
                       store.imageUrl,
                       categoria,
-                      store.computadoras[store.computadoras.length - 1].id + 1
+                      store.celulares[store.celulares.length - 1].id + 1
                     );
                     navigate("/");
                     actions.setNotification(

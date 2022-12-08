@@ -15,6 +15,12 @@ export const Home = () => {
 
   let productos = computadoras.concat(celulares);
 
+  // useEffect(() => {
+  //   if (comp !== undefined) {
+  //     actions.getImgurl(comp.categorias, comp.id);
+  //   }
+  // }, []);
+
   return (
     <React.Fragment>
       <Carousel />
