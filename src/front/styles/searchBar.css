@@ -41,8 +41,8 @@
   pointer-events: painted;
 }
 
-.btn-search:focus ~ .input-search {
-  width: 300px;
+.btn-search:focus~.input-search {
+  width: 400px;
   border-radius: 0px;
   background-color: transparent;
   border-bottom: 1px solid rgba(175, 173, 173, 0.5);
@@ -50,13 +50,28 @@
 }
 
 .input-search:focus {
-  width: 300px;
+  width: 400px;
   border-radius: 0px;
   background-color: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
 
-#resultados {
-  height: 200px;
+.suggestions {
+  background-color: transparent;
+  color: darkslategrey;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.suggestions:hover {
+  background-color: transparent;
+  border-bottom: 1px solid burlywood;
+  color: darkslategrey;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  cursor: pointer;
 }
