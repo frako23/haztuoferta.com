@@ -333,12 +333,17 @@ export const Publish = () => {
                       nuevo_usado: nuevo_usado,
                       descripcion: descripcion,
                     });
+                    if (store.computadoras == "") {
+                      console.log("entra en el if");
+                      actions.postImgurl(store.imageUrl, categoria, 1);
+                    } else {
+                      actions.postImgurl(
+                        store.imageUrl,
+                        categoria,
+                        store.computadoras[store.computadoras.length - 1].id + 1
+                      );
+                    }
 
-                    actions.postImgurl(
-                      store.imageUrl,
-                      categoria,
-                      store.computadoras[store.computadoras.length - 1].id + 1
-                    );
                     navigate("/");
                     actions.setNotification(
                       "¡Has publicado tu producto exitosamente!"
