@@ -32,7 +32,7 @@ export const Home = () => {
             <p className="text-center text-bold">
               {" "}
               <i>
-                Oferta, Intercambia o Subasta tus Productos. Que esperas para
+                Oferta, Intercambia o Subasta tus Productos. ¿Qué esperas para
                 comprar a tu manera?
               </i>
             </p>

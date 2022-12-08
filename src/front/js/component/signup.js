@@ -43,7 +43,7 @@ export const Signup = () => {
       {show && (
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Registrate</Modal.Title>
+            <Modal.Title>Regístrate</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p>Por favor llena este formulario para crear tu cuenta</p>

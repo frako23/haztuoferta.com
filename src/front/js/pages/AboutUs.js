@@ -1,9 +1,10 @@
 import React from "react";
 import "../../styles/AboutUs.css";
 import piero from "../../img/Piero.png";
-import logo from "../../img/TECNOLOGIAS.png";
+import logo from "../../img/teconologias.png";
 import francisco from "../../img/foto_francisco.jpg";
 import luis from "../../img/Foto_Luis.jpg";
+import javier from "../../img/javier.png";
 
 export const AboutUs = () => {
   return (
@@ -12,7 +13,7 @@ export const AboutUs = () => {
         <h1>¿Quienes somos?</h1>
         <p id="descripcion">
           Una nueva propuesta en el mercado de compra-venta. Su principal
-          caracteristica es proveer al usuario de una interfaz simple que le
+          característica es proveer al usuario de una interfaz simple que le
           permita intercambiar sus productos y proponer ofertas.
         </p>
       </div>
@@ -25,7 +26,7 @@ export const AboutUs = () => {
           <div className="col-8">
             <p className="fs-1 text fw-bolder">Francisco Orozco </p>
             <p className="fs-5 text">
-              37 años, Ingeniero de Producción de la USB, con mas de 13 años de
+              37 años, Ingeniero de Producción de la USB, con más de 13 años de
               experiencia en marketing y ventas, papá de Sebastián
             </p>
             <p className="fs-5 text">Siempre viculado a la tecnología</p>
@@ -76,7 +77,7 @@ export const AboutUs = () => {
           </div>
           <div className="col-4 w-auto">
             <img
-              src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+              src={javier}
               alt="imagen"
               width="300px"
               style={{ "border-radius": "50%" }}
@@ -99,7 +100,11 @@ export const AboutUs = () => {
           <div className="col-8">
             <p className="fs-1 text fw-bolder">Luis Camargo</p>
             <p className="fs-5 text">
-              Estudiante de Medicina, 23 años <br />
+              Estudiante de Medicina, 23 años, amante de los animales.
+            </p>
+            <p className="fs-5 text">
+              Apasionado por las nuevas tecnologias y la innovación, geek desde
+              pequeño.
             </p>
           </div>
         </div>
@@ -107,11 +112,11 @@ export const AboutUs = () => {
       <div className="container py-5 border-top ">
         <div className="row d-flex justify-content-center ">
           <div className="text-center">
-            <p className="fs-1 text fw-bolder">Tecnologias que usamos</p>
+            <p className="fs-1 text fw-bolder">Tecnologías que usamos</p>
             <img
               src={logo}
               alt="imagen"
-              width="500px"
+              width="1000px"
               style={{ "border-radius": "10%" }}
             />
           </div>

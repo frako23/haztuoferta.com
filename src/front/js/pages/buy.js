@@ -41,9 +41,9 @@ export const Buy = () => {
             id="form"
           >
             <InputGroup className="mb-3">
-              <InputGroup.Text id="basic-addon1">Titulo</InputGroup.Text>
+              <InputGroup.Text id="basic-addon1">Título</InputGroup.Text>
               <Form.Control
-                placeholder="Titulo de la publicacion"
+                placeholder="Título de la publicación"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
                 value={titulo}
@@ -53,7 +53,7 @@ export const Buy = () => {
               />
             </InputGroup>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-              <Form.Label>Categoria</Form.Label>
+              <Form.Label>Categoría</Form.Label>
               <Form.Select
                 aria-label="dropdown select"
                 onChange={(e) => {
@@ -61,7 +61,7 @@ export const Buy = () => {
                 }}
               >
                 <option disabled selected>
-                  Escoge una categoria
+                  Escoge una categoría
                 </option>
                 <option value="Accesorios para bebés">
                   Accesorios para bebés
@@ -73,7 +73,9 @@ export const Buy = () => {
                   Artículos de colección
                 </option>
                 <option value="Carros y Motos">Carros y Motos</option>
-                <option value="Cámaras y Accesorios">Cámaras y Accesorios</option>
+                <option value="Cámaras y Accesorios">
+                  Cámaras y Accesorios
+                </option>
                 <option value="Celulares">Celulares</option>
                 <option value="Computadoras">Computadoras</option>
                 <option value="Consolas y Videojuegos">
@@ -115,7 +117,10 @@ export const Buy = () => {
                 />
               </InputGroup>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
               <Form.Label>Descripción</Form.Label>
               <Form.Control
                 as="textarea"

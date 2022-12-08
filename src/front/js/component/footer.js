@@ -60,7 +60,8 @@ export const Footer = () => (
                 Contacto
               </h6>
               <p>
-                <i className="fas fa-home mr-3"></i> Macaracuay, Caracas 1071, VE
+                <i className="fas fa-home mr-3"></i> Macaracuay, Caracas 1071,
+                VE
               </p>
               <p>
                 <i className="fas fa-envelope mr-3"></i> haztuoferta@gmail.com
@@ -77,7 +78,7 @@ export const Footer = () => (
 
         <hr className="my-3 w-100" />
 
-        <section className="p-3 pt-0 container">
+        <section className="p-3 pt-0 container h-25">
           <div className="row d-flex align-items-center">
             <div className="col-md-7 col-lg-8 text-center text-md-start">
               <div className="p-3">

@@ -13,13 +13,14 @@ export const Segmento = () => {
         <div className="container">
           <div className="containersegmento d-flex justify-content-center">
             <h1 className="display-6 text-bold text-center">
-              Que encontrarias en haztuoferta?
+              ¿Qué encontrarás en haztuoferta?
             </h1>
           </div>
           <br></br>
           <div className="containersegmento d-flex justify-content-center">
             <p className="lead text-bold text-center">
-              Encontraras todo tipo de productos con opcion a intercambio y precios a justados al mercado
+              Encontrarás todo tipo de productos con opción a intercambio y
+              precios ajustados al mercado
             </p>
           </div>
 
@@ -37,7 +38,7 @@ export const Segmento = () => {
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
                       <h2 className="">PRODUCTOS EN VENTA</h2>
-                      <h3>Vende tu Producto!</h3>
+                      <h3>!Vende tu Producto!</h3>
                     </div>
                   </div>
                 </div>
@@ -47,7 +48,7 @@ export const Segmento = () => {
               <Link
                 className="seccion-link"
                 to="/Oferts"
-              // preventScrollReset={true}
+                // preventScrollReset={true}
               >
                 <div className="seccion">
                   <div className="image">
@@ -58,7 +59,7 @@ export const Segmento = () => {
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
                       <h2 className="">OFERTAS DE COMPRA</h2>
-                      <h3>Haz una Oferta!</h3>
+                      <h3>!Haz una Oferta!</h3>
                     </div>
                   </div>
                 </div>
@@ -75,7 +76,7 @@ export const Segmento = () => {
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
                       <h2 className="">INTERCAMBIOS</h2>
-                      <h3>Porpón un Trueque!</h3>
+                      <h3>!Propón un Trueque!</h3>
                     </div>
                   </div>
                 </div>
@@ -92,7 +93,7 @@ export const Segmento = () => {
                   <div className="seccion-inner text-center pt-5">
                     <div className="header text-center">
                       <h2 className="">SUBASTAS</h2>
-                      <h3>Subasta tu Producto!</h3>
+                      <h3>!Subasta tu Producto!</h3>
                     </div>
                   </div>
                 </div>

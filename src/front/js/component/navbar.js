@@ -61,15 +61,15 @@ export const Navbar = (props) => {
                     <Dropdown.Menu>
                       {store.favoritos.map((fav) => {
                         return (
-                          <Dropdown.Item key={fav}>
+                          <Dropdown.Item key={fav} className="suggestions">
                             {fav}{" "}
-                            <button
+                            <span
                               type="button"
-                              className="btn btn-danger mx-2 boton"
+                              className="btn btn-secondary btn-sm mx-2 boton"
                               onClick={(event) => actions.toggleFavorite(fav)}
                             >
-                              <i className="fa-solid fa-trash"></i>
-                            </button>
+                              <i class="fa-solid fa-trash"></i>
+                            </span>
                           </Dropdown.Item>
                         );
                       })}

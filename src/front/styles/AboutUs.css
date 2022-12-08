@@ -32,8 +32,12 @@ h1 {
   padding: 50px;
   height: 300px;
   text-align: center;
-  background-color: orange;
-  color: #fff;
+  background-image: linear-gradient(
+    90deg,
+    rgba(232, 110, 9, 1) 0%,
+    rgba(253, 164, 29, 1) 50%,
+    rgba(252, 225, 69, 1) 100%
+  );
 }
 
 .container {

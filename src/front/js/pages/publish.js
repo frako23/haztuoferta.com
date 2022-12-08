@@ -189,7 +189,7 @@ export const Publish = () => {
                 }}
               >
                 <option disabled selected>
-                  Escoge una categoria
+                  Escoge una categoría
                 </option>
                 <option value="bebes">Accesorios para bebés</option>
                 <option value="mascotas">Accesorios para mascotas</option>
