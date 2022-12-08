@@ -17,9 +17,9 @@ export const ItemCard = (props) => {
         <div className="item-card">
           {store.imgSingleUrl !== "" && (
             <img
-              src={store.imgSingleUrl[0].url}
+              // src={store.imgSingleUrl[0].url}
               className="card-img-top w-100"
-              style={{ height: "300px" }}
+              style={{ minHeight: "300px" }}
             ></img>
           )}
           <div className="card-body">
