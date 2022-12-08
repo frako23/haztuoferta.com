@@ -18,12 +18,14 @@ export const SingleComp = (props) => {
   let comp = store.computadoras.find((computadora) => {
     return computadora.id == params.id;
   });
+
   const [img, setImg] = useState("");
   const handleClick = (event) => {
     console.log(event.target);
     console.log("Image clicked");
     // setImg(event.target);
   };
+  console.log(comp);
   useEffect(() => {
     if (comp !== undefined) {
       actions.getImgurl(comp.categorias, comp.id);
@@ -40,7 +42,7 @@ export const SingleComp = (props) => {
             <div className="col-md-6 border-end">
               <div className="d-flex flex-column justify-content-center">
                 {/* items lado izquierdo */}
-                {store.imgSingleUrl !== "" && (
+                {/* {comp && (
                   <div className="main_image">
                     <img
                       src={store.imgSingleUrl[0].url}
@@ -48,10 +50,10 @@ export const SingleComp = (props) => {
                       width="350"
                     ></img>
                   </div>
-                )}
+                )} */}
                 <div className="thumbnail_images">
                   <ul id="thumbnail">
-                    {store.imgSingleUrl !== "" &&
+                    {/* {comp &&
                       store.imgSingleUrl.map((img, index) => {
                         return (
                           <li key={index}>
@@ -62,7 +64,7 @@ export const SingleComp = (props) => {
                             ></img>
                           </li>
                         );
-                      })}
+                      })} */}
 
                     {/* <li>
                       <img
