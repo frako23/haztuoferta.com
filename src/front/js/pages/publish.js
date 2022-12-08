@@ -66,7 +66,7 @@ export const Publish = () => {
   };
 
   return (
-    <div id="container">
+    <div className="container">
       <div id="container1" className="">
         <h1 className="">¿Qué deseas vender?</h1>
       </div>
@@ -160,21 +160,6 @@ export const Publish = () => {
           <Form.Group className="" controlId="exampleForm.ControlInput3">
             <Form.Label>¿Qué estas buscando?</Form.Label>
             <div className="">
-              {/* <Form.Select
-                  aria-label="dropdown select"
-                  className="w-auto"
-                  onChange={(e) => {
-                    setMoneda(e.target.value);
-                  }}
-                >
-                  <option disabled selected>
-                    #
-                  </option>
-                  <option value="$">$</option>
-                  <option value="€">€</option>
-                  <option value="Bs">Bs</option>
-                </Form.Select> */}
-
               <Form.Control
                 type="text"
                 aria-describedby="passwordHelpBlock"
@@ -184,7 +169,7 @@ export const Publish = () => {
                 }}
               />
               <Form.Text id="passwordHelpBlock" muted>
-                Coloca los productos que deseas como interncambio
+                Coloca los productos que deseas como intercambio
               </Form.Text>
             </div>
           </Form.Group>
@@ -324,11 +309,6 @@ export const Publish = () => {
         ) : (
           ""
         )}
-
-        <Form.Group className="mb-2 mt-3 d-grid gap-2" controlId="formFile">
-          <Form.Label>Agregar fotos </Form.Label>
-          <CloudinaryUploadWidget />
-        </Form.Group>
 
         <Form.Group className="" controlId="exampleForm.ControlInput2">
           <Form.Label>Categoria</Form.Label>
