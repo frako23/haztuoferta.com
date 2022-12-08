@@ -42,7 +42,7 @@ export const SingleComp = (props) => {
             <div className="col-md-6 border-end">
               <div className="d-flex flex-column justify-content-center">
                 {/* items lado izquierdo */}
-                {/* {comp && (
+                {comp && (
                   <div className="main_image">
                     <img
                       src={store.imgSingleUrl[0].url}
@@ -50,10 +50,10 @@ export const SingleComp = (props) => {
                       width="350"
                     ></img>
                   </div>
-                )} */}
+                )}
                 <div className="thumbnail_images">
                   <ul id="thumbnail">
-                    {/* {comp &&
+                    {comp &&
                       store.imgSingleUrl.map((img, index) => {
                         return (
                           <li key={index}>
@@ -64,7 +64,7 @@ export const SingleComp = (props) => {
                             ></img>
                           </li>
                         );
-                      })} */}
+                      })}
 
                     {/* <li>
                       <img
