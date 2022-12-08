@@ -62,11 +62,12 @@ class Computadora(db.Model):
     memoria_ram = db.Column(db.String(50), unique=False, nullable=False)
     disco_duro = db.Column(db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
-    moneda = db.Column(db.String(5), unique=False, nullable=False)
+    moneda = db.Column(db.String(5), unique=False, nullable=True)
     precio = db.Column(db.String(80), unique=False, nullable=False)
     tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
     descripcion = db.Column(db.String(500), unique=False, nullable=False)
+    imagen = db.Column(db.String(500), unique=False, nullable=False)
     user_id = db.Column(db.Integer(), ForeignKey('user.id'))
 
     def __init__(self, **kwargs):
@@ -78,12 +79,13 @@ class Computadora(db.Model):
         self.memoria_ram = kwargs['memoria_ram']
         self.disco_duro = kwargs['disco_duro']
         self.sistema_operativo = kwargs['sistema_operativo']
-        self.moneda = kwargs['moneda']
+        self.moneda = kwargs['moneda'] if 'moneda' in kwargs else None
         self.precio = kwargs['precio']
         self.tipo_de_negocio = kwargs['tipo_de_negocio']
         self.nuevo_usado = kwargs['nuevo_usado']
         self.descripcion = kwargs['descripcion']
         self.user_id = kwargs['user_id']
+        self.imagen = kwargs['imagen']
 
     @classmethod
     def create(cls, **kwargs):
@@ -114,6 +116,8 @@ class Computadora(db.Model):
             "nuevo_usado": self.nuevo_usado,
             "descripcion": self.descripcion,
             "user_id": self.user_id,
+            "categorias": "computadoras",
+            "imagen": self.imagen
             # do not serialize the password, its a security breach
         }
 
@@ -128,7 +132,7 @@ class Celular(db.Model):
     almacenamiento_interno = db.Column(
         db.String(50), unique=False, nullable=False)
     sistema_operativo = db.Column(db.String(250), unique=False, nullable=False)
-    moneda = db.Column(db.String(5), unique=False, nullable=False)
+    moneda = db.Column(db.String(5), unique=False, nullable=True)
     precio = db.Column(db.String(80), unique=False, nullable=False)
     bateria = db.Column(db.String(50), unique=False, nullable=False)
     camara_frontal = db.Column(db.String(50), unique=False, nullable=False)
@@ -136,6 +140,7 @@ class Celular(db.Model):
     tipo_de_negocio = db.Column(db.String(80), unique=False, nullable=False)
     nuevo_usado = db.Column(db.String(80), unique=False, nullable=False)
     descripcion = db.Column(db.String(500), unique=False, nullable=False)
+    imagen = db.Column(db.String(500), unique=False, nullable=False)
     user_id = db.Column(db.Integer(), ForeignKey('user.id'))
 
     def __init__(self, **kwargs):
@@ -146,7 +151,7 @@ class Celular(db.Model):
         self.memoria_ram = kwargs['memoria_ram']
         self.almacenamiento_interno = kwargs['almacenamiento_interno']
         self.sistema_operativo = kwargs['sistema_operativo']
-        self.moneda = kwargs['moneda']
+        self.moneda = kwargs['moneda'] if 'moneda' in kwargs else None
         self.precio = kwargs['precio']
         self.bateria = kwargs['bateria']
         self.camara_frontal = kwargs['camara_frontal']
@@ -155,6 +160,7 @@ class Celular(db.Model):
         self.nuevo_usado = kwargs['nuevo_usado']
         self.descripcion = kwargs['descripcion']
         self.user_id = kwargs['user_id']
+        self.imagen = kwargs['imagen']
 
     @classmethod
     def create(cls, **kwargs):
@@ -187,6 +193,8 @@ class Celular(db.Model):
             "nuevo_usado": self.nuevo_usado,
             "descripcion": self.descripcion,
             "user_id": self.user_id,
+            "categorias": "computadoras",
+            "imagen": self.imagen
             # do not serialize the password, its a security breach
         }
 
@@ -270,9 +278,13 @@ class Publicar(db.Model):
 class Imgurl(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     url = db.Column(db.String(500), unique=False, nullable=False)
+    computadora_id = db.Column(db.Integer(), ForeignKey('computadora.id'))
+    celular_id = db.Column(db.Integer(), ForeignKey('celular.id'))
 
     def __init__(self, **kwargs):
         self.url = kwargs['url']
+        self.computadora_id = kwargs['computadora_id'] if 'computadora_id' in kwargs else None
+        self.celular_id = kwargs['celular_id'] if 'celular_id' in kwargs else None
 
     @classmethod
     def create(cls, **kwargs):
@@ -290,5 +302,7 @@ class Imgurl(db.Model):
         return {
             "id": self.id,
             "url": self.url,
+            "computadora_id": self.computadora_id,
+            "celular_id": self.celular_id
             # do not serialize the password, its a security breach
         }

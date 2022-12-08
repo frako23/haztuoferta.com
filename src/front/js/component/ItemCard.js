@@ -16,10 +16,11 @@ export const ItemCard = (props) => {
       <div className="col-md-4">
         <div className="item-card">
           <img
-            src={props.computadoras.img_url}
+            src={props.computadoras.imagen}
             className="card-img-top w-100"
             style={{ height: "300px" }}
           ></img>
+
           <div className="card-body">
             <div className="d-flex justify-content-between">
               <span className="item-title font-weight-bold h5">

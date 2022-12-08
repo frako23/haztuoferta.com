@@ -32,6 +32,13 @@ export const Publish = () => {
   const [bateria, setBateria] = useState("");
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
+  if (store.computadoras.length > 0) {
+    console.log(
+      store.computadoras.length,
+      store.computadoras[store.computadoras.length - 1].titulo,
+      store.computadoras[store.computadoras.length - 1].id + 1
+    );
+  }
 
   return (
     <>
@@ -145,21 +152,6 @@ export const Publish = () => {
               <Form.Group className="" controlId="exampleForm.ControlInput3">
                 <Form.Label>¿Qué estas buscando?</Form.Label>
                 <div className="">
-                  {/* <Form.Select
-                    aria-label="dropdown select"
-                    className="w-auto"
-                    onChange={(e) => {
-                      setMoneda(e.target.value);
-                    }}
-                  >
-                    <option disabled selected>
-                      #
-                    </option>
-                    <option value="$">$</option>
-                    <option value="€">€</option>
-                    <option value="Bs">Bs</option>
-                  </Form.Select> */}
-
                   <Form.Control
                     type="text"
                     aria-describedby="passwordHelpBlock"
@@ -176,11 +168,17 @@ export const Publish = () => {
             ) : (
               ""
             )}
-            <Form.Group className="mb-2 mt-3 d-grid gap-2" controlId="formFile">
+            <Form.Group className="mb-3 d-grid gap-2" controlId="formFile">
               <Form.Label>Agregar fotos </Form.Label>
               <CloudinaryUploadWidget />
+              {store.imageUrl.length > 0 && (
+                <div>
+                  {store.imageUrl.map((img) => {
+                    return <img className="p-2" src={img.thumbnail} />;
+                  })}
+                </div>
+              )}
             </Form.Group>
-
             <Form.Group className="" controlId="exampleForm.ControlInput2">
               <Form.Label>Categoria</Form.Label>
               <Form.Select
@@ -216,6 +214,7 @@ export const Publish = () => {
                 <option value="otros">Otras categorías</option>
               </Form.Select>
             </Form.Group>
+
             {categoria == "computadoras" ? (
               <div>
                 <InputGroup className="mb-3">
@@ -333,8 +332,15 @@ export const Publish = () => {
                       tipo_de_negocio: tipo_de_negocio,
                       nuevo_usado: nuevo_usado,
                       descripcion: descripcion,
-                      img_url: store.imageUrl,
+                      imagen: store.imageUrl[0].url,
                     });
+
+                    actions.postImgurl(
+                      store.imageUrl,
+                      categoria,
+                      store.computadoras[store.computadoras.length - 1].id + 1
+                    );
+
                     navigate("/");
                     actions.setNotification(
                       "¡Has publicado tu producto exitosamente!"
@@ -458,6 +464,7 @@ export const Publish = () => {
                   <option value="macOS">iOS</option>
                 </Form.Select>
                 <Form.Label>Descripción</Form.Label>
+
                 <Form.Control
                   as="textarea"
                   rows={5}
@@ -487,8 +494,12 @@ export const Publish = () => {
                       tipo_de_negocio: tipo_de_negocio,
                       nuevo_usado: nuevo_usado,
                       descripcion: descripcion,
-                      img_url: store.imageUrl,
                     });
+                    actions.postImgurl(
+                      store.imageUrl,
+                      categoria,
+                      store.celulares[store.celulares.length - 1].id + 1
+                    );
                     navigate("/");
                     actions.setNotification(
                       "¡Has publicado tu producto exitosamente!"

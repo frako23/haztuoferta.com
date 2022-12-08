@@ -32,6 +32,7 @@ const injectContext = (PassedComponent) => {
       state.actions.getCelulares();
       state.actions.getOfertas();
       state.actions.getUsuarios();
+      state.actions.getImgurl();
       // state.actions.postOfertas();
     }, []);
 
