@@ -332,17 +332,14 @@ export const Publish = () => {
                       tipo_de_negocio: tipo_de_negocio,
                       nuevo_usado: nuevo_usado,
                       descripcion: descripcion,
+                      imagen: store.imageUrl[0].url,
                     });
-                    if (store.computadoras == "") {
-                      console.log("entra en el if");
-                      actions.postImgurl(store.imageUrl, categoria, 1);
-                    } else {
-                      actions.postImgurl(
-                        store.imageUrl,
-                        categoria,
-                        store.computadoras[store.computadoras.length - 1].id + 1
-                      );
-                    }
+
+                    actions.postImgurl(
+                      store.imageUrl,
+                      categoria,
+                      store.computadoras[store.computadoras.length - 1].id + 1
+                    );
 
                     navigate("/");
                     actions.setNotification(

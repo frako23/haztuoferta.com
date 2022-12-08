@@ -28,7 +28,7 @@ export const SingleComp = (props) => {
     if (comp !== undefined) {
       actions.getImgurl(comp.categorias, comp.id);
     }
-  }, []);
+  }, [comp]);
   console.log(store.imgSingleUrl);
   // console.log(store.imgSingleUrl[0].url);
   // console.log(comp);
