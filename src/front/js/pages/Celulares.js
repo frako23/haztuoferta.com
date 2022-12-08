@@ -15,7 +15,7 @@ export const Celulares = () => {
       <h1 className="ps-5 pt-5 pb-3 mb-5 display-5 border-bottom border-secondary">
         <i className="fa-solid fa-mobile-screen-button"></i> Celulares
       </h1>
-      <div className="container d-flex flex-wrap justify-content-center shadow">
+      <div className="container d-flex flex-wrap justify-content-center">
         {store.searchResults == ""
           ? store.celulares.map((celulares, index) => {
               return <ItemCard computadoras={celulares} key={index} />;

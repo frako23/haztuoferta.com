@@ -9,8 +9,8 @@ import { Login } from "./login";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Button as MyButton } from "./Button";
 import logo from "../../img/LOGOHAZTUOFERTA.png";
-import { Search } from "./Search";
 import { Button } from "bootstrap";
+import { SearchBar } from "./SearchBar";
 
 export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
@@ -27,8 +27,11 @@ export const Navbar = (props) => {
               </Link>
             </div>
           </div>
+          <div>
+            <SearchBar />
+          </div>
           <div className="d-flex flex-row p-1 text-center">
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-end">
               {!store.token ? (
                 <Signup />
               ) : (
@@ -75,6 +78,7 @@ export const Navbar = (props) => {
                 </>
               )}
             </div>
+
             <div className="d-flex align-items-between ms-1">
               {!store.token ? (
                 <Login />
@@ -86,7 +90,6 @@ export const Navbar = (props) => {
                   Salir
                 </button>
               )}
-              {/* <Search /> */}
             </div>
           </div>
         </div>
