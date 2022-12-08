@@ -4,17 +4,15 @@
     color: #fff;
     border-width: 1px;
     border-style: solid;
-    border-color: #1c1c1c;
     font-weight: bold;
     letter-spacing: 1px;
 
 }
 
 .signup__button--register:hover {
-    background-color: white;
+    background-color: #1d1d1d;
     border-radius: 0.3rem;
-    color: black;
-    border: 1px solid black;
+    color: rgb(230, 230, 230);
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -22,22 +20,20 @@
 
 
 .signup__button--login {
-    background: #f27b28;
+    background: orange;
     border-radius: 0.3rem;
     color: #fff;
     border-width: 1px;
     border-style: solid;
-    border-color: #1c1c1c;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 
 .signup__button--login:hover {
-    background-color: white;
+    background-color:  rgb(255, 145, 0);
     border-radius: 0.3rem;
     color: black;
-    border: 1px solid black;
     font-weight: bold;
     letter-spacing: 1px;
 }
