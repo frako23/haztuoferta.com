@@ -45,7 +45,7 @@ export const SingleComp = (props) => {
                 {comp && (
                   <div className="main_image">
                     <img
-                      // src={store.imgSingleUrl[0].url}
+                      src={store.imgSingleUrl[0].url}
                       id="main_product_image"
                       width="350"
                     ></img>
