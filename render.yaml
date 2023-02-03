@@ -13,8 +13,10 @@ services:
     envVars:
       - key: BASENAME # Imported from Heroku app
         value: /
-      - key: FLASK_APP # Imported from Heroku app
+      - key: FLASK_APP
         value: src/app.py
+      - key: FLASK_APP_KEY
+        value: "any keywords" # Imported from Heroku app
       - key: FLASK_ENV # Imported from Heroku app
         value: production
       - key: DATABASE_URL # Render PostgreSQL database
