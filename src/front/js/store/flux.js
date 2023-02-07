@@ -67,10 +67,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
 
         try {
-          const resp = await fetch(
-            `${process.env.BACKEND_URL}/api/token`,
-            opts
-          );
+          const resp = await fetch(`/api/token`, opts);
           if (resp.status !== 200) {
             const mensaje = await resp.json();
             alert(mensaje.msg);
@@ -111,10 +108,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
 
         try {
-          const response = await fetch(
-            `${process.env.BACKEND_URL}/api/users`,
-            options
-          );
+          const response = await fetch(`/api/users`, options);
 
           if (!response.ok) {
             let danger = await response.json();
@@ -145,7 +139,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       postImgurl: (data, productName, productId) => {
         console.log(data, productName, productId);
-        const apiURL = `${process.env.BACKEND_URL}/api/imgurl/${productName}/${productId}`;
+        const apiURL = `/api/imgurl/${productName}/${productId}`;
         const store = getStore();
         for (const url of data) {
           fetch(apiURL, {
@@ -170,7 +164,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       getImgurl: (productName, productId) => {
         console.log(productName, productId);
-        const apiURL = `${process.env.BACKEND_URL}/api/imgurl/${productName}/${productId}`;
+        const apiURL = `/api/imgurl/${productName}/${productId}`;
         fetch(apiURL)
           .then((response) => {
             if (response.ok) {
@@ -186,7 +180,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getUsuarios: () => {
-        const apiURL = `${process.env.BACKEND_URL}/api/users`;
+        const apiURL = `/api/users`;
 
         fetch(apiURL)
           .then((response) => {
@@ -200,7 +194,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getComputadoras: () => {
-        const apiURL = `${process.env.BACKEND_URL}/api/get_computadoras`;
+        const apiURL = `/api/get_computadoras`;
 
         fetch(apiURL)
           .then((response) => {
@@ -214,7 +208,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getComputadoraId: (computadoraId) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/get_computadora_id/${computadoraId}`;
+        const apiURL = `/api/get_computadora_id/${computadoraId}`;
 
         fetch(apiURL)
           .then((response) => {
@@ -228,7 +222,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postComputadoras: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/post_computadoras`;
+        const apiURL = `/api/post_computadoras`;
         const store = getStore();
         const actions = getActions();
         fetch(apiURL, {
@@ -252,7 +246,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postCelulares: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/post_celulares`;
+        const apiURL = `/api/post_celulares`;
         const store = getStore();
         fetch(apiURL, {
           method: "POST", // or 'POST'
@@ -271,7 +265,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getCelulares: async () => {
-        const cellURL = `${process.env.BACKEND_URL}/api/get_celulares`;
+        const cellURL = `/api/get_celulares`;
 
         try {
           let response = await fetch(cellURL);
@@ -287,7 +281,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getOfertas: () => {
-        const apiURL = `${process.env.BACKEND_URL}/api/get_ofertas_de_compras`;
+        const apiURL = `/api/get_ofertas_de_compras`;
         fetch(apiURL)
           .then((response) => {
             if (response.ok) {
@@ -300,7 +294,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postOfertas: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/post_ofertas_de_compras`;
+        const apiURL = `/api/post_ofertas_de_compras`;
         const store = getStore();
         fetch(apiURL, {
           method: "POST", // or 'POST'
@@ -319,7 +313,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postVentas: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        const apiURL = `/api/ofertas_de_compras`;
         fetch(apiURL, {
           method: "POST", // or 'POST'
           body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
@@ -336,7 +330,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postIntercambios: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        const apiURL = `/api/ofertas_de_compras`;
         fetch(apiURL, {
           method: "POST", // or 'POST'
           body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
@@ -353,7 +347,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       postSubastas: (data) => {
-        const apiURL = `${process.env.BACKEND_URL}/api/ofertas_de_compras`;
+        const apiURL = `/api/ofertas_de_compras`;
         fetch(apiURL, {
           method: "POST", // or 'POST'
           body: JSON.stringify(data), // data can be a `string` or  an {object} which comes from somewhere further above in our application
