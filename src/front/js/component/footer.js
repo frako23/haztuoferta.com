@@ -93,27 +93,31 @@ export const Footer = () => (
             </div>
             <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
               <a
-                className="btn btn-outline-dark btn-floating m-1 text-black"
+                className="btn btn-outline-dark btn-floating m-1"
                 role="button"
+                style={{ width: "42px" }}
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a
-                className="btn btn-outline-dark btn-floating m-1 text-black"
+                className="btn btn-outline-dark btn-floating m-1"
                 role="button"
+                style={{ width: "42px" }}
               >
                 <i className="fab fa-twitter"></i>
               </a>
               <a
-                className="btn btn-outline-dark btn-floating m-1 text-black"
+                className="btn btn-outline-dark btn-floating m-1"
                 role="button"
+                style={{ width: "42px" }}
               >
                 <i className="fab fa-linkedin"></i>
               </a>
 
               <a
-                className="btn btn-outline-dark btn-floating m-1 text-black"
+                className="btn btn-outline-dark btn-floating m-1"
                 role="button"
+                style={{ width: "42px" }}
               >
                 <i className="fab fa-instagram"></i>
               </a>
